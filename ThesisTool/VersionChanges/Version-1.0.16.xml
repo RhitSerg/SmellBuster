@@ -1,0 +1,3465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diff>
+<paths>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\ant\build-swt.xml</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\ant\build.xml</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\ChangeLog</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\experimental\org\jfree\experimental\chart\renderer\xy\XYSmoothLineAndShapeRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\demo\PieChartDemo1.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\CategoryAnnotation.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\Annotation.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\XYAnnotation.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\StackedXYAreaRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\AbstractXYItemRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\AbstractCategoryItemRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\CombinedDomainCategoryPlot.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\CombinedDomainXYPlot.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\CombinedRangeCategoryPlot.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\XYPlot.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\CategoryPlot.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\PiePlot.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\PolarPlot.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\CombinedRangeXYPlot.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\JFreeChart.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\ChartPanel.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\DateAxis.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\CategoryAxis.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\NumberAxis3D.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\Axis.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\LogAxis.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\Timeline.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\SubCategoryAxis.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\NumberAxis.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\SymbolAxis.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\AxisLocation.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\AxisLabelLocation.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\ValueAxis.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\PeriodAxis.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\PeriodAxisLabelInfo.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\CategoryAxis3D.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\ChartFactory.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\LocalizationBundle.properties</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\util\ParamChecks.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\util\AttrStringUtils.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\DefaultKeyedValue.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\DomainOrder.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\time\TimeSeriesCollection.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\DomainInfo.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\xy\XYSeries.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\general\DatasetUtilities.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="dir">jfreechart-1.0.x-branch\tests\org\jfree\experimental\chart\renderer\junit</path>
+<path
+   item="deleted"
+   props="none"
+   kind="dir">jfreechart-1.0.x-branch\tests\org\jfree\experimental\chart\renderer\xy\junit</path>
+<path
+   props="none"
+   kind="dir"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\experimental\chart\renderer\xy</path>
+<path
+   item="deleted"
+   props="none"
+   kind="dir">jfreechart-1.0.x-branch\tests\org\jfree\experimental\chart\renderer</path>
+<path
+   props="none"
+   kind="dir"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\experimental\chart</path>
+<path
+   item="deleted"
+   props="none"
+   kind="dir">jfreechart-1.0.x-branch\tests\org\jfree\experimental</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\XYAreaChartTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\StackedBarChart3DTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\ChartPackageTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\LegendItemTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\XYStepChartTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\PieChart3DTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\BarChartTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\TestUtilities.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\package.html</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\MeterChartTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\GanttChartTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\WaterfallChartTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\StrokeMapTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\XYStepAreaChartTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\LineChartTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\PaintMapTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\ChartRenderingInfoTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\JFreeChartTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\BarChart3DTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\HashUtilitiesTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\ChartPanelTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\StackedBarChartTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\LegendItemCollectionTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\StackedAreaChartTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\XYLineChartTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\AreaChartTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\TimeSeriesChartTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\PieChartTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\LineChart3DTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\JFreeChartTestSuite.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\ScatterPlotTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\StandardChartThemeTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit\XYBarChartTests.java</path>
+<path
+   props="none"
+   kind="dir"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\junit</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\PieChartTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\LineChart3DTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\imagemap\junit\StandardURLTagFragmentGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\imagemap\junit\ImageMapPackageTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\imagemap\junit\ImageMapUtilitiesTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\imagemap\junit\DynamicDriveToolTipTagFragmentGeneratorTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\imagemap\junit\StandardToolTipTagFragmentGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\imagemap\junit\OverLIBToolTipTagFragmentGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="dir">jfreechart-1.0.x-branch\tests\org\jfree\chart\imagemap\junit</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\imagemap\DynamicDriveToolTipTagFragmentGeneratorTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\imagemap\StandardToolTipTagFragmentGeneratorTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\imagemap\OverLIBToolTipTagFragmentGeneratorTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\imagemap\StandardURLTagFragmentGeneratorTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\imagemap\ImageMapUtilitiesTest.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\junit\LegendGraphicTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\junit\TitlePackageTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\junit\DateTitleTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\junit\LegendTitleTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\junit\TitleTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\junit\PaintScaleLegendTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\junit\CompositeTitleTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\junit\ImageTitleTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\junit\ShortTextTitleTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\junit\TextTitleTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="dir">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\junit</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\DateTitleTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\LegendTitleTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\TitleTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\PaintScaleLegendTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\CompositeTitleTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\ImageTitleTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\ShortTextTitleTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\TextTitleTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\title\LegendGraphicTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\ScatterPlotTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\StrokeMapTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\StandardChartThemeTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\XYStepAreaChartTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\XYBarChartTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\LineChartTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\StackedBarChart3DTest.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\junit\ArrowNeedleTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\junit\NeedlePackageTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\junit\MeterNeedleTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\junit\PlumNeedleTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\junit\LongNeedleTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\junit\PointerNeedleTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\junit\WindNeedleTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\junit\ShipNeedleTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\junit\MiddlePinNeedleTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\junit\PinNeedleTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\junit\LineNeedleTests.java</path>
+<path
+   props="none"
+   kind="dir"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\junit</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\ShipNeedleTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\MiddlePinNeedleTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\PinNeedleTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\LineNeedleTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\ArrowNeedleTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\MeterNeedleTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\PlumNeedleTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\LongNeedleTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\PointerNeedleTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\needle\WindNeedleTest.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\junit\XYTextAnnotationTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\junit\CategoryLineAnnotationTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\junit\XYPolygonAnnotationTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\junit\XYLineAnnotationTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\junit\XYBoxAnnotationTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\junit\CategoryPointerAnnotationTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\junit\AnnotationsPackageTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\junit\package.html</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\junit\XYShapeAnnotationTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\junit\XYPointerAnnotationTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\junit\XYTitleAnnotationTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\junit\XYDrawableAnnotationTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\junit\CategoryTextAnnotationTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\junit\XYImageAnnotationTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\junit\TextAnnotationTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="dir">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\junit</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\TextAnnotationTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\CategoryLineAnnotationTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\XYTextAnnotationTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\XYLineAnnotationTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\XYPolygonAnnotationTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\XYBoxAnnotationTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\CategoryPointerAnnotationTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\XYPointerAnnotationTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\XYShapeAnnotationTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\CategoryTextAnnotationTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\XYDrawableAnnotationTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\XYTitleAnnotationTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\XYImageAnnotationTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\package.html</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\LegendItemTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\XYStepChartTest.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\panel\junit\CrosshairOverlayTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="dir">jfreechart-1.0.x-branch\tests\org\jfree\chart\panel\junit</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\panel\CrosshairOverlayTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\HashUtilitiesTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\StackedBarChartTest.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\junit\AbstractRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\junit\package.html</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\junit\LookupPaintScaleTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\junit\RendererPackageTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\junit\RendererUtilitiesTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\junit\OutlierTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\junit\RendererChangeDetector.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\junit\GrayPaintScaleTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\junit\AreaRendererEndTypeTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\junit\DefaultPolarItemRendererTests.java</path>
+<path
+   kind="dir"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\junit</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\GradientXYBarPainterTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\XYLine3DRendererTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\StandardXYItemRendererTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\ClusteredXYBarRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\HighLowRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\VectorRendererTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\StandardXYBarPainterTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\AbstractXYItemRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\XYDotRendererTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\XYErrorRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\StackedXYAreaRenderer2Tests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\XYSplineRendererTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\XYDifferenceRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\XYBlockRendererTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\XYAreaRenderer2Tests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\XYLineAndShapeRendererTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\XYBubbleRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\RendererXYPackageTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\YIntervalRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\WindItemRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\XYShapeRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\DeviationRendererTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\CandlestickRendererTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\StackedXYBarRendererTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\XYBarRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\XYStepAreaRendererTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\StackedXYAreaRendererTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\XYAreaRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\XYBoxAndWhiskerRendererTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit\XYStepRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="dir">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\junit</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\XYErrorRendererTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\StackedXYAreaRenderer2Test.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\XYSplineRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\XYDifferenceRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\XYBlockRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\XYAreaRenderer2Test.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\XYLineAndShapeRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\XYBubbleRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\YIntervalRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\WindItemRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\XYShapeRendererTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\DeviationRendererTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\CandlestickRendererTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\StackedXYBarRendererTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\XYStepAreaRendererTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\XYBarRendererTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\StackedXYAreaRendererTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\XYAreaRendererTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\XYBoxAndWhiskerRendererTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\XYStepRendererTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\RendererXYPackageUtils.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\GradientXYBarPainterTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\XYLine3DRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\StandardXYItemRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\ClusteredXYBarRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\HighLowRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\VectorRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\StandardXYBarPainterTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\AbstractXYItemRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\XYDotRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\RendererUtilitiesTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\OutlierTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\GrayPaintScaleTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\RendererChangeDetector.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\AreaRendererEndTypeTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\DefaultPolarItemRendererTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\AbstractRendererTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\LookupPaintScaleTest.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\LayeredBarRendererTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\GanttRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\LineRenderer3DTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\GradientBarPainterTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\AbstractCategoryItemRendererTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\StandardBarPainterTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\MinMaxCategoryRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\RendererCategoryPackageTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\GroupedStackedBarRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\StackedBarRenderer3DTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\BarRenderer3DTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\LineAndShapeRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\StatisticalLineAndShapeRendererTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\DefaultCategoryItemRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\StackedBarRendererTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\BarRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\ScatterRendererTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\WaterfallBarRendererTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\StackedAreaRendererTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\LevelRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\BoxAndWhiskerRendererTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\AreaRendererTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\IntervalBarRendererTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\CategoryStepRendererTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit\StatisticalBarRendererTests.java</path>
+<path
+   kind="dir"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\junit</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\AreaRendererTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\BoxAndWhiskerRendererTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\StatisticalBarRendererTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\CategoryStepRendererTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\IntervalBarRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\LayeredBarRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\GanttRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\GradientBarPainterTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\LineRenderer3DTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\AbstractCategoryItemRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\StandardBarPainterTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\MinMaxCategoryRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\GroupedStackedBarRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\StackedBarRenderer3DTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\BarRenderer3DTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\LineAndShapeRendererTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\StatisticalLineAndShapeRendererTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\DefaultCategoryItemRendererTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\StackedBarRendererTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\BarRendererTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\ScatterRendererTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\WaterfallBarRendererTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\LevelRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\StackedAreaRendererTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\package.html</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\TimeSeriesChartTest.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\CombinedDomainCategoryPlotTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\MeterPlotTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\CategoryPlotTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\PiePlotTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\PolarPlotTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\MyPlotChangeListener.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\PlotTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\MeterIntervalTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\FastScatterPlotTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\MultiplePiePlotTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\PlotRenderingInfoTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\package.html</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\RingPlotTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\PiePlot3DTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\CompassPlotTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\PieLabelRecordTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\CombinedRangeXYPlotTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\ValueMarkerTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\CategoryMarkerTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\MarkerTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\SpiderWebPlotTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\DefaultDrawingSupplierTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\IntervalMarkerTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\CombinedDomainXYPlotTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\ContourPlotTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\ThermometerPlotTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\PlotPackageTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\PlotOrientationTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\CombinedRangeCategoryPlotTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\CrosshairTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\ColorPaletteTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit\XYPlotTests.java</path>
+<path
+   props="none"
+   kind="dir"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\junit</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\XYPlotTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\CompassPlotTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\CombinedDomainCategoryPlotTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\MeterPlotTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\PieLabelRecordTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\ValueMarkerTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\MeterIntervalTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\DefaultDrawingSupplierTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\IntervalMarkerTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\CombinedDomainXYPlotTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\ContourPlotTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\ThermometerPlotTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\PlotOrientationTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\CombinedRangeCategoryPlotTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\MyPlotChangeListener.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\PiePlot3DTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\CategoryPlotTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\PiePlotTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\PolarPlotTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\CombinedRangeXYPlotTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\PlotTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\package.html</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\CategoryMarkerTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\MarkerTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\FastScatterPlotTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\SpiderWebPlotTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\MultiplePiePlotTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\PlotRenderingInfoTest.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\junit\StandardDialScaleTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\junit\DialValueIndicatorTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\junit\DialPackageTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\junit\MyDialLayerChangeListener.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\junit\StandardDialFrameTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\junit\StandardDialRangeTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\junit\DialPlotTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\junit\DialBackgroundTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\junit\DialTextAnnotationTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\junit\AbstractDialLayerTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\junit\ArcDialFrameTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\junit\DialPointerTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\junit\DialCapTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="dir">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\junit</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\StandardDialScaleTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\DialValueIndicatorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\StandardDialFrameTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\StandardDialRangeTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\DialPlotTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\MyDialLayerChangeListener.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\DialBackgroundTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\DialTextAnnotationTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\AbstractDialLayerTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\ArcDialFrameTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\DialPointerTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\DialCapTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\CrosshairTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\ColorPaletteTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\RingPlotTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\GanttChartTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\WaterfallChartTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\junit\UrlsPackageTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\junit\CustomCategoryURLGeneratorTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\junit\CustomPieURLGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\junit\TimeSeriesURLGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\junit\CustomXYURLGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\junit\StandardCategoryURLGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\junit\StandardPieURLGeneratorTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\junit\StandardXYURLGeneratorTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\junit\package.html</path>
+<path
+   kind="dir"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\junit</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\CustomCategoryURLGeneratorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\CustomPieURLGeneratorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\TimeSeriesURLGeneratorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\CustomXYURLGeneratorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\StandardCategoryURLGeneratorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\StandardPieURLGeneratorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\StandardXYURLGeneratorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\urls\package.html</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\PaintMapTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\junit\AbstractBlockTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\junit\BorderArrangementTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\junit\ColumnArrangementTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\junit\LineBorderTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\junit\BlockPackageTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\junit\BlockBorderTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\junit\ColorBlockTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\junit\EmptyBlockTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\junit\GridArrangementTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\junit\RectangleConstraintTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\junit\LabelBlockTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\junit\FlowArrangementTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\junit\BlockContainerTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="dir">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\junit</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\BorderArrangementTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\ColumnArrangementTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\LineBorderTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\BlockBorderTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\ColorBlockTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\EmptyBlockTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\GridArrangementTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\RectangleConstraintTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\LabelBlockTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\FlowArrangementTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\BlockContainerTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\block\AbstractBlockTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\ChartRenderingInfoTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\TestUtilities.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\XYAreaChartTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\JFreeChartTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\BarChart3DTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\package.html</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\ChartPanelTest.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\StandardPieSectionLabelGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\BoxAndWhiskerToolTipGeneratorTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\package.html</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\StandardContourToolTipGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\StandardXYZToolTipGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\MultipleXYSeriesLabelGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\BubbleXYItemLabelGeneratorTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\StandardXYToolTipGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\StandardXYSeriesLabelGeneratorTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\IntervalCategoryToolTipGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\StandardXYItemLabelGeneratorTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\IntervalCategoryItemLabelGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\BoxAndWhiskerXYToolTipGeneratorTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\LabelsPackageTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\StandardPieToolTipGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\StandardCategorySeriesLabelGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\StandardCategoryToolTipGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\CustomXYItemLabelGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\ItemLabelPositionTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\StandardCategoryItemLabelGeneratorTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\HighLowItemLabelGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\SymbolicXYItemLabelGeneratorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit\ItemLabelAnchorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="dir">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\junit</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\BubbleXYItemLabelGeneratorTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\StandardXYToolTipGeneratorTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\StandardXYSeriesLabelGeneratorTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\IntervalCategoryToolTipGeneratorTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\StandardXYItemLabelGeneratorTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\IntervalCategoryItemLabelGeneratorTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\BoxAndWhiskerXYToolTipGeneratorTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\package.html</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\StandardCategorySeriesLabelGeneratorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\StandardCategoryToolTipGeneratorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\StandardPieToolTipGeneratorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\CustomXYItemLabelGeneratorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\ItemLabelPositionTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\StandardCategoryItemLabelGeneratorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\HighLowItemLabelGeneratorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\SymbolicXYItemLabelGeneratorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\ItemLabelAnchorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\StandardPieSectionLabelGeneratorTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\BoxAndWhiskerToolTipGeneratorTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\StandardContourToolTipGeneratorTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\StandardXYZToolTipGeneratorTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\labels\MultipleXYSeriesLabelGeneratorTest.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\PeriodAxisTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\CategoryLabelWidthTypeTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\AxisSpaceTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\AxisPackageTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\ModuloAxisTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\LogarithmicAxisTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\DateTickTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\DateTickMarkPositionTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\CategoryTickTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\CategoryAxis3DTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\SymbolAxisTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\MarkerAxisBandTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\ValueAxisTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\SegmentedTimelineTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\NumberTickUnitTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\CyclicNumberAxisTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\LogAxisTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\CategoryAnchorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\SubCategoryAxisTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\NumberAxisTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\TickUnitsTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\PeriodAxisLabelInfoTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\ExtendedCategoryAxisTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\SegmentedTimelineTests2.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\CategoryLabelPositionsTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\DateTickUnitTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\QuarterDateFormatTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\package.html</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\MonthDateFormatTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\StandardTickUnitSourceTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\AxisLocationTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\CategoryLabelPositionTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\CategoryAxisTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\DateAxisTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\ColorBarTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\NumberAxis3DTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit\AxisTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="dir">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\junit</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\SegmentedTimelineTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\CategoryAxisTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\DateAxisTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\NumberTickUnitTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\NumberAxis3DTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\AxisTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\LogAxisTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\SubCategoryAxisTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\NumberAxisTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\ExtendedCategoryAxisTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\SegmentedTimelineTest2.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\ModuloAxisTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\CategoryLabelPositionsTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\LogarithmicAxisTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\DateTickTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\CategoryTickTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\DateTickMarkPositionTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\SymbolAxisTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\QuarterDateFormatTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\MonthDateFormatTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\AxisLocationTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\ValueAxisTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\CategoryLabelPositionTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\ColorBarTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\CyclicNumberAxisTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\PeriodAxisTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\CategoryAnchorTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\TickUnitsTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\package.html</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\CategoryLabelWidthTypeTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\AxisSpaceTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\PeriodAxisLabelInfoTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\DateTickUnitTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\CategoryAxis3DTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\MarkerAxisBandTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\StandardTickUnitSourceTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\BarChartTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\PieChart3DTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\StackedAreaChartTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\LegendItemCollectionTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\XYLineChartTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\chart\AreaChartTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\junit\ContourEntityTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\junit\TickLabelEntityTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\junit\EntityPackageTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\junit\CategoryItemEntityTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\junit\StandardEntityCollectionTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\junit\CategoryLabelEntityTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\junit\LegendItemEntityTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\junit\XYItemEntityTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\junit\PieSectionEntityTests.java</path>
+<path
+   props="none"
+   kind="dir"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\junit</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\PieSectionEntityTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\ContourEntityTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\TickLabelEntityTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\CategoryItemEntityTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\StandardEntityCollectionTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\CategoryLabelEntityTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\LegendItemEntityTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\entity\XYItemEntityTest.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\util\junit\UtilPackageTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\util\junit\LogFormatTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\util\junit\RelativeDateFormatTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\util\junit\LineUtilitiesTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="dir">jfreechart-1.0.x-branch\tests\org\jfree\chart\util\junit</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\util\RelativeDateFormatTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\util\LineUtilitiesTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\util\LogFormatTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\MeterChartTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\junit\DataPackageTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\junit\DataUtilitiesTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\junit\DefaultKeyedValuesTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\junit\KeyToGroupMapTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\junit\ComparableObjectSeriesTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\junit\KeyedObjectTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\junit\package.html</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\junit\KeyedObjectsTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\junit\ComparableObjectItemTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\junit\RangeTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\junit\DefaultKeyedValues2DTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\junit\RangeTypeTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\junit\KeyedObjects2DTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\junit\DomainOrderTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\junit\DefaultKeyedValueTests.java</path>
+<path
+   kind="dir"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\junit</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\KeyedObjects2DTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\DefaultKeyedValueTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\DomainOrderTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\DataUtilitiesTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\function\junit\PolynomialFunction2DTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\function\junit\LineFunction2DTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\function\junit\NormalDistributionFunction2DTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\function\junit\PowerFunction2DTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\function\junit\DataFunctionPackageTests.java</path>
+<path
+   props="none"
+   kind="dir"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\function\junit</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\function\PolynomialFunction2DTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\function\LineFunction2DTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\function\NormalDistributionFunction2DTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\function\PowerFunction2DTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\KeyToGroupMapTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\ComparableObjectSeriesTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\junit\package.html</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\junit\SimpleHistogramDatasetTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\junit\DefaultStatisticalCategoryDatasetTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\junit\RegressionTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\junit\SimpleHistogramBinTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\junit\DefaultMultiValueCategoryDatasetTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\junit\DataStatisticsPackageTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\junit\DefaultBoxAndWhiskerCategoryDatasetTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\junit\BoxAndWhiskerCalculatorTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\junit\HistogramDatasetTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\junit\DefaultBoxAndWhiskerXYDatasetTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\junit\HistogramBinTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\junit\MeanAndStandardDeviationTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\junit\BoxAndWhiskerItemTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\junit\StatisticsTests.java</path>
+<path
+   kind="dir"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\junit</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\DefaultMultiValueCategoryDatasetTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\RegressionTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\SimpleHistogramBinTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\DefaultBoxAndWhiskerCategoryDatasetTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\BoxAndWhiskerCalculatorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\HistogramDatasetTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\DefaultBoxAndWhiskerXYDatasetTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\HistogramBinTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\BoxAndWhiskerItemTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\MeanAndStandardDeviationTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\StatisticsTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\DefaultStatisticalCategoryDatasetTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\SimpleHistogramDatasetTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\package.html</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\ComparableObjectItemTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\KeyedObjectsTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\DefaultKeyedValues2DTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\TimeSeriesTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\SecondTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\SimpleTimePeriodTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\DayTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\HourTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\TimePeriodValuesTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\TimeSeriesDataItemTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\FixedMillisecondTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\QuarterTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\TimeSeriesCollectionTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\MonthTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\DateRangeTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\MovingAverageTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\package.html</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\WeekTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\TimePeriodAnchorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\TimePeriodValuesCollectionTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\TimeTableXYDatasetTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\TimePeriodValueTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\YearTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\MinuteTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\MillisecondTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit\DataTimePackageTests.java</path>
+<path
+   props="none"
+   kind="dir"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\time\junit</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\YearTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\MinuteTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\MillisecondTest.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\ohlc\junit\OHLCSeriesCollectionTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\ohlc\junit\OHLCSeriesTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\ohlc\junit\OHLCPackageTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\time\ohlc\junit\OHLCItemTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\time\ohlc\junit\OHLCTests.java</path>
+<path
+   props="none"
+   kind="dir"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\time\ohlc\junit</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\time\ohlc\OHLCSeriesTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\time\ohlc\OHLCItemTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\time\ohlc\OHLCTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\ohlc\OHLCSeriesCollectionTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\TimeSeriesTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\SecondTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\SimpleTimePeriodTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\DayTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\HourTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\package.html</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\TimePeriodValuesTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\TimeSeriesDataItemTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\FixedMillisecondTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\time\QuarterTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\time\MonthTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\time\TimeSeriesCollectionTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\time\MovingAverageTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\time\DateRangeTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\time\WeekTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\time\TimePeriodAnchorTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\time\TimePeriodValuesCollectionTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\time\TimeTableXYDatasetTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\time\TimePeriodValueTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\package.html</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\DefaultIntervalXYDatasetTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\DefaultTableXYDatasetTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\XIntervalSeriesTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\XYSeriesCollectionTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\YIntervalSeriesTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\VectorSeriesCollectionTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\MatrixSeriesCollectionTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\XYIntervalSeriesCollectionTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\OHLCDataItemTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\DefaultOHLCDatasetTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\YWithXIntervalTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\DataXYPackageTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\DefaultXYDatasetTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\XYSeriesTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\DefaultHighLowDatasetTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\YIntervalTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\VectorSeriesTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\MatrixSeriesTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\XYIntervalSeriesTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\XIntervalDataItemTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\YIntervalDataItemTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\XYBarDatasetTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\IntervalXYDelegateTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\VectorTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\XIntervalSeriesCollectionTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\YIntervalSeriesCollectionTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\XYIntervalTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\DefaultXYZDatasetTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\XYCoordinateTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\XYDataItemTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\VectorDataItemTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\CategoryTableXYDatasetTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\DefaultWindDatasetTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\XYIntervalDataItemTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit\TableXYDatasetTests.java</path>
+<path
+   props="none"
+   kind="dir"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\junit</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\DefaultOHLCDatasetTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\XIntervalSeriesCollectionTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\XYIntervalTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\DefaultXYZDatasetTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\XYDataItemTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\VectorDataItemTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\DefaultHighLowDatasetTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\XYIntervalSeriesTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\DefaultTableXYDatasetTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\YIntervalDataItemTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\XYSeriesCollectionTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\XIntervalSeriesTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\VectorSeriesCollectionTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\MatrixSeriesCollectionTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\IntervalXYDelegateTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\YWithXIntervalTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\VectorTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\YIntervalSeriesCollectionTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\XYCoordinateTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\DefaultXYDatasetTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\XYSeriesTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\DefaultWindDatasetTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\CategoryTableXYDatasetTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\YIntervalTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\VectorSeriesTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\TableXYDatasetTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\XYIntervalDataItemTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\MatrixSeriesTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\DefaultIntervalXYDatasetTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\XIntervalDataItemTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\YIntervalSeriesTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\XYBarDatasetTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\XYIntervalSeriesCollectionTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\OHLCDataItemTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\DefaultKeyedValuesTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\KeyedObjectTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\RangeTest.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\gantt\junit\SlidingGanttCategoryDatasetTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\gantt\junit\TaskSeriesTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\gantt\junit\TaskTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\gantt\junit\DataGanttPackageTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\gantt\junit\TaskSeriesCollectionTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\gantt\junit\XYTaskDatasetTests.java</path>
+<path
+   kind="dir"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\gantt\junit</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\gantt\TaskTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\gantt\TaskSeriesCollectionTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\gantt\XYTaskDatasetTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\gantt\SlidingGanttCategoryDatasetTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\gantt\TaskSeriesTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\category\junit\DefaultCategoryDatasetTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\category\junit\DefaultIntervalCategoryDatasetTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\category\junit\SlidingCategoryDatasetTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\category\junit\DataCategoryPackageTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\category\junit\CategoryToPieDatasetTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="dir">jfreechart-1.0.x-branch\tests\org\jfree\data\category\junit</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\category\CategoryToPieDatasetTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\category\DefaultCategoryDatasetTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\category\DefaultIntervalCategoryDatasetTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\category\SlidingCategoryDatasetTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\general\junit\TestIntervalCategoryDataset.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\general\junit\DefaultPieDatasetTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\general\junit\DefaultKeyedValueDatasetTests.java</path>
+<path
+   kind="file"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\general\junit\DefaultHeatMapDatasetTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\general\junit\IntervalDataItem.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\general\junit\DefaultKeyedValuesDatasetTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\general\junit\DatasetUtilitiesTests.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\data\general\junit\DatasetGroupTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\general\junit\DefaultKeyedValues2DDatasetTests.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\general\junit\DataGeneralPackageTests.java</path>
+<path
+   kind="dir"
+   item="deleted"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\general\junit</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\general\DatasetUtilitiesTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\general\DatasetGroupTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\general\DefaultKeyedValues2DDatasetTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\general\DefaultPieDatasetTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\general\TestIntervalCategoryDataset.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\general\DefaultKeyedValueDatasetTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\general\DefaultHeatMapDatasetTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\general\DefaultKeyedValuesDatasetTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\general\IntervalDataItem.java</path>
+<path
+   props="none"
+   kind="file"
+   item="added">jfreechart-1.0.x-branch\tests\org\jfree\data\RangeTypeTest.java</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\lib\jcommon-1.0.18.jar</path>
+<path
+   item="deleted"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\lib\junit.jar</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\lib\iText-2.1.5.jar</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\lib\jfreesvg-1.2.jar</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\lib\junit-4.11.jar</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\lib\hamcrest-core-1.3.jar</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\lib\orsonpdf-1.2-eval.jar</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\lib\jcommon-1.0.20.jar</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\README.txt</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\NEWS</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\swt\org\jfree\experimental\chart\swt\ChartComposite.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\swt\org\jfree\experimental\swt\SWTGraphics2D.java</path>
+</paths>
+</diff>

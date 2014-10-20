@@ -1,0 +1,1989 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diff>
+<paths>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\ant\build-swt.xml</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\ant\build.xml</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\ChangeLog</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\pom.xml</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\imagemap\DynamicDriveToolTipTagFragmentGenerator.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\imagemap\StandardToolTipTagFragmentGenerator.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\imagemap\OverLIBToolTipTagFragmentGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\imagemap\StandardURLTagFragmentGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\imagemap\ImageMapUtilities.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\title\LegendTitle.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\title\Title.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\title\PaintScaleLegend.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\title\CompositeTitle.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\title\ImageTitle.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\title\ShortTextTitle.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\title\TextTitle.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\title\LegendItemBlockContainer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\title\LegendGraphic.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\ClipPath.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\servlet\ChartDeleter.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\servlet\DisplayChart.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\StandardChartTheme.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\StrokeMap.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\MouseWheelHandler.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\needle\ShipNeedle.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\needle\MiddlePinNeedle.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\needle\PinNeedle.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\needle\LineNeedle.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\needle\ArrowNeedle.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\needle\MeterNeedle.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\needle\PlumNeedle.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\needle\LongNeedle.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\needle\PointerNeedle.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\needle\WindNeedle.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\LegendItem.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\XYTextAnnotation.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\XYPolygonAnnotation.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\XYLineAnnotation.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\XYBoxAnnotation.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\CategoryPointerAnnotation.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\XYShapeAnnotation.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\CategoryTextAnnotation.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\AbstractXYAnnotation.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\TextAnnotation.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\CategoryLineAnnotation.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\XYDataImageAnnotation.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\XYPointerAnnotation.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\XYDrawableAnnotation.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\XYTitleAnnotation.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\XYImageAnnotation.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\annotations\AbstractAnnotation.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\panel\CrosshairOverlay.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\encoders\KeypointPNGEncoderAdapter.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\encoders\SunPNGEncoderAdapter.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\encoders\SunJPEGEncoderAdapter.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\GrayPaintScale.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\LookupPaintScale.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\XYErrorRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\XYBlockRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\XYBubbleRenderer.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\YIntervalRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\WindItemRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\DeviationRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\CandlestickRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\XYBoxAndWhiskerRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\XYAreaRenderer.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\XYStepRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\GradientXYBarPainter.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\HighLowRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\StandardXYBarPainter.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\SamplingXYLineRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\StackedXYAreaRenderer2.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\XYAreaRenderer2.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\XYDifferenceRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\XYSplineRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\XYLineAndShapeRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\XYShapeRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\StackedXYBarRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\XYStepAreaRenderer.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\XYBarRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\StackedXYAreaRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\XYLine3DRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\StandardXYItemRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\ClusteredXYBarRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\VectorRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\AbstractXYItemRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\CyclicXYItemRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\xy\XYDotRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\Outlier.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\AreaRendererEndType.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\DefaultPolarItemRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\WaferMapRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\AbstractRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\AreaRenderer.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\BoxAndWhiskerRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\StatisticalBarRenderer.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\CategoryStepRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\IntervalBarRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\LayeredBarRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\GanttRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\LineRenderer3D.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\GradientBarPainter.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\AbstractCategoryItemRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\StandardBarPainter.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\MinMaxCategoryRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\GroupedStackedBarRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\StackedBarRenderer3D.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\BarRenderer3D.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\LineAndShapeRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\StatisticalLineAndShapeRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\StackedBarRenderer.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\BarRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\ScatterRenderer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\WaterfallBarRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\LevelRenderer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\renderer\category\StackedAreaRenderer.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\CombinedDomainCategoryPlot.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\MeterPlot.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\DatasetRenderingOrder.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\GreyPalette.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\CombinedDomainXYPlot.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\ContourPlot.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\CombinedRangeCategoryPlot.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\PlotOrientation.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\WaferMapPlot.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\FastScatterPlot.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\SeriesRenderingOrder.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\MultiplePiePlot.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\DialShape.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\Crosshair.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\ColorPalette.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\RingPlot.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\XYPlot.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\CompassPlot.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\JThermometer.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\PieLabelRecord.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\ValueMarker.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\RainbowPalette.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\MeterInterval.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\DefaultDrawingSupplier.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\IntervalMarker.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\ThermometerPlot.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\PolarAxisLocation.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\PiePlot3D.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\PieLabelDistributor.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\CategoryPlot.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\PieLabelLinkStyle.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\PiePlot.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\PolarPlot.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\CombinedRangeXYPlot.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\Plot.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\CategoryMarker.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\Marker.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\SpiderWebPlot.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\PlotRenderingInfo.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\dial\StandardDialScale.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\dial\DialValueIndicator.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\dial\StandardDialFrame.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\dial\StandardDialRange.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\dial\DialPlot.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\dial\DialBackground.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\dial\DialTextAnnotation.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\dial\ArcDialFrame.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\dial\DialPointer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\dial\AbstractDialLayer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\plot\dial\DialCap.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\event\ChartChangeEventType.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\urls\CustomCategoryURLGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\urls\CustomPieURLGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\urls\TimeSeriesURLGenerator.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\urls\CustomXYURLGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\urls\StandardXYZURLGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\urls\StandardCategoryURLGenerator.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\urls\StandardPieURLGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\urls\StandardXYURLGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\editor\PaletteSample.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\editor\DefaultChartEditorFactory.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\editor\DefaultChartEditor.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\editor\DefaultValueAxisEditor.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\editor\DefaultColorBarEditor.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\editor\DefaultAxisEditor.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\editor\DefaultLogAxisEditor.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\editor\DefaultPolarPlotEditor.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\editor\DefaultNumberAxisEditor.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\editor\DefaultPlotEditor.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\editor\DefaultTitleEditor.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\PaintMap.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\block\BorderArrangement.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\block\CenterArrangement.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\block\RectangleConstraint.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\block\GridArrangement.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\block\EmptyBlock.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\block\AbstractBlock.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\block\ColumnArrangement.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\block\LineBorder.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\block\LengthConstraintType.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\block\BlockBorder.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\block\BlockResult.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\block\ColorBlock.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\block\LabelBlock.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\block\FlowArrangement.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\block\BlockContainer.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\block\BlockParams.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\ChartRenderingInfo.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\JFreeChart.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\PolarChartPanel.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\ChartPanel.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\BubbleXYItemLabelGenerator.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\StandardXYToolTipGenerator.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\IntervalCategoryToolTipGenerator.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\StandardXYItemLabelGenerator.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\IntervalCategoryItemLabelGenerator.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\AbstractXYItemLabelGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\StandardPieToolTipGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\StandardCategorySeriesLabelGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\StandardCrosshairLabelGenerator.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\HighLowItemLabelGenerator.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\ItemLabelAnchor.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\BoxAndWhiskerToolTipGenerator.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\IntervalXYItemLabelGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\StandardXYZToolTipGenerator.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\MultipleXYSeriesLabelGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\StandardXYSeriesLabelGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\BoxAndWhiskerXYToolTipGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\CustomXYToolTipGenerator.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\StandardCategoryToolTipGenerator.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\ItemLabelPosition.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\StandardCategoryItemLabelGenerator.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\AbstractCategoryItemLabelGenerator.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\AbstractPieItemLabelGenerator.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\SymbolicXYItemLabelGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\StandardPieSectionLabelGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\labels\StandardContourToolTipGenerator.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\DateAxis.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\CategoryAxis.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\SegmentedTimeline.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\NumberTickUnit.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\NumberAxis3D.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\Axis.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\LogAxis.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\SubCategoryAxis.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\NumberAxis.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\CompassFormat.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\ExtendedCategoryAxis.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\ModuloAxis.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\CategoryLabelPositions.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\LogarithmicAxis.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\CategoryTick.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\DateTick.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\DateTickMarkPosition.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\Tick.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\SymbolAxis.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\QuarterDateFormat.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\DateTickUnitType.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\MonthDateFormat.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\AxisLocation.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\AxisLabelLocation.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\ValueAxis.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\CategoryLabelPosition.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\ColorBar.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\CyclicNumberAxis.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\PeriodAxis.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\CategoryAnchor.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\TickUnits.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\CategoryLabelWidthType.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\AxisSpace.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\PeriodAxisLabelInfo.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\ValueTick.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\DateTickUnit.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\CategoryAxis3D.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\TickUnit.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\MarkerAxisBand.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\StandardTickUnitSource.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\axis\TickType.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\LegendRenderingOrder.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\LegendItemCollection.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\ChartFactory.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\ChartTransferable.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\resources\JFreeChartResources.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\entity\PieSectionEntity.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\entity\AxisEntity.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\entity\StandardEntityCollection.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\entity\CategoryLabelEntity.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\entity\JFreeChartEntity.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\entity\LegendItemEntity.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\entity\PlotEntity.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\entity\XYItemEntity.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\entity\TitleEntity.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\entity\ContourEntity.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\entity\XYAnnotationEntity.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\entity\CategoryItemEntity.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\entity\ChartEntity.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\LocalizationBundle.properties</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\util\DefaultShadowGenerator.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\util\PaintAlpha.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\util\AttrStringUtils.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\chart\util\RelativeDateFormat.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\util\HexNumberFormat.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\util\HMSNumberFormat.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\util\DirectionalGradientPaintTransformer.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\chart\util\LogFormat.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\chart\util\XYCoordinateType.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\DefaultKeyedValue.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\DomainOrder.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\function\PolynomialFunction2D.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\function\LineFunction2D.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\function\NormalDistributionFunction2D.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\function\PowerFunction2D.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\KeyToGroupMap.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\ComparableObjectSeries.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\contour\DefaultContourDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\statistics\HistogramType.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\statistics\DefaultMultiValueCategoryDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\statistics\SimpleHistogramBin.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\statistics\HistogramDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\statistics\DefaultBoxAndWhiskerXYDataset.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\statistics\SimpleHistogramDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\statistics\Regression.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\statistics\DefaultBoxAndWhiskerCategoryDataset.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\statistics\HistogramBin.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\statistics\BoxAndWhiskerItem.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\statistics\MeanAndStandardDeviation.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\statistics\DefaultStatisticalCategoryDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\DefaultKeyedValues2D.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\time\Year.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\time\Minute.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\time\TimeSeriesTableModel.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\time\Millisecond.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\time\ohlc\OHLCSeries.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\time\ohlc\OHLCItem.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\time\ohlc\OHLC.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\time\ohlc\OHLCSeriesCollection.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\time\TimeSeries.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\time\Second.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\time\SimpleTimePeriod.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\time\Day.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\time\Hour.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\time\TimePeriodValues.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\time\TimeSeriesDataItem.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\time\FixedMillisecond.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\time\RegularTimePeriod.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\time\Quarter.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\time\Month.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\time\TimeSeriesCollection.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\time\DynamicTimeSeriesCollection.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\time\DateRange.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\time\Week.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\time\TimePeriodAnchor.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\time\TimePeriodValuesCollection.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\time\TimeTableXYDataset.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\time\TimePeriodValue.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\jdbc\JDBCXYDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\KeyedValueComparator.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\DefaultKeyedValues.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\Range.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\category\CategoryToPieDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\category\DefaultCategoryDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\category\DefaultIntervalCategoryDataset.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\category\SlidingCategoryDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\KeyedObjects2D.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\KeyedObjects.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\ComparableObjectItem.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\xy\AbstractIntervalXYDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xy\XYDatasetTableModel.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xy\DefaultOHLCDataset.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\xy\XIntervalSeriesCollection.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\xy\NormalizedMatrixSeries.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\xy\DefaultXYZDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xy\XYInterval.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\xy\XYDataItem.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\xy\DefaultHighLowDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xy\XYIntervalSeries.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xy\DefaultTableXYDataset.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\xy\XYSeriesCollection.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xy\XIntervalSeries.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xy\VectorSeriesCollection.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\xy\MatrixSeriesCollection.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xy\IntervalXYDelegate.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xy\YWithXInterval.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xy\Vector.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xy\YIntervalSeriesCollection.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\xy\XYCoordinate.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\xy\DefaultXYDataset.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\xy\XYSeries.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\xy\CategoryTableXYDataset.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\xy\DefaultWindDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xy\VectorSeries.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xy\YInterval.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xy\MatrixSeries.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\xy\DefaultIntervalXYDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xy\AbstractXYZDataset.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\xy\YIntervalSeries.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xy\AbstractXYDataset.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\xy\XYBarDataset.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\xy\XYIntervalSeriesCollection.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xy\OHLCDataItem.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xml\CategoryDatasetHandler.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xml\PieDatasetHandler.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\xml\RootHandler.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xml\CategorySeriesHandler.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xml\KeyHandler.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\xml\ValueHandler.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\xml\ItemHandler.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\KeyedObject.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\KeyedValueComparatorType.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\resources\DataPackageResources.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\resources\DataPackageResources_ru.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\resources\DataPackageResources_es.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\resources\DataPackageResources_fr.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\resources\DataPackageResources_de.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\resources\DataPackageResources_pl.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\general\DatasetGroup.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\general\AbstractDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\general\DefaultKeyedValueDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\general\SubSeriesDataset.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\source\org\jfree\data\general\DatasetUtilities.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\general\AbstractSeriesDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\general\CombinedDataset.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\general\DefaultValueDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\general\DefaultPieDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\general\DefaultHeatMapDataset.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\general\Series.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\gantt\Task.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\gantt\TaskSeriesCollection.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\gantt\XYTaskDataset.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\gantt\SlidingGanttCategoryDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\source\org\jfree\data\gantt\TaskSeries.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\source\org\jfree\data\RangeType.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\PieChartTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\LineChart3DTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\ScatterPlotTest.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\XYStepAreaChartTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\XYBarChartTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\LineChartTest.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\StackedBarChart3DTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\TextAnnotationTest.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\annotations\XYDrawableAnnotationTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\XYStepChartTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\StackedBarChartTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\xy\XYSplineRendererTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\RendererUtilitiesTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\RendererChangeDetector.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\AbstractRendererTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\BoxAndWhiskerRendererTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\StackedBarRenderer3DTest.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\renderer\category\WaterfallBarRendererTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\TimeSeriesChartTest.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\CombinedDomainCategoryPlotTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\ValueMarkerTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\IntervalMarkerTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\CombinedDomainXYPlotTest.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\CombinedRangeCategoryPlotTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\MyPlotChangeListener.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\PiePlotTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\CombinedRangeXYPlotTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\CategoryMarkerTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\MarkerTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\MultiplePiePlotTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\DialPlotTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\plot\dial\MyDialLayerChangeListener.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\tests\org\jfree\chart\GanttChartTest.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\XYAreaChartTest.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\JFreeChartTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\BarChart3DTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\tests\org\jfree\chart\ChartPanelTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\SegmentedTimelineTest2.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\SegmentedTimelineTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\DateAxisTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\LogarithmicAxisTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\PeriodAxisTest.java</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\axis\SegmentedTimelineAdditionalTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\BarChartTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\PieChart3DTest.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\StackedAreaChartTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\XYLineChartTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\chart\AreaChartTest.java</path>
+<path
+   kind="file"
+   item="added"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\chart\util\HMSNumberFormatTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\ComparableObjectSeriesTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\statistics\HistogramDatasetTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\tests\org\jfree\data\time\ohlc\OHLCSeriesTest.java</path>
+<path
+   kind="file"
+   item="modified"
+   props="none">jfreechart-1.0.x-branch\tests\org\jfree\data\time\ohlc\OHLCSeriesCollectionTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\TimeSeriesTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\time\TimePeriodValuesTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\XYSeriesCollectionTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\tests\org\jfree\data\xy\XYSeriesTest.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\general\DefaultPieDatasetTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\tests\org\jfree\data\general\TestIntervalCategoryDataset.java</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\tests\org\jfree\data\general\DefaultHeatMapDatasetTest.java</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\lib\jfreesvg-1.2.jar</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\lib\orsonpdf-1.2-eval.jar</path>
+<path
+   props="none"
+   kind="file"
+   item="deleted">jfreechart-1.0.x-branch\lib\jcommon-1.0.20.jar</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\lib\jfreesvg-1.4.jar</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\lib\orsonpdf-1.3-eval.jar</path>
+<path
+   item="added"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\lib\jcommon-1.0.21.jar</path>
+<path
+   item="modified"
+   props="none"
+   kind="file">jfreechart-1.0.x-branch\README.txt</path>
+<path
+   props="none"
+   kind="file"
+   item="modified">jfreechart-1.0.x-branch\NEWS</path>
+</paths>
+</diff>
