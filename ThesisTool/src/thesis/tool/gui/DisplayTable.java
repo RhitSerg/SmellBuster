@@ -2,14 +2,18 @@ package thesis.tool.gui;
 
 import thesis.tool.util.*;
 import thesis.tool.xmlparser.*;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -26,12 +30,14 @@ public class DisplayTable extends JFrame {
 	private JPanel topPanel;
 	private JTable table;
 	private JScrollPane scrollPane;
-	static Map<String, ArrayList<JavaClass>> metricMap;
+	private Map<Integer, String> versionMap;
+	private Map<String, ArrayList<JavaClass>> metricMap;
 
 	// Constructor of main frame
-	public DisplayTable(String[][] dataValues) {
+	public DisplayTable(String[][] dataValues, Map<Integer, String> versionMap) {
 		// Set the frame characteristics
 		metricMap = new HashMap<>();
+		this.versionMap = versionMap;
 		setTitle("Simple Table Application");
 		setSize(1000, 700);
 		setBackground(Color.gray);
@@ -45,9 +51,7 @@ public class DisplayTable extends JFrame {
 		parseMetrics();
 
 		// Create columns names
-		final String columnNames[] = { "1.0.6", "1.0.7", "1.0.8", "1.0.9",
-				"1.0.10", "1.0.11", "1.0.12", "1.0.13", "1.0.14", "1.0.15",
-				"1.0.16", "1.0.17", "1.0.18", "1.0.19" };
+		final String columnNames[] = getColumnNames();
 
 		final String[][] values = dataValues;
 		// Create a new table instance
@@ -73,47 +77,47 @@ public class DisplayTable extends JFrame {
 						+ "</td></tr>"
 						+ "<tr><td>Weighted Methods per Class (WMC)"
 						+ "</td><td>"
-						+ DisplayTable.getWMCValueFor(version, className)
+						+ DisplayTable.this.getWMCValueFor(version, className)
 						+ "</td></tr>"
 						+ "<tr><td>Number of Children (NOC)"
 						+ "</td><td>"
-						+ DisplayTable.getNOCValueFor(version, className)
+						+ DisplayTable.this.getNOCValueFor(version, className)
 						+ "</td></tr>"
 						+ "<tr><td>Coupling Between Object Classes (CBO)"
 						+ "</td><td>"
-						+ DisplayTable.getCBOValueFor(version, className)
+						+ DisplayTable.this.getCBOValueFor(version, className)
 						+ "</td></tr>"
 						+ "<tr><td>Lack of Cohesion in Methods (LCOM)"
 						+ "</td><td>"
-						+ DisplayTable.getLCOMValueFor(version, className)
+						+ DisplayTable.this.getLCOMValueFor(version, className)
 						+ "</td></tr>"
 						+ "<tr><td>Afferent Coupling (Ca)"
 						+ "</td><td>"
-						+ DisplayTable.getCAValueFor(version, className)
+						+ DisplayTable.this.getCAValueFor(version, className)
 						+ "</td></tr>"
 						+ "<tr><td>Efferent Coupling (Ce)"
 						+ "</td><td>"
-						+ DisplayTable.getCEValueFor(version, className)
+						+ DisplayTable.this.getCEValueFor(version, className)
 						+ "</td></tr>"
 						+ "<tr><td>Lack of Cohesion in Methods (LCOM3)"
 						+ "</td><td>"
-						+ DisplayTable.getLCOM3ValueFor(version, className)
+						+ DisplayTable.this.getLCOM3ValueFor(version, className)
 						+ "</td></tr>"
 						+ "<tr><td>Cohesion Among Methods of Class (CAM)"
 						+ "</td><td>"
-						+ DisplayTable.getCAMValueFor(version, className)
+						+ DisplayTable.this.getCAMValueFor(version, className)
 						+ "</td></tr>"
 						+ "<tr><td>Inheritance Coupling (IC)"
 						+ "</td><td>"
-						+ DisplayTable.getICValueFor(version, className)
+						+ DisplayTable.this.getICValueFor(version, className)
 						+ "</td></tr>"
 						+ "<tr><td>Coupling Between Methods (CBM)"
 						+ "</td><td>"
-						+ DisplayTable.getCBMValueFor(version, className)
+						+ DisplayTable.this.getCBMValueFor(version, className)
 						+ "</td></tr>"
 						+ "<tr><td>Average Method Complexity (AMC)"
 						+ "</td><td>"
-						+ DisplayTable.getAMCValueFor(version, className)
+						+ DisplayTable.this.getAMCValueFor(version, className)
 						+ "</td></tr>" + "</table>";
 				final String[] options = new String[] { "Ok", "Display Graph" };
 				int selectedOption = JOptionPane.showOptionDialog(null,
@@ -125,7 +129,6 @@ public class DisplayTable extends JFrame {
 					LineChart chart = new LineChart(className, classList);
 					chart.setSize(500, 500);
 					chart.setVisible(true);
-					chart.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 					break;
 				default:
 					break;
@@ -137,61 +140,40 @@ public class DisplayTable extends JFrame {
 		scrollPane = new JScrollPane(table);
 		topPanel.add(scrollPane, BorderLayout.CENTER);
 	}
+	
+	public String[] getColumnNames(){
+		int len = this.versionMap.keySet().size();
+		String[] colNames = new String[len];
+		
+		Arrays.fill(colNames, "");
+		Iterator<Integer> itr = this.versionMap.keySet().iterator();
+		int k = 0;
+		while (itr.hasNext()){
+			colNames[k] = this.versionMap.get(itr.next());
+			k++;
+		}
+		
+		return colNames;
+	}
 
 	public ArrayList<JavaClass> createClassListMap(String className) {
 		ArrayList<JavaClass> list = new ArrayList<JavaClass>();
-		JavaClass[] classList = new JavaClass[14];
+		JavaClass[] classList = new JavaClass[this.versionMap.keySet().size()];
 		for (String version : metricMap.keySet()) {
 			ArrayList<JavaClass> jcList = metricMap.get(version);
 			for (JavaClass jc : jcList) {
 				String name = jc.getName();
 				if (name.equals(className)) {
-					switch (version) {
-					case "1.0.6":
-						classList[0] = jc;
-						break;
-					case "1.0.7":
-						classList[1] = jc;
-						break;
-					case "1.0.8":
-						classList[2] = jc;
-						break;
-					case "1.0.9":
-						classList[3] = jc;
-						break;
-					case "1.0.10":
-						classList[4] = jc;
-						break;
-					case "1.0.11":
-						classList[5] = jc;
-						break;
-					case "1.0.12":
-						classList[6] = jc;
-						break;
-					case "1.0.13":
-						classList[7] = jc;
-						break;
-					case "1.0.14":
-						classList[8] = jc;
-						break;
-					case "1.0.15":
-						classList[9] = jc;
-						break;
-					case "1.0.16":
-						classList[10] = jc;
-						break;
-					case "1.0.17":
-						classList[11] = jc;
-						break;
-					case "1.0.18":
-						classList[12] = jc;
-						break;
-					case "1.0.19":
-						classList[13] = jc;
-						break;
-					default:
-						break;
+					
+					int j = 0;
+					Iterator<Integer> itr = this.versionMap.keySet().iterator();
+					while (itr.hasNext()){
+						if (version.equals(this.versionMap.get(itr.next()))){
+							break;
+						}
+						j++;
 					}
+					classList[j] = jc;
 				}
 			}
 		}
@@ -202,7 +184,7 @@ public class DisplayTable extends JFrame {
 		return list;
 	}
 
-	public static void parseMetrics() {
+	public void parseMetrics() {
 		File[] files = new File("MetricAnalysis").listFiles();
 		DOMParser parser = new DOMParser();
 
@@ -220,7 +202,7 @@ public class DisplayTable extends JFrame {
 		}
 	}
 
-	public static String getWMCValueFor(String version, String className) {
+	public String getWMCValueFor(String version, String className) {
 		String value = "N/A";
 		if (version.length() > 0 && className.length() > 0) {
 			for (String ver : metricMap.keySet()) {
@@ -236,7 +218,7 @@ public class DisplayTable extends JFrame {
 		return value;
 	}
 
-	public static String getNOCValueFor(String version, String className) {
+	public String getNOCValueFor(String version, String className) {
 		String value = "N/A";
 		if (version.length() > 0 && className.length() > 0) {
 			for (String ver : metricMap.keySet()) {
@@ -252,7 +234,7 @@ public class DisplayTable extends JFrame {
 		return value;
 	}
 
-	public static String getCBOValueFor(String version, String className) {
+	public String getCBOValueFor(String version, String className) {
 		String value = "N/A";
 		if (version.length() > 0 && className.length() > 0) {
 			for (String ver : metricMap.keySet()) {
@@ -268,7 +250,7 @@ public class DisplayTable extends JFrame {
 		return value;
 	}
 
-	public static String getLCOMValueFor(String version, String className) {
+	public String getLCOMValueFor(String version, String className) {
 		String value = "N/A";
 		if (version.length() > 0 && className.length() > 0) {
 			for (String ver : metricMap.keySet()) {
@@ -284,7 +266,7 @@ public class DisplayTable extends JFrame {
 		return value;
 	}
 
-	public static String getCAValueFor(String version, String className) {
+	public String getCAValueFor(String version, String className) {
 		String value = "N/A";
 		if (version.length() > 0 && className.length() > 0) {
 			for (String ver : metricMap.keySet()) {
@@ -300,7 +282,7 @@ public class DisplayTable extends JFrame {
 		return value;
 	}
 
-	public static String getCEValueFor(String version, String className) {
+	public String getCEValueFor(String version, String className) {
 		String value = "N/A";
 		if (version.length() > 0 && className.length() > 0) {
 			for (String ver : metricMap.keySet()) {
@@ -316,7 +298,7 @@ public class DisplayTable extends JFrame {
 		return value;
 	}
 
-	public static String getLCOM3ValueFor(String version, String className) {
+	public String getLCOM3ValueFor(String version, String className) {
 		String value = "N/A";
 		if (version.length() > 0 && className.length() > 0) {
 			for (String ver : metricMap.keySet()) {
@@ -332,7 +314,7 @@ public class DisplayTable extends JFrame {
 		return value;
 	}
 
-	public static String getCAMValueFor(String version, String className) {
+	public String getCAMValueFor(String version, String className) {
 		String value = "N/A";
 		if (version.length() > 0 && className.length() > 0) {
 			for (String ver : metricMap.keySet()) {
@@ -348,7 +330,7 @@ public class DisplayTable extends JFrame {
 		return value;
 	}
 
-	public static String getICValueFor(String version, String className) {
+	public String getICValueFor(String version, String className) {
 		String value = "N/A";
 		if (version.length() > 0 && className.length() > 0) {
 			for (String ver : metricMap.keySet()) {
@@ -364,7 +346,7 @@ public class DisplayTable extends JFrame {
 		return value;
 	}
 
-	public static String getCBMValueFor(String version, String className) {
+	public String getCBMValueFor(String version, String className) {
 		String value = "N/A";
 		if (version.length() > 0 && className.length() > 0) {
 			for (String ver : metricMap.keySet()) {
@@ -380,7 +362,7 @@ public class DisplayTable extends JFrame {
 		return value;
 	}
 
-	public static String getAMCValueFor(String version, String className) {
+	public String getAMCValueFor(String version, String className) {
 		String value = "N/A";
 		if (version.length() > 0 && className.length() > 0) {
 			for (String ver : metricMap.keySet()) {

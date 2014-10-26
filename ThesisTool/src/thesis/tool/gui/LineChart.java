@@ -8,14 +8,13 @@ import org.jfree.chart.plot.XYPlot;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
-import org.jfree.ui.ApplicationFrame;
 
 import javax.swing.*;
 
 import java.awt.*;
 import java.util.ArrayList;
 
-public class LineChart extends ApplicationFrame {
+public class LineChart extends JFrame {
 	/**
 	 * 
 	 */
@@ -36,6 +35,7 @@ public class LineChart extends ApplicationFrame {
 	 */
 	public LineChart(final String title, ArrayList<JavaClass> classList) {
 		super(title);
+		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.title = title;
 		this.classList = classList;
 		setContentPane(getChartPanel(this.classList));
