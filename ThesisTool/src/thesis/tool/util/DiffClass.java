@@ -2,7 +2,7 @@ package thesis.tool.util;
 
 public class DiffClass {
 		private String name;
-		private String type;
+		private char type;
 
 		public String getName() {
 			return name;
@@ -12,11 +12,11 @@ public class DiffClass {
 			this.name = name;
 		}
 
-		public String getType() {
+		public char getType() {
 			return type;
 		}
 
-		public void setType(String type) {
+		public void setType(char type) {
 			this.type = type;
 		}
 

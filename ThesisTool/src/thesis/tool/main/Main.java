@@ -5,7 +5,6 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -22,6 +21,7 @@ import javax.swing.UIManager;
 import javax.swing.WindowConstants;
 
 import thesis.tool.gui.DisplayTable;
+import thesis.tool.svn.SVNParser;
 import thesis.tool.util.*;
 import thesis.tool.xmlparser.*;
 
@@ -74,7 +74,7 @@ public class Main extends JFrame implements ActionListener {
 		
 		removeForProduction();
 		
-		this.addButton = new JButton("Save");
+		this.addButton = new JButton("Display Table");
 		this.addButton.addActionListener(this);
 		this.addMoreButton = new JButton("Save and Add More");
 		this.addMoreButton.addActionListener(this);
@@ -140,6 +140,7 @@ public class Main extends JFrame implements ActionListener {
 			this.versionMap.put(Integer.parseInt(revision), release);
 
 		if (e.getSource().equals(this.addButton)) {
+			this.addButton.setText("Loading ...");
 			this.loadData();
 			dispose();
 			this.displayTable();
@@ -152,19 +153,22 @@ public class Main extends JFrame implements ActionListener {
 	}
 
 	public void parseVersionChanges() {
-		File[] files = new File("VersionChanges").listFiles();
-		DOMParser parser = new DOMParser();
+//		File[] files = new File("VersionChanges").listFiles();
+//		DOMParser parser = new DOMParser();
 
-		for (int i = 0; i < files.length; i++) {
-			parser.setFileName(files[i].getAbsolutePath());
-			parser.parseXML();
-			ArrayList<DiffClass> dcList = parser.getDiffClassList();
-
-			String[] nameParts = files[i].getName().split("-");
-			String version = nameParts[nameParts.length - 1];
-			version = version.substring(0, version.length() - 4);
+		Iterator<Integer> itr = this.versionMap.keySet().iterator();
+		int start = itr.next();
+		
+		while (itr.hasNext()){
+			int end = itr.next();
+			SVNParser svnParser = new SVNParser("http://svn.code.sf.net/p/jfreechart/code/branches/", (long)start, (long)end);
+			svnParser.loadSVNInfo();
+			ArrayList<DiffClass> dcList = svnParser.getDiffClassList();
+			
+			String version = this.versionMap.get(end);
 
 			diffMap.put(version, dcList);
+			start = end;
 		}
 	}
 

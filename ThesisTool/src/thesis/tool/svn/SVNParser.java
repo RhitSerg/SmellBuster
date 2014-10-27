@@ -1,5 +1,6 @@
 package thesis.tool.svn;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
@@ -11,15 +12,18 @@ import org.tmatesoft.svn.core.internal.io.dav.DAVRepositoryFactory;
 import org.tmatesoft.svn.core.io.SVNRepository;
 import org.tmatesoft.svn.core.io.SVNRepositoryFactory;
 
+import thesis.tool.util.DiffClass;
+
 public class SVNParser {
 
 	private String svnURL;
 	private long startRev;
 	private long endRev;
+	private ArrayList<DiffClass> diffClassList;
 
 	public SVNParser(String url, long startRev, long endRev) {
 		DAVRepositoryFactory.setup();
-
+		this.diffClassList = new ArrayList<>();
 		this.svnURL = url;
 		this.startRev = startRev;
 		this.endRev = endRev;
@@ -36,7 +40,6 @@ public class SVNParser {
 			logEntries = repository.log(new String[] { "" }, null,
 					this.startRev, this.endRev, true, true);
 
-			System.out.println("changed paths:");
 			for (Iterator<?> entries = logEntries.iterator(); entries.hasNext();) {
 				SVNLogEntry logEntry = (SVNLogEntry) entries.next();
 
@@ -50,15 +53,22 @@ public class SVNParser {
 								.getChangedPaths().get(changedPaths.next());
 						if (entryPath.getPath().contains(".java")
 								&& !entryPath.getPath().contains("junit")
-								&& entryPath.getType() != 'D')
-							System.out.println(" " + entryPath.getType() + " "
-									+ entryPath.getPath());
+								&& entryPath.getType() != 'D') {
+							DiffClass dc = new DiffClass();
+							dc.setName(entryPath.getPath());
+							dc.setType(entryPath.getType());
+							this.diffClassList.add(dc);
+						}
 					}
 				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public ArrayList<DiffClass> getDiffClassList(){
+		return this.diffClassList;
 	}
 
 	public static void main(String[] args) {

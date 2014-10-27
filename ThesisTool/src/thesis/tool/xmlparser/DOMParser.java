@@ -120,7 +120,7 @@ public class DOMParser {
 							if (!type.equals("deleted")){
 								DiffClass dc = new DiffClass();
 								dc.setName(content);
-								dc.setType(type);
+								dc.setType(type.charAt(0));
 								this.dcList.add(dc);
 							}
 							break;
