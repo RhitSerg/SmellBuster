@@ -39,7 +39,7 @@ public class DisplayTable extends JFrame {
 		metricMap = new HashMap<>();
 		this.versionMap = versionMap;
 		setTitle("Simple Table Application");
-		setSize(1000, 700);
+		setSize(1300, 700);
 		setBackground(Color.gray);
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 

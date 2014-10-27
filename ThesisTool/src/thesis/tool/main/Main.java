@@ -1,6 +1,7 @@
 package thesis.tool.main;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,6 +18,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
 import javax.swing.WindowConstants;
 
 import thesis.tool.gui.DisplayTable;
@@ -193,6 +195,14 @@ public class Main extends JFrame implements ActionListener {
 
 	public static void main(String[] args) throws Exception {
 
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+			UIManager.put("Table.alternateRowColor", Color.LIGHT_GRAY);
+	    } 
+	    catch (Exception e) {
+	    	e.printStackTrace();
+	    }
+		
 		Main frame = new Main();
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
