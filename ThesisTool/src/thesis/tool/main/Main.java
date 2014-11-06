@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 import javax.swing.JButton;
@@ -222,8 +223,8 @@ public class Main extends JFrame implements ActionListener {
 
 		for (String version : this.diffMap.keySet()) {
 			ArrayList<DiffClass> dcList = this.diffMap.get(version);
-			ArrayList<String> cList = new ArrayList<String>();
 			for (DiffClass dc : dcList) {
+				ArrayList<String> cList = new ArrayList<String>();
 				String name = dc.getName();
 				if (this.classMap.containsKey(name)) {
 					cList = this.classMap.get(name);

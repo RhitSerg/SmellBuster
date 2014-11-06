@@ -20,6 +20,7 @@ public class JavaClass {
 		private double ic;
 		private double cbm;
 		private double amc;
+		private double cc;
 		private String other;
 
 		public String getName() {
@@ -183,6 +184,14 @@ public class JavaClass {
 
 		public void setOther(String other) {
 			this.other = other;
+		}
+
+		public double getCc() {
+			return cc;
+		}
+
+		public void setCc(double cc) {
+			this.cc = cc;
 		}
 
 	}

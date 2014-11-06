@@ -1,4 +1,5 @@
 package thesis.tool.xmlparser;
+
 import java.io.File;
 import java.util.ArrayList;
 import thesis.tool.util.*;
@@ -48,7 +49,6 @@ public class DOMParser {
 			Node node = nodeList.item(i);
 			if (node instanceof Element) {
 				JavaClass jc = new JavaClass();
-				
 
 				NodeList childNodes = node.getChildNodes();
 				for (int j = 0; j < childNodes.getLength(); j++) {
@@ -114,10 +114,23 @@ public class DOMParser {
 						case "amc":
 							jc.setAmc(Double.parseDouble(content));
 							break;
+						case "cc":
+							double cc = 0.0;
+							NodeList children = cNode.getChildNodes();
+							for (int k = 0; k < children.getLength(); k++) {
+								Node tempNode = children.item(k);
+								if (tempNode.getNodeName().equals("method")) {
+									String ccScore = tempNode.getLastChild()
+											.getTextContent().trim();
+									cc += Double.parseDouble(ccScore);
+								}
+							}
+							jc.setCc(cc);
+							break;
 						case "path":
 							String type = cNode.getAttributes()
 									.getNamedItem("item").getNodeValue();
-							if (!type.equals("deleted")){
+							if (!type.equals("deleted")) {
 								DiffClass dc = new DiffClass();
 								dc.setName(content);
 								dc.setType(type.charAt(0));
@@ -125,7 +138,8 @@ public class DOMParser {
 							}
 							break;
 						case "entry":
-							this.baseVersion.add(cNode.getChildNodes().item(1).getTextContent().trim());
+							this.baseVersion.add(cNode.getChildNodes().item(1)
+									.getTextContent().trim());
 							break;
 						default:
 							jc.setOther(content);
@@ -146,8 +160,8 @@ public class DOMParser {
 	public ArrayList<DiffClass> getDiffClassList() {
 		return this.dcList;
 	}
-	
-	public ArrayList<String> getBaseVersion(){
+
+	public ArrayList<String> getBaseVersion() {
 		return this.baseVersion;
 	}
 }

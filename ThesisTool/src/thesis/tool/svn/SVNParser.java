@@ -47,13 +47,15 @@ public class SVNParser {
 					Set<String> changedPathsSet = logEntry.getChangedPaths()
 							.keySet();
 
-					for (Iterator<String> changedPaths = changedPathsSet.iterator(); changedPaths
-							.hasNext();) {
+					for (Iterator<String> changedPaths = changedPathsSet
+							.iterator(); changedPaths.hasNext();) {
 						SVNLogEntryPath entryPath = (SVNLogEntryPath) logEntry
 								.getChangedPaths().get(changedPaths.next());
 						if (entryPath.getPath().contains(".java")
 								&& !entryPath.getPath().contains("junit")
-								&& entryPath.getType() != 'D') {
+								&& entryPath.getType() != 'D'
+								&& !(entryPath.getPath().contains("Test") || entryPath
+										.getPath().contains("Tests"))) {
 							DiffClass dc = new DiffClass();
 							dc.setName(entryPath.getPath());
 							dc.setType(entryPath.getType());
@@ -66,8 +68,8 @@ public class SVNParser {
 			e.printStackTrace();
 		}
 	}
-	
-	public ArrayList<DiffClass> getDiffClassList(){
+
+	public ArrayList<DiffClass> getDiffClassList() {
 		return this.diffClassList;
 	}
 
