@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.tmatesoft.svn.core.SVNDirEntry;
 import org.tmatesoft.svn.core.SVNLogEntry;
 import org.tmatesoft.svn.core.SVNLogEntryPath;
 import org.tmatesoft.svn.core.SVNURL;
@@ -20,6 +21,8 @@ public class SVNParser {
 	private long startRev;
 	private long endRev;
 	private ArrayList<DiffClass> diffClassList;
+	private SVNRepository repository;
+	private long latestRevision;
 
 	public SVNParser(String url, long startRev, long endRev) {
 		DAVRepositoryFactory.setup();
@@ -27,14 +30,19 @@ public class SVNParser {
 		this.svnURL = url;
 		this.startRev = startRev;
 		this.endRev = endRev;
+		this.repository = null;
+		try {
+			this.repository = SVNRepositoryFactory.create(SVNURL
+					.parseURIEncoded(this.svnURL));
+			SVNDirEntry entry = this.repository.info(".", -1);
+			this.setLatestRevision(entry.getRevision());
+		} catch (Exception e){
+			e.printStackTrace();
+		}
 	}
 
 	public void loadSVNInfo() {
-		SVNRepository repository = null;
-		try {
-			repository = SVNRepositoryFactory.create(SVNURL
-					.parseURIEncoded(this.svnURL));
-
+		try {			
 			Collection<?> logEntries = null;
 
 			logEntries = repository.log(new String[] { "" }, null,
@@ -57,7 +65,12 @@ public class SVNParser {
 								&& !(entryPath.getPath().contains("Test") || entryPath
 										.getPath().contains("Tests"))) {
 							DiffClass dc = new DiffClass();
-							dc.setName(entryPath.getPath());
+							
+							String className = entryPath.getPath().replace("/", "\\");
+							String[] nameSplit = className.split("\\\\");
+							className = nameSplit[nameSplit.length - 1];
+							
+							dc.setName(className);
 							dc.setType(entryPath.getType());
 							this.diffClassList.add(dc);
 						}
@@ -73,9 +86,11 @@ public class SVNParser {
 		return this.diffClassList;
 	}
 
-	public static void main(String[] args) {
-		SVNParser parser = new SVNParser(
-				"http://svn.code.sf.net/p/jfreechart/code/branches/", 91, 588);
-		parser.loadSVNInfo();
+	public long getLatestRevision() {
+		return latestRevision;
+	}
+
+	public void setLatestRevision(long latestRevision) {
+		this.latestRevision = latestRevision;
 	}
 }

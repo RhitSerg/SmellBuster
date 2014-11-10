@@ -1,7 +1,6 @@
 package thesis.tool.main;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,9 +9,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 import java.util.TreeMap;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -20,8 +19,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.WindowConstants;
+import javax.swing.table.TableModel;
 
 import thesis.tool.gui.DisplayTable;
+import thesis.tool.gui.InputTable;
 import thesis.tool.svn.SVNParser;
 import thesis.tool.util.*;
 import thesis.tool.xmlparser.*;
@@ -29,143 +30,99 @@ import thesis.tool.xmlparser.*;
 public class Main extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
-	private JPanel textFieldPanel;
 	private JPanel buttonPanel;
 	private JPanel svnFieldPanel;
+	private ImageIcon loadingIcon;
 
-	private JLabel revisionNumberLabel;
-	private JLabel releaseNumberLabel;
 	private JLabel svnLabel;
 
-	private JTextField revisionNumberField;
-	private JTextField releaseNumberField;
 	private JTextField svnField;
 
 	private JButton addButton;
-	private JButton addMoreButton;
 
+	private InputTable inputTable;
 	private Map<Integer, String> versionMap;
 	private Map<String, ArrayList<DiffClass>> diffMap;
 	private Map<String, ArrayList<String>> classMap;
-	
+
 	ArrayList<String> releaseNums = new ArrayList<>();
 	ArrayList<String> revisionNums = new ArrayList<>();
 
 	public Main() {
 		super("VersionPopulator");
 		this.versionMap = new TreeMap<>();
-		
-		this.textFieldPanel = new JPanel();
+		this.inputTable = new InputTable();
+
 		this.buttonPanel = new JPanel();
 		this.svnFieldPanel = new JPanel();
-		
-		this.textFieldPanel.setLayout(new GridLayout(1, 4));
+
+		this.loadingIcon = new ImageIcon("loading.gif");
+
 		this.buttonPanel.setLayout(new GridLayout(1, 2));
 		this.svnFieldPanel.setLayout(new BorderLayout());
 
-		this.revisionNumberLabel = new JLabel("SVN Revision Number:");
-		this.releaseNumberLabel = new JLabel("Product Release Version:");
 		this.svnLabel = new JLabel("SVN Repo URL:");
 		this.svnLabel.setSize(250, 50);
 
-		this.revisionNumberField = new JTextField();
-		this.releaseNumberField = new JTextField();
-		this.svnField = new JTextField();
-		this.svnField.setSize(450,50);
-		
-		removeForProduction();
-		
+		this.svnField = new JTextField(
+				"http://svn.code.sf.net/p/jfreechart/code/branches/");
+		this.svnField.setSize(450, 50);
+
 		this.addButton = new JButton("Display Table");
 		this.addButton.addActionListener(this);
-		this.addMoreButton = new JButton("Save and Add More");
-		this.addMoreButton.addActionListener(this);
-
-		this.textFieldPanel.add(this.releaseNumberLabel);
-		this.textFieldPanel.add(this.releaseNumberField);
-		this.textFieldPanel.add(this.revisionNumberLabel);
-		this.textFieldPanel.add(this.revisionNumberField);
 
 		this.buttonPanel.add(this.addButton);
-		this.buttonPanel.add(this.addMoreButton);
-		
+
 		this.svnFieldPanel.add(this.svnLabel, BorderLayout.WEST);
 		this.svnFieldPanel.add(this.svnField, BorderLayout.CENTER);
 
-		setLayout(new GridLayout(3, 1));
-		add(this.svnFieldPanel);
-		add(this.textFieldPanel);
-		add(this.buttonPanel);
-		setSize(700, 150);
 
-	}
-
-	private void removeForProduction() {
-		this.revisionNumberField.setText("91");
-		this.releaseNumberField.setText("1.0.6");
-		releaseNums.add("1.0.19");
-		releaseNums.add("1.0.18");
-		releaseNums.add("1.0.17");
-		releaseNums.add("1.0.16");
-		releaseNums.add("1.0.15");
-		releaseNums.add("1.0.14");
-		releaseNums.add("1.0.13");
-		releaseNums.add("1.0.12");
-		releaseNums.add("1.0.11");
-		releaseNums.add("1.0.10");
-		releaseNums.add("1.0.9");
-		releaseNums.add("1.0.8");
-		releaseNums.add("1.0.7");
-		
-		revisionNums.add("3284");
-		revisionNums.add("3247");
-		revisionNums.add("3070");
-		revisionNums.add("2924");
-		revisionNums.add("2763");
-		revisionNums.add("2440");
-		revisionNums.add("2010");
-		revisionNums.add("1769");
-		revisionNums.add("1633");
-		revisionNums.add("1060");
-		revisionNums.add("706");
-		revisionNums.add("655");
-		revisionNums.add("588");
+		setLayout(new BorderLayout());
+		add(this.svnFieldPanel, BorderLayout.NORTH);
+		add(this.inputTable, BorderLayout.CENTER);
+		add(this.buttonPanel, BorderLayout.SOUTH);
+		setSize(700, 450);
+		setLocationRelativeTo(null);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		String revision = this.revisionNumberField.getText();
-		String release = this.releaseNumberField.getText();
+		TableModel model = this.inputTable.getTable().getModel();
 
-		if (revision.length() > 0 && release.length() > 0)
-			this.versionMap.put(Integer.parseInt(revision), release);
+		for (int i = 0; i < model.getRowCount(); i++) {
+
+			String release = model.getValueAt(i, 0).toString();
+			String revision = model.getValueAt(i, 1).toString();
+			if (revision.length() > 0 && release.length() > 0)
+				this.versionMap.put(Integer.parseInt(revision), release);
+		}
 
 		if (e.getSource().equals(this.addButton)) {
-			this.addButton.setText("Loading ...");
+			this.addButton.setText("");
+			this.addButton.setIcon(this.loadingIcon);
+
 			this.loadData();
 			dispose();
 			this.displayTable();
-		} else {
-			int len = this.releaseNums.size();
-			this.revisionNumberField.setText(this.revisionNums.remove(len-1));
-			this.releaseNumberField.setText(this.releaseNums.remove(len-1));
 		}
 
 	}
 
 	public void parseVersionChanges() {
-//		File[] files = new File("VersionChanges").listFiles();
-//		DOMParser parser = new DOMParser();
+		// File[] files = new File("VersionChanges").listFiles();
+		// DOMParser parser = new DOMParser();
 
 		Iterator<Integer> itr = this.versionMap.keySet().iterator();
-		int start = itr.next();
-		
-		while (itr.hasNext()){
+		int start = 0;
+
+		while (itr.hasNext()) {
 			int end = itr.next();
-			SVNParser svnParser = new SVNParser("http://svn.code.sf.net/p/jfreechart/code/branches/", (long)start, (long)end);
+			SVNParser svnParser = new SVNParser(this.svnField.getText(),
+					(long) start, (long) end);
 			svnParser.loadSVNInfo();
 			ArrayList<DiffClass> dcList = svnParser.getDiffClassList();
-			
+
 			String version = this.versionMap.get(end);
 
 			diffMap.put(version, dcList);
@@ -185,8 +142,12 @@ public class Main extends JFrame implements ActionListener {
 		ArrayList<DiffClass> dcList = new ArrayList<DiffClass>();
 
 		for (String name : nameList) {
+			String className = name.replace("/", "\\");
+			String[] nameSplit = className.split("\\\\");
+			className = nameSplit[nameSplit.length - 1];
+
 			DiffClass dc = new DiffClass();
-			dc.setName(name);
+			dc.setName(className);
 
 			if (diffMap.containsKey(release)) {
 				dcList = diffMap.get(release);
@@ -202,12 +163,10 @@ public class Main extends JFrame implements ActionListener {
 
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-			UIManager.put("Table.alternateRowColor", Color.LIGHT_GRAY);
-	    } 
-	    catch (Exception e) {
-	    	e.printStackTrace();
-	    }
-		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		Main frame = new Main();
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -215,13 +174,15 @@ public class Main extends JFrame implements ActionListener {
 	}
 
 	private void loadData() {
+		
 		this.diffMap = new HashMap<>();
 		this.classMap = new HashMap<>();
 
-		this.parseBaseVersion();
 		this.parseVersionChanges();
 
-		for (String version : this.diffMap.keySet()) {
+		Iterator<String> itr = this.diffMap.keySet().iterator();
+		while (itr.hasNext()) {
+			String version = itr.next();
 			ArrayList<DiffClass> dcList = this.diffMap.get(version);
 			for (DiffClass dc : dcList) {
 				ArrayList<String> cList = new ArrayList<String>();
@@ -255,7 +216,7 @@ public class Main extends JFrame implements ActionListener {
 		Arrays.fill(toWrite, "");
 		Iterator<Integer> itr = this.versionMap.keySet().iterator();
 		int k = 0;
-		while (itr.hasNext()){
+		while (itr.hasNext()) {
 			toWrite[k] = this.versionMap.get(itr.next());
 			k++;
 		}
@@ -263,18 +224,9 @@ public class Main extends JFrame implements ActionListener {
 		ArrayList<String[]> values = new ArrayList<>();
 		for (String name : classMap.keySet()) {
 			boolean isValid = false;
-			String className = name.replace("/", "\\");
-			String[] nameSplit = className.split("\\\\");
-			className = nameSplit[nameSplit.length - 1];
 
-			if (className.contains(".java")) {
+			if (name.contains(".java")) {
 				isValid = true;
-			}
-
-			for (int i = 0; i < nameSplit.length; i++) {
-				if (nameSplit[i].equals("junit")) {
-					isValid = false;
-				}
 			}
 
 			if (isValid) {
@@ -283,13 +235,13 @@ public class Main extends JFrame implements ActionListener {
 				for (String version : classMap.get(name)) {
 					int j = 0;
 					itr = this.versionMap.keySet().iterator();
-					while (itr.hasNext()){
-						if (version.equals(this.versionMap.get(itr.next()))){
+					while (itr.hasNext()) {
+						if (version.equals(this.versionMap.get(itr.next()))) {
 							break;
 						}
 						j++;
 					}
-					toWrite[j] = className;
+					toWrite[j] = name;
 				}
 				values.add(toWrite);
 			}

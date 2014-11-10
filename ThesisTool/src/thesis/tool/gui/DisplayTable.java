@@ -5,6 +5,7 @@ import thesis.tool.xmlparser.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
@@ -20,18 +21,18 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.WindowConstants;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableCellRenderer;
 
 public class DisplayTable extends JFrame {
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
-	// Instance attributes used in this example
 	private JPanel topPanel;
 	private JTable table;
 	private JScrollPane scrollPane;
 	private Map<Integer, String> versionMap;
 	private Map<String, ArrayList<JavaClass>> metricMap;
+	private String[][] dataValues;
 
 	// Constructor of main frame
 	public DisplayTable(String[][] dataValues, Map<Integer, String> versionMap) {
@@ -53,11 +54,12 @@ public class DisplayTable extends JFrame {
 		// Create columns names
 		final String columnNames[] = getColumnNames();
 
-		final String[][] values = dataValues;
+		this.dataValues = dataValues;
 		// Create a new table instance
 		table = new JTable(dataValues, columnNames);
 		table.setRowSelectionAllowed(false);
 		table.setCellSelectionEnabled(true);
+		table.setDefaultRenderer(Object.class, new MyTableCellRenderer());
 		table.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 
@@ -66,7 +68,7 @@ public class DisplayTable extends JFrame {
 
 				final String title = "Track info";
 				final String version = columnNames[column];
-				final String className = values[row][column];
+				final String className = DisplayTable.this.dataValues[row][column];
 				if (className.length() > 0) {
 					final String message = "<html><table>" + "<tr><td>Version"
 							+ "</td><td>"
@@ -175,6 +177,20 @@ public class DisplayTable extends JFrame {
 		topPanel.add(scrollPane, BorderLayout.CENTER);
 	}
 
+	private class MyTableCellRenderer extends DefaultTableCellRenderer implements TableCellRenderer {
+
+		private static final long serialVersionUID = 1L;
+
+		@Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+        	Component c = (Component) super.getTableCellRendererComponent(table, 
+                    value, isSelected, hasFocus, row, column);
+            c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+            return c;
+        }
+
+    }
+	
 	public String[] getColumnNames() {
 		int len = this.versionMap.keySet().size();
 		String[] colNames = new String[len];
