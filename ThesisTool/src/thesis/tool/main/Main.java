@@ -56,7 +56,10 @@ public class Main extends JFrame implements ActionListener {
 		this.buttonPanel = new JPanel();
 		this.svnFieldPanel = new JPanel();
 
-		this.loadingIcon = new ImageIcon("loading.gif");
+		if (OSDetector.isWindows())
+			this.loadingIcon = new ImageIcon("assets\\loading.gif");
+		else
+			this.loadingIcon = new ImageIcon("assets/loading.gif");
 
 		this.buttonPanel.setLayout(new GridLayout(1, 2));
 		this.svnFieldPanel.setLayout(new BorderLayout());
@@ -102,9 +105,14 @@ public class Main extends JFrame implements ActionListener {
 			this.addButton.setText("");
 			this.addButton.setIcon(this.loadingIcon);
 
-			this.loadData();
-			dispose();
-			this.displayTable();
+			Thread t = new Thread() {
+				public void run(){
+					loadData();
+					dispose();
+					displayTable();					
+				}
+			};
+			t.start();
 		}
 
 	}
