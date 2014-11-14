@@ -1,6 +1,6 @@
 ##The MIT License (MIT)
 
-**Copyright (c) 2014 [Dharmin K. Shah](mailto:shahdk@rose-hulman.edu) and [Chandan R. Rupakheti](mailto:rupakhet@rose-hulman.edu), [SERG @ Rose-Hulman](http://serg.csse.rose-hulman.edu)**
+**Copyright (c) 2014 [Dharmin K. Shah](http://dharminshah.com) and [Chandan R. Rupakheti](http://rose-hulman.edu/~rupakhet), [SERG @ Rose-Hulman](http://serg.csse.rose-hulman.edu)**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
