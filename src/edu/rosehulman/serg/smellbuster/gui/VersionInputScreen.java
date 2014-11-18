@@ -36,12 +36,14 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 	private JButton addButton;
 	private InputTable inputTable;
 	private Map<Integer, String> versionMap;
+	private FileChooser fileChooser;
 	
 	public VersionInputScreen() {
 		super("VersionPopulator");
 		
 		this.versionMap = new TreeMap<>();
 		this.inputTable = new InputTable();
+		this.fileChooser = new FileChooser();
 
 		initializeComponents();
 		initProgressBar();
@@ -127,9 +129,11 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 			t.start();
 		}
 		else if (e.getSource().equals(this.loadMenuItem)){
-			
+			this.versionMap = this.fileChooser.getVersionMap();
+			this.inputTable.loadTableValues(this.versionMap);
 		} else if (e.getSource().equals(this.saveMenuItem)) {
-			
+			loadVersionMap();
+			this.fileChooser.saveFile(this.versionMap);
 		} else if (e.getSource().equals(this.quitMenuItem)){
 			System.exit(0);
 		}
