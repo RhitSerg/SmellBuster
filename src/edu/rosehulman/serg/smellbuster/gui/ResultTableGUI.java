@@ -20,10 +20,10 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 
-import edu.rosehulman.serg.smellbuster.logic.DisplayTableLogic;
+import edu.rosehulman.serg.smellbuster.logic.ResultTableLogic;
 import edu.rosehulman.serg.smellbuster.util.*;
 
-public class DisplayTable extends JFrame {
+public class ResultTableGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel topPanel;
@@ -31,14 +31,14 @@ public class DisplayTable extends JFrame {
 	private JScrollPane scrollPane;
 	private Map<Integer, String> versionMap;
 	private String[][] dataValues;
-	private DisplayTableLogic displayTableLogic;
+	private ResultTableLogic displayTableLogic;
 	private MyTableModel tableModel;
 
 	// Constructor of main frame
-	public DisplayTable(String[][] dataValues, Map<Integer, String> versionMap) {
+	public ResultTableGUI(String[][] dataValues, Map<Integer, String> versionMap) {
 
 		this.versionMap = versionMap;
-		this.displayTableLogic = new DisplayTableLogic(this.versionMap);
+		this.displayTableLogic = new ResultTableLogic(this.versionMap);
 		
 		initTable(dataValues);
 		initPanel();
@@ -58,12 +58,12 @@ public class DisplayTable extends JFrame {
 		table.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 
-				int row = DisplayTable.this.table.getSelectedRow();
-				int column = DisplayTable.this.table.getSelectedColumn();
+				int row = ResultTableGUI.this.table.getSelectedRow();
+				int column = ResultTableGUI.this.table.getSelectedColumn();
 
 				final String title = "Track info";
 				final String version = columnNames[column];
-				final String className = DisplayTable.this.dataValues[row][column];
+				final String className = ResultTableGUI.this.dataValues[row][column];
 				if (className != null && className.length() > 0) {
 					final String message = "<html><table>" + "<tr><td>Version"
 							+ "</td><td>"
@@ -75,76 +75,76 @@ public class DisplayTable extends JFrame {
 							+ "</td></tr>"
 							+ "<tr><td>Weighted Methods per Class (WMC)"
 							+ "</td><td>"
-							+ DisplayTable.this.displayTableLogic.getWMCValueFor(version,
+							+ ResultTableGUI.this.displayTableLogic.getWMCValueFor(version,
 									className)
 							+ "</td></tr>"
 							+ "<tr><td>Number of Children (NOC)"
 							+ "</td><td>"
-							+ DisplayTable.this.displayTableLogic.getNOCValueFor(version,
+							+ ResultTableGUI.this.displayTableLogic.getNOCValueFor(version,
 									className)
 							+ "</td></tr>"
 							+ "<tr><td>Coupling Between Object Classes (CBO)"
 							+ "</td><td>"
-							+ DisplayTable.this.displayTableLogic.getCBOValueFor(version,
+							+ ResultTableGUI.this.displayTableLogic.getCBOValueFor(version,
 									className)
 							+ "</td></tr>"
 							+ "<tr><td>Lack of Cohesion in Methods (LCOM)"
 							+ "</td><td>"
-							+ DisplayTable.this.displayTableLogic.getLCOMValueFor(version,
+							+ ResultTableGUI.this.displayTableLogic.getLCOMValueFor(version,
 									className)
 							+ "</td></tr>"
 							+ "<tr><td>Afferent Coupling (Ca)"
 							+ "</td><td>"
-							+ DisplayTable.this.displayTableLogic.getCAValueFor(version,
+							+ ResultTableGUI.this.displayTableLogic.getCAValueFor(version,
 									className)
 							+ "</td></tr>"
 							+ "<tr><td>Efferent Coupling (Ce)"
 							+ "</td><td>"
-							+ DisplayTable.this.displayTableLogic.getCEValueFor(version,
+							+ ResultTableGUI.this.displayTableLogic.getCEValueFor(version,
 									className)
 							+ "</td></tr>"
 							+ "<tr><td>Lack of Cohesion in Methods (LCOM3)"
 							+ "</td><td>"
-							+ DisplayTable.this.displayTableLogic.getLCOM3ValueFor(version,
+							+ ResultTableGUI.this.displayTableLogic.getLCOM3ValueFor(version,
 									className)
 							+ "</td></tr>"
 							+ "<tr><td>Cohesion Among Methods of Class (CAM)"
 							+ "</td><td>"
-							+ DisplayTable.this.displayTableLogic.getCAMValueFor(version,
+							+ ResultTableGUI.this.displayTableLogic.getCAMValueFor(version,
 									className)
 							+ "</td></tr>"
 							+ "<tr><td>Inheritance Coupling (IC)"
 							+ "</td><td>"
-							+ DisplayTable.this.displayTableLogic.getICValueFor(version,
+							+ ResultTableGUI.this.displayTableLogic.getICValueFor(version,
 									className)
 							+ "</td></tr>"
 							+ "<tr><td>Coupling Between Methods (CBM)"
 							+ "</td><td>"
-							+ DisplayTable.this.displayTableLogic.getCBMValueFor(version,
+							+ ResultTableGUI.this.displayTableLogic.getCBMValueFor(version,
 									className)
 							+ "</td></tr>"
 							+ "<tr><td>Average Method Complexity (AMC)"
 							+ "</td><td>"
-							+ DisplayTable.this.displayTableLogic.getAMCValueFor(version,
+							+ ResultTableGUI.this.displayTableLogic.getAMCValueFor(version,
 									className)
 							+ "</td></tr>"
 							+ "<tr><td>Cyclomatic Complexoty (CC)"
 							+ "</td><td>"
-							+ DisplayTable.this.displayTableLogic.getCCValueFor(version,
+							+ ResultTableGUI.this.displayTableLogic.getCCValueFor(version,
 									className)
 							+ "</td></tr>"
 							+ "<tr><td>Aggregate Metrics "
 							+ "</td><td>"
-							+ DisplayTable.this.displayTableLogic.getAggregateMetrics(className)
+							+ ResultTableGUI.this.displayTableLogic.getAggregateMetrics(className)
 							+ "</td></tr>"
 							+ "<tr><td>Aggregate Metrics of Max Values "
 							+ "</td><td>"
-							+ DisplayTable.this.displayTableLogic
+							+ ResultTableGUI.this.displayTableLogic
 									.getAggregateMetricsOfMax(className)
 							+ "</td></tr>"
 							+ "<tr><td>Aggregate Metrics of Min Values "
 							+ "</td><td>"
-							+ DisplayTable.this.displayTableLogic
+							+ ResultTableGUI.this.displayTableLogic
 									.getAggregateMetricsOfMin(className)
 							+ "</td></tr>" + "</table>";
 					final String[] options = new String[] { "Ok",
@@ -155,7 +155,7 @@ public class DisplayTable extends JFrame {
 							options[0]);
 					switch (selectedOption) {
 					case 1:
-						ArrayList<JavaClass> classList = DisplayTable.this.displayTableLogic.createClassListMap(className);
+						ArrayList<JavaClass> classList = ResultTableGUI.this.displayTableLogic.createClassListMap(className);
 						LineChart chart = new LineChart(className, classList);
 						chart.setSize(500, 500);
 						chart.setVisible(true);

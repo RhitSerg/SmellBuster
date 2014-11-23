@@ -8,7 +8,7 @@ import java.util.Map;
 
 import javax.swing.JProgressBar;
 
-import edu.rosehulman.serg.smellbuster.gui.DisplayTable;
+import edu.rosehulman.serg.smellbuster.gui.ResultTableGUI;
 import edu.rosehulman.serg.smellbuster.svn.SVNParser;
 import edu.rosehulman.serg.smellbuster.util.DiffClass;
 
@@ -103,7 +103,7 @@ public class SVNLoadLogic {
 		int size = getTableRowcount(values);
 		String[][] dataValues = getTableDataValues(len, values, size);
 
-		DisplayTable resultsTable = new DisplayTable(dataValues, this.versionMap);
+		ResultTableGUI resultsTable = new ResultTableGUI(dataValues, this.versionMap);
 		resultsTable.setVisible(true);
 	}
 

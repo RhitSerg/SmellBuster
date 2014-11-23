@@ -9,12 +9,12 @@ import java.util.Map;
 import edu.rosehulman.serg.smellbuster.util.JavaClass;
 import edu.rosehulman.serg.smellbuster.xmlparser.DOMParser;
 
-public class DisplayTableLogic {
+public class ResultTableLogic {
 	
 	private Map<String, ArrayList<JavaClass>> metricMap;
 	private Map<Integer, String> versionMap;
 	
-	public DisplayTableLogic(Map<Integer, String> versionMap){
+	public ResultTableLogic(Map<Integer, String> versionMap){
 		this.metricMap = new HashMap<>();
 		this.versionMap = versionMap;
 		parseMetrics();
