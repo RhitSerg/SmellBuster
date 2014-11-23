@@ -39,7 +39,7 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 	private FileChooser fileChooser;
 	
 	public VersionInputScreen() {
-		super("VersionPopulator");
+		super("SmellBuster");
 		
 		this.versionMap = new TreeMap<>();
 		this.inputTable = new InputTable();

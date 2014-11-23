@@ -110,6 +110,8 @@ public class SVNLoadLogic {
 	private String[][] getTableDataValues(int len, ArrayList<String[]> values,
 			int size) {
 		String[][] dataValues = new String[size * 2][len];
+		for (String[] row : dataValues)
+		    Arrays.fill(row, "");
 		int i = 0;
 		for (String[] value : values) {
 			if (didChange(value)) {

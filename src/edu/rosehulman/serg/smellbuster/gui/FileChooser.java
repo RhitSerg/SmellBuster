@@ -36,7 +36,7 @@ public class FileChooser extends JFrame {
 			System.out.println("Did not select a file");
 		}
 	}
-	
+
 	private File getSaveFile() {
 		int option = chooser.showSaveDialog(FileChooser.this);
 		if (option == JFileChooser.APPROVE_OPTION
@@ -46,17 +46,19 @@ public class FileChooser extends JFrame {
 			return null;
 		}
 	}
-	
-	public void saveFile(Map<Integer, String> versionMap){
+
+	public void saveFile(Map<Integer, String> versionMap) {
 		File saveFile = this.getSaveFile();
-		try {
-		PrintWriter writer = new PrintWriter(saveFile);
-		for (Integer release: versionMap.keySet()){
-			writer.println(versionMap.get(release) + ";" + release);
-		}
-		writer.close();
-		} catch (Exception e){
-			e.printStackTrace();
+		if (saveFile != null) {
+			try {
+				PrintWriter writer = new PrintWriter(saveFile);
+				for (Integer release : versionMap.keySet()) {
+					writer.println(versionMap.get(release) + ";" + release);
+				}
+				writer.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
