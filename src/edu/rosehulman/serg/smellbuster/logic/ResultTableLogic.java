@@ -10,11 +10,11 @@ import edu.rosehulman.serg.smellbuster.util.JavaClass;
 import edu.rosehulman.serg.smellbuster.xmlparser.DOMParser;
 
 public class ResultTableLogic {
-	
+
 	private Map<String, ArrayList<JavaClass>> metricMap;
 	private Map<Integer, String> versionMap;
-	
-	public ResultTableLogic(Map<Integer, String> versionMap){
+
+	public ResultTableLogic(Map<Integer, String> versionMap) {
 		this.metricMap = new HashMap<>();
 		this.versionMap = versionMap;
 		parseMetrics();
@@ -267,17 +267,14 @@ public class ResultTableLogic {
 				double wmc = jc.getWmc();
 				double noc = jc.getNoc();
 				double cbo = jc.getCbo();
-				double lcom = jc.getLcom();
-				double ca = jc.getCa();
-				double ce = jc.getCe();
 				double lcom3 = jc.getLcom3();
 				double cam = jc.getCam();
 				double ic = jc.getIc();
 				double cbm = jc.getCbm();
 				double amc = jc.getAmc();
 				double cc = jc.getCc();
-				score += ((10 - noc) - wmc - cbo - lcom - ca - ce - lcom3 + cam
-						- ic - cbm - amc - cc);
+				score += ((10 - noc) - wmc - cbo - lcom3 + (2 * cam) - ic - cbm
+						- (0.5 * amc) - cc);
 			}
 		}
 		value = String.valueOf(score);
@@ -290,9 +287,6 @@ public class ResultTableLogic {
 		double wmc = Integer.MIN_VALUE;
 		double noc = Integer.MIN_VALUE;
 		double cbo = Integer.MIN_VALUE;
-		double lcom = Integer.MIN_VALUE;
-		double ca = Integer.MIN_VALUE;
-		double ce = Integer.MIN_VALUE;
 		double lcom3 = Integer.MIN_VALUE;
 		double cam = Integer.MIN_VALUE;
 		double ic = Integer.MIN_VALUE;
@@ -304,9 +298,6 @@ public class ResultTableLogic {
 				wmc = Math.max(wmc, jc.getWmc());
 				noc = Math.max(noc, jc.getNoc());
 				cbo = Math.max(cbo, jc.getCbo());
-				lcom = Math.max(lcom, jc.getLcom());
-				ca = Math.max(ca, jc.getCa());
-				ce = Math.max(ce, jc.getCe());
 				lcom3 = Math.max(lcom3, jc.getLcom3());
 				cam = Math.max(cam, jc.getCam());
 				ic = Math.max(ic, jc.getIc());
@@ -315,9 +306,11 @@ public class ResultTableLogic {
 				cc = Math.max(cc, jc.getCc());
 			}
 		}
-		double score = ((10 - noc) - wmc - cbo - lcom - ca - ce - lcom3 + cam
-				- ic - cbm - amc - cc);
-		value = String.valueOf(score);
+		if (wmc != Integer.MAX_VALUE) {
+			double score = ((10 - noc) - wmc - cbo - lcom3 + (2 * cam) - ic - cbm
+					- (0.5 * amc) - cc);
+			value = String.valueOf(score);
+		}
 		return value;
 	}
 
@@ -327,9 +320,6 @@ public class ResultTableLogic {
 		double wmc = Integer.MAX_VALUE;
 		double noc = Integer.MAX_VALUE;
 		double cbo = Integer.MAX_VALUE;
-		double lcom = Integer.MAX_VALUE;
-		double ca = Integer.MAX_VALUE;
-		double ce = Integer.MAX_VALUE;
 		double lcom3 = Integer.MAX_VALUE;
 		double cam = Integer.MAX_VALUE;
 		double ic = Integer.MAX_VALUE;
@@ -341,9 +331,6 @@ public class ResultTableLogic {
 				wmc = Math.min(wmc, jc.getWmc());
 				noc = Math.min(noc, jc.getNoc());
 				cbo = Math.min(cbo, jc.getCbo());
-				lcom = Math.min(lcom, jc.getLcom());
-				ca = Math.min(ca, jc.getCa());
-				ce = Math.min(ce, jc.getCe());
 				lcom3 = Math.min(lcom3, jc.getLcom3());
 				cam = Math.min(cam, jc.getCam());
 				ic = Math.min(ic, jc.getIc());
@@ -352,9 +339,11 @@ public class ResultTableLogic {
 				cc = Math.min(cc, jc.getCc());
 			}
 		}
-		double score = ((10 - noc) - wmc - cbo - lcom - ca - ce - lcom3 + cam
-				- ic - cbm - amc - cc);
-		value = String.valueOf(score);
+		if (wmc != Integer.MAX_VALUE) {
+			double score = ((10 - noc) - wmc - cbo - lcom3 + (2 * cam) - ic - cbm
+					- (0.5 * amc) - cc);
+			value = String.valueOf(score);
+		}
 		return value;
 	}
 }
