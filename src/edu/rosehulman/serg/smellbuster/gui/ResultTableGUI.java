@@ -49,6 +49,7 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 	private String lowImportance = "low";
 	private String safelyIgnore = "safe";
 	private String[] metrics;
+	private int selectedMetric;
 
 	// Constructor of main frame
 	public ResultTableGUI(String[][] dataValues, Map<Integer, String> versionMap) {
@@ -56,6 +57,7 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 		this.versionMap = versionMap;
 		this.displayTableLogic = new ResultTableLogic(this.versionMap);
 		this.heatMapColors = new HashMap<>();
+		this.selectedMetric = 0;
 		this.loadMetrics();
 		this.loadHeatMapColors();
 		// double maxAggregateValue =
@@ -81,7 +83,7 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 		this.dataValues = dataValues;
 		this.tableModel = new MyTableModel(dataValues, columnNames);
 
-		initTable(0);
+		initTable();
 		initComboBox();
 		initPanel();
 		initFrame();
@@ -125,12 +127,12 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 		}
 	}
 
-	private void initTable(int metricIndex) {
+	private void initTable() {
 
 		table = new JTable(tableModel);
 		table.setRowSelectionAllowed(false);
 		table.setCellSelectionEnabled(true);
-		table.setDefaultRenderer(Object.class, new MyTableCellRenderer(0));
+		table.setDefaultRenderer(Object.class, new MyTableCellRenderer());
 		table.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 
@@ -204,11 +206,6 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 			implements TableCellRenderer {
 
 		private static final long serialVersionUID = 1L;
-		private int selectedMetric;
-
-		public MyTableCellRenderer(int selectedMetric) {
-			this.selectedMetric = selectedMetric;
-		}
 
 		@Override
 		public Component getTableCellRendererComponent(JTable table,
@@ -216,7 +213,7 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 				int column) {
 			Component c = (Component) super.getTableCellRendererComponent(
 					table, value, isSelected, hasFocus, row, column);
-			switch(this.selectedMetric){
+			switch(selectedMetric){
 			case 0:
 				if (value != null && value.toString().length() > 0) {
 					double score = Double
@@ -232,40 +229,40 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
 				break;
 			case 2:
-				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				c.setBackground(row % 2 == 0 ? Color.CYAN : Color.WHITE);
 				break;
 			case 3:
-				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				c.setBackground(row % 2 == 0 ? Color.BLUE : Color.WHITE);
 				break;
 			case 4:
-				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				c.setBackground(row % 2 == 0 ? Color.GREEN : Color.WHITE);
 				break;
 			case 5:
-				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				c.setBackground(row % 2 == 0 ? Color.GRAY : Color.WHITE);
 				break;
 			case 6:
-				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				c.setBackground(row % 2 == 0 ? Color.RED : Color.WHITE);
 				break;
 			case 7: 
-				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				c.setBackground(row % 2 == 0 ? Color.YELLOW : Color.WHITE);
 				break;
 			case 8:
-				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				c.setBackground(row % 2 == 0 ? Color.MAGENTA : Color.WHITE);
 				break;
 			case 9:
-				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				c.setBackground(row % 2 == 0 ? Color.ORANGE : Color.WHITE);
 				break;
 			case 10:
-				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				c.setBackground(row % 2 == 0 ? Color.PINK : Color.WHITE);
 				break;
 			case 11:
-				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				c.setBackground(row % 2 == 0 ? Color.WHITE : Color.BLACK);
 				break;
 			case 12:
-				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.RED);
 				break;
 			default:
-				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.BLUE);
 				break;
 			}
 			return c;
@@ -441,12 +438,9 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(this.metricComboBox)) {
 			System.out.println(this.metricComboBox.getSelectedIndex());
-			this.updateHeatMap(this.metricComboBox.getSelectedIndex());
+			this.selectedMetric = this.metricComboBox.getSelectedIndex();
+			this.tableModel.fireTableDataChanged();
 		}
-	}
-
-	private void updateHeatMap(int selectedIndex) {
-		this.initTable(selectedIndex);
 	}
 
 }
