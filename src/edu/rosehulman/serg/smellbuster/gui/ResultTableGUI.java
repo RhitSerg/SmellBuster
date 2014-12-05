@@ -3,6 +3,8 @@ package edu.rosehulman.serg.smellbuster.gui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -11,7 +13,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -24,10 +28,14 @@ import javax.swing.table.TableCellRenderer;
 import edu.rosehulman.serg.smellbuster.logic.ResultTableLogic;
 import edu.rosehulman.serg.smellbuster.util.*;
 
-public class ResultTableGUI extends JFrame {
+public class ResultTableGUI extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
+	private String[] columnNames;
 	private JPanel topPanel;
+	private JPanel tablePanel;
+	private JComboBox<String> metricComboBox;
+	private JLabel comboLabel;
 	private JTable table;
 	private JScrollPane scrollPane;
 	private Map<Integer, String> versionMap;
@@ -40,6 +48,7 @@ public class ResultTableGUI extends JFrame {
 	private String mediumImportance = "medium";
 	private String lowImportance = "low";
 	private String safelyIgnore = "safe";
+	private String[] metrics;
 
 	// Constructor of main frame
 	public ResultTableGUI(String[][] dataValues, Map<Integer, String> versionMap) {
@@ -47,37 +56,58 @@ public class ResultTableGUI extends JFrame {
 		this.versionMap = versionMap;
 		this.displayTableLogic = new ResultTableLogic(this.versionMap);
 		this.heatMapColors = new HashMap<>();
-		
+		this.loadMetrics();
 		this.loadHeatMapColors();
-//		double maxAggregateValue = Double.parseDouble(this.displayTableLogic.getAggregateMetrics(dataValues[0][0]));
-//		double minAggregateValue = Double.parseDouble(this.displayTableLogic.getAggregateMetrics(dataValues[0][0]));
-//		for(String[] row: dataValues){
-//			for (String name: row){
-//				if (name != null && name.length() > 0){
-//					double value = Double.parseDouble(this.displayTableLogic.getAggregateMetrics(name));
-//					maxAggregateValue = Math.max(maxAggregateValue, value);
-//					minAggregateValue = Math.min(minAggregateValue, value);
-//					break;
-//				}
-//			}
-//		}
-//		
-//		System.out.println(maxAggregateValue+" Max");
-//		System.out.println(minAggregateValue+" Min");
+		// double maxAggregateValue =
+		// Double.parseDouble(this.displayTableLogic.getAggregateMetrics(dataValues[0][0]));
+		// double minAggregateValue =
+		// Double.parseDouble(this.displayTableLogic.getAggregateMetrics(dataValues[0][0]));
+		// for(String[] row: dataValues){
+		// for (String name: row){
+		// if (name != null && name.length() > 0){
+		// double value =
+		// Double.parseDouble(this.displayTableLogic.getAggregateMetrics(name));
+		// maxAggregateValue = Math.max(maxAggregateValue, value);
+		// minAggregateValue = Math.min(minAggregateValue, value);
+		// break;
+		// }
+		// }
+		// }
+		//
+		// System.out.println(maxAggregateValue+" Max");
+		// System.out.println(minAggregateValue+" Min");
 
-		initTable(dataValues);
+		this.columnNames = getColumnNames();
+		this.dataValues = dataValues;
+		this.tableModel = new MyTableModel(dataValues, columnNames);
+
+		initTable(0);
+		initComboBox();
 		initPanel();
 		initFrame();
 
 	}
-	
-	private void loadHeatMapColors(){
+
+	private void loadMetrics() {
+		this.metrics = new String[] { "All", "Weighted Method Per Class (WMC)",
+				"Number of Children (NOC)",
+				"Coupling Between Object Classes (CBO)",
+				"Lack of Cohesion in methods (LCOM)",
+				"Afferent Couplings (Ca)", "Efferent Couplings (Ce)",
+				"Lack of Cohesion in methods (LCOM3)",
+				"Cohesion Among Methods of Class (CAM)",
+				"Inheritance Coupling (IC)", "Coupling Between Methods (CBM)",
+				"Average Method Complexity (AMC)",
+				"McCabe's Cyclomatic Complexity (CC)" };
+	}
+
+	private void loadHeatMapColors() {
 		Color critical = new Color(0xAB0000);
 		Color high = new Color(0xB24026);
 		Color medium = new Color(0xC96164);
 		Color low = new Color(0x77AB6B);
 		Color safe = new Color(0xBEF29D);
-		
+
 		this.heatMapColors.put(this.critical, critical);
 		this.heatMapColors.put(this.highImportance, high);
 		this.heatMapColors.put(this.mediumImportance, medium);
@@ -85,16 +115,22 @@ public class ResultTableGUI extends JFrame {
 		this.heatMapColors.put(this.safelyIgnore, safe);
 	}
 
-	private void initTable(String[][] dataValues) {
-		final String columnNames[] = getColumnNames();
-		this.dataValues = dataValues;
-		this.tableModel = new MyTableModel(dataValues, columnNames);
-		
+	private void initComboBox() {
+		this.metricComboBox = new JComboBox<>();
+		this.metricComboBox.addActionListener(this);
+		this.comboLabel = new JLabel("Choose metric to display heat map: ");
+
+		for (String metric : this.metrics) {
+			this.metricComboBox.addItem(metric);
+		}
+	}
+
+	private void initTable(int metricIndex) {
 
 		table = new JTable(tableModel);
 		table.setRowSelectionAllowed(false);
 		table.setCellSelectionEnabled(true);
-		table.setDefaultRenderer(Object.class, new MyTableCellRenderer());
+		table.setDefaultRenderer(Object.class, new MyTableCellRenderer(0));
 		table.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 
@@ -130,27 +166,34 @@ public class ResultTableGUI extends JFrame {
 	}
 
 	private void initPanel() {
-		topPanel = new JPanel();
-		topPanel.setLayout(new BorderLayout());
-		topPanel.add(scrollPane, BorderLayout.CENTER);
+		tablePanel = new JPanel();
+		tablePanel.setLayout(new BorderLayout());
+		tablePanel.add(scrollPane, BorderLayout.CENTER);
+
+		this.topPanel = new JPanel();
+		this.topPanel.setLayout(new BorderLayout());
+		this.topPanel.add(this.comboLabel, BorderLayout.WEST);
+		this.topPanel.add(this.metricComboBox, BorderLayout.CENTER);
 	}
 
 	private void initFrame() {
-		getContentPane().add(topPanel);
+		setLayout(new BorderLayout());
+		getContentPane().add(this.topPanel, BorderLayout.NORTH);
+		getContentPane().add(tablePanel, BorderLayout.CENTER);
 		setTitle("SmellBuster - Metric Analysis Result");
 		setSize(1300, 700);
 		setBackground(Color.gray);
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	}
-	
-	private Color getColorForMetricScore(double score){
-		if (score >= -2457){
+
+	private Color getColorForMetricScore(double score) {
+		if (score >= -2457) {
 			return this.heatMapColors.get(this.safelyIgnore);
-		} else if (score < -2457 && score >= -5062){
+		} else if (score < -2457 && score >= -5062) {
 			return this.heatMapColors.get(this.lowImportance);
-		} else if (score < -5062 && score >= -7649){
+		} else if (score < -5062 && score >= -7649) {
 			return this.heatMapColors.get(this.mediumImportance);
-		} else if (score < -7649 && score >= -10236){
+		} else if (score < -7649 && score >= -10236) {
 			return this.heatMapColors.get(this.highImportance);
 		} else {
 			return this.heatMapColors.get(this.critical);
@@ -161,6 +204,11 @@ public class ResultTableGUI extends JFrame {
 			implements TableCellRenderer {
 
 		private static final long serialVersionUID = 1L;
+		private int selectedMetric;
+
+		public MyTableCellRenderer(int selectedMetric) {
+			this.selectedMetric = selectedMetric;
+		}
 
 		@Override
 		public Component getTableCellRendererComponent(JTable table,
@@ -168,15 +216,60 @@ public class ResultTableGUI extends JFrame {
 				int column) {
 			Component c = (Component) super.getTableCellRendererComponent(
 					table, value, isSelected, hasFocus, row, column);
-			if (value != null && value.toString().length() > 0){
-				double score = Double.parseDouble(ResultTableGUI.this.displayTableLogic.getAggregateMetrics(value.toString()));
-				c.setBackground(ResultTableGUI.this.getColorForMetricScore(score));
-			}else{
-				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY: Color.WHITE);
+			switch(this.selectedMetric){
+			case 0:
+				if (value != null && value.toString().length() > 0) {
+					double score = Double
+							.parseDouble(ResultTableGUI.this.displayTableLogic
+									.getAggregateMetrics(value.toString()));
+					c.setBackground(ResultTableGUI.this
+							.getColorForMetricScore(score));
+				} else {
+					c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				}				
+				break;
+			case 1:
+				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				break;
+			case 2:
+				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				break;
+			case 3:
+				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				break;
+			case 4:
+				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				break;
+			case 5:
+				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				break;
+			case 6:
+				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				break;
+			case 7: 
+				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				break;
+			case 8:
+				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				break;
+			case 9:
+				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				break;
+			case 10:
+				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				break;
+			case 11:
+				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				break;
+			case 12:
+				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				break;
+			default:
+				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+				break;
 			}
 			return c;
 		}
-
 	}
 
 	private class MyTableModel extends DefaultTableModel {
@@ -208,8 +301,7 @@ public class ResultTableGUI extends JFrame {
 	}
 
 	private String getDisplayMessage(String version, String className) {
-		return "<html><table>" 
-				+ getMessageForVersion(version)
+		return "<html><table>" + getMessageForVersion(version)
 				+ getMessageForClassName(className)
 				+ getMessageForWMC(version, className)
 				+ getMessageForNOC(version, className)
@@ -343,6 +435,18 @@ public class ResultTableGUI extends JFrame {
 				+ "</td><td>"
 				+ ResultTableGUI.this.displayTableLogic
 						.getAggregateMetricsOfMin(className) + "</td></tr>";
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource().equals(this.metricComboBox)) {
+			System.out.println(this.metricComboBox.getSelectedIndex());
+			this.updateHeatMap(this.metricComboBox.getSelectedIndex());
+		}
+	}
+
+	private void updateHeatMap(int selectedIndex) {
+		this.initTable(selectedIndex);
 	}
 
 }
