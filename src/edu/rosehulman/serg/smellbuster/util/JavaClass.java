@@ -194,4 +194,9 @@ public class JavaClass {
 			this.cc = cc;
 		}
 
+		public String getAggregate(){
+			double score = ((10 - noc) - wmc - cbo - lcom3 + (2 * cam) - ic - cbm
+					- (0.5 * amc) - cc);
+			return String.valueOf(score);
+		}
 	}

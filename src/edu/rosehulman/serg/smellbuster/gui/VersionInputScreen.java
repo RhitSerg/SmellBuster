@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.util.Map;
 import java.util.TreeMap;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,6 +20,7 @@ import javax.swing.JTextField;
 import javax.swing.table.TableModel;
 
 import edu.rosehulman.serg.smellbuster.logic.SVNLoadLogic;
+import edu.rosehulman.serg.smellbuster.util.OSDetector;
 
 public class VersionInputScreen extends JFrame implements ActionListener {
 
@@ -37,10 +39,10 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 	private InputTable inputTable;
 	private Map<Integer, String> versionMap;
 	private FileChooser fileChooser;
-	
+
 	public VersionInputScreen() {
 		super("SmellBuster");
-		
+
 		this.versionMap = new TreeMap<>();
 		this.inputTable = new InputTable();
 		this.fileChooser = new FileChooser();
@@ -59,19 +61,19 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 		setSize(700, 450);
 		setLocationRelativeTo(null);
 	}
-	
-	private void initializeComponents(){
+
+	private void initializeComponents() {
 		this.addButton = new JButton("Display Table");
 		this.addButton.addActionListener(this);
-		
+
 		this.svnLabel = new JLabel("SVN Repo URL:");
 		this.svnLabel.setSize(250, 50);
-		
+
 		this.svnField = new JTextField(
 				"http://svn.code.sf.net/p/jfreechart/code/branches/");
 		this.svnField.setSize(450, 50);
 	}
-	
+
 	private void initProgressBar() {
 		this.progressBar = new JProgressBar();
 		this.progressBar.setMinimum(0);
@@ -81,15 +83,27 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 	private void initializeMenu() {
 		this.menuBar = new JMenuBar();
 		this.fileMenu = new JMenu("File");
-		this.loadMenuItem = new JMenuItem("Load");
-		this.saveMenuItem = new JMenuItem("Save");
-		this.quitMenuItem = new JMenuItem("Quit");
-		
+		if (OSDetector.isWindows()) {
+			this.loadMenuItem = new JMenuItem("Load", new ImageIcon(
+					"assets\\upload.png"));
+			this.saveMenuItem = new JMenuItem("Save", new ImageIcon(
+					"assets\\save.png"));
+			this.quitMenuItem = new JMenuItem("Quit", new ImageIcon(
+					"assets\\quit.png"));
+		} else {
+			this.loadMenuItem = new JMenuItem("Load", new ImageIcon(
+					"assets/upload.png"));
+			this.saveMenuItem = new JMenuItem("Save", new ImageIcon(
+					"assets/save.png"));
+			this.quitMenuItem = new JMenuItem("Quit", new ImageIcon(
+					"assets/quit.png"));
+		}
+
 		this.menuBar.add(this.fileMenu);
 		this.fileMenu.add(this.loadMenuItem);
 		this.fileMenu.add(this.saveMenuItem);
 		this.fileMenu.add(this.quitMenuItem);
-		
+
 		this.loadMenuItem.addActionListener(this);
 		this.saveMenuItem.addActionListener(this);
 		this.quitMenuItem.addActionListener(this);
@@ -97,8 +111,8 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 
 	private void initializeBottomPanel() {
 		this.bottomPanel = new JPanel();
-		this.bottomPanel.setLayout(new GridLayout(2,1));
-		
+		this.bottomPanel.setLayout(new GridLayout(2, 1));
+
 		this.bottomPanel.add(this.addButton);
 		this.bottomPanel.add(this.progressBar);
 	}
@@ -106,7 +120,7 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 	private void initializeSVNPanel() {
 		this.svnFieldPanel = new JPanel();
 		this.svnFieldPanel.setLayout(new BorderLayout());
-		
+
 		this.svnFieldPanel.add(this.svnLabel, BorderLayout.WEST);
 		this.svnFieldPanel.add(this.svnField, BorderLayout.CENTER);
 	}
@@ -118,23 +132,23 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 
 		if (e.getSource().equals(this.addButton)) {
 			this.progressBar.setIndeterminate(true);
-			
+
 			Thread t = new Thread() {
-				public void run(){
-					SVNLoadLogic svnLoadLogic = new SVNLoadLogic(versionMap, svnField.getText(), progressBar);
+				public void run() {
+					SVNLoadLogic svnLoadLogic = new SVNLoadLogic(versionMap,
+							svnField.getText(), progressBar);
 					dispose();
-					svnLoadLogic.displayTable();				
+					svnLoadLogic.displayTable();
 				}
 			};
 			t.start();
-		}
-		else if (e.getSource().equals(this.loadMenuItem)){
+		} else if (e.getSource().equals(this.loadMenuItem)) {
 			this.versionMap = this.fileChooser.getVersionMap();
 			this.inputTable.loadTableValues(this.versionMap);
 		} else if (e.getSource().equals(this.saveMenuItem)) {
 			loadVersionMap();
 			this.fileChooser.saveFile(this.versionMap);
-		} else if (e.getSource().equals(this.quitMenuItem)){
+		} else if (e.getSource().equals(this.quitMenuItem)) {
 			System.exit(0);
 		}
 

@@ -1,5 +1,6 @@
 package edu.rosehulman.serg.smellbuster.logic;
 
+import java.awt.Color;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -258,6 +259,22 @@ public class ResultTableLogic {
 		return value;
 	}
 
+	public String getAggregateValueFor(String version, String className) {
+		String value = "N/A";
+		if (version.length() > 0 && className.length() > 0) {
+			for (String ver : metricMap.keySet()) {
+				if (ver.equals(version)) {
+					for (JavaClass jc : metricMap.get(ver)) {
+						if (jc.getName().equals(className)) {
+							value = String.valueOf(jc.getAggregate());
+						}
+					}
+				}
+			}
+		}
+		return value;
+	}
+
 	public String getAggregateMetrics(String className) {
 		String value = "N/A";
 		double score = 0.0;
@@ -307,8 +324,8 @@ public class ResultTableLogic {
 			}
 		}
 		if (wmc != Integer.MAX_VALUE) {
-			double score = ((10 - noc) - wmc - cbo - lcom3 + (2 * cam) - ic - cbm
-					- (0.5 * amc) - cc);
+			double score = ((10 - noc) - wmc - cbo - lcom3 + (2 * cam) - ic
+					- cbm - (0.5 * amc) - cc);
 			value = String.valueOf(score);
 		}
 		return value;
@@ -340,10 +357,111 @@ public class ResultTableLogic {
 			}
 		}
 		if (wmc != Integer.MAX_VALUE) {
-			double score = ((10 - noc) - wmc - cbo - lcom3 + (2 * cam) - ic - cbm
-					- (0.5 * amc) - cc);
+			double score = ((10 - noc) - wmc - cbo - lcom3 + (2 * cam) - ic
+					- cbm - (0.5 * amc) - cc);
 			value = String.valueOf(score);
 		}
 		return value;
+	}
+
+	public Color getColorForMetricScore(int index, String className,
+			String version) {
+		String result = "N/A";
+		double minAggregateValue = Integer.MAX_VALUE;
+		double maxAggregateValue = Integer.MIN_VALUE;
+		for (String ver : metricMap.keySet()) {
+			for (JavaClass jc : metricMap.get(ver)) {
+				if (jc != null && jc.getName().equals(className)) {
+					double wmc = jc.getWmc();
+					double noc = jc.getNoc();
+					double cbo = jc.getCbo();
+					double lcom3 = jc.getLcom3();
+					double cam = jc.getCam();
+					double ic = jc.getIc();
+					double cbm = jc.getCbm();
+					double amc = jc.getAmc();
+					double cc = jc.getCc();
+					switch (index) {
+					case 0:
+						// All
+						result = this.getAggregateValueFor(version, className);
+						double value = ((10 - noc) - wmc - cbo - lcom3
+								+ (2 * cam) - ic - cbm - (0.5 * amc) - cc);
+						maxAggregateValue = Math.max(maxAggregateValue, value);
+						minAggregateValue = Math.min(minAggregateValue, value);
+						break;
+					case 1:
+						// WMC
+						result = this.getWMCValueFor(version, className);
+						maxAggregateValue = Math.max(maxAggregateValue, wmc);
+						minAggregateValue = Math.min(minAggregateValue, wmc);
+						break;
+					case 2:
+						// NOC
+						result = this.getNOCValueFor(version, className);
+						maxAggregateValue = Math.max(maxAggregateValue, noc);
+						minAggregateValue = Math.min(minAggregateValue, noc);
+						break;
+					case 3:
+						// CBO
+						result = this.getCBOValueFor(version, className);
+						maxAggregateValue = Math.max(maxAggregateValue, cbo);
+						minAggregateValue = Math.min(minAggregateValue, cbo);
+						break;
+					case 4:
+						// LCOM3
+						result = this.getLCOM3ValueFor(version, className);
+						maxAggregateValue = Math.max(maxAggregateValue, lcom3);
+						minAggregateValue = Math.min(minAggregateValue, lcom3);
+						break;
+					case 5:
+						// CAM
+						result = this.getCAMValueFor(version, className);
+						maxAggregateValue = Math.max(maxAggregateValue, cam);
+						minAggregateValue = Math.min(minAggregateValue, cam);
+						break;
+					case 6:
+						// CBM
+						result = this.getCBMValueFor(version, className);
+						maxAggregateValue = Math.max(maxAggregateValue, cbm);
+						minAggregateValue = Math.min(minAggregateValue, cbm);
+						break;
+					case 7:
+						// AMC
+						result = this.getAMCValueFor(version, className);
+						maxAggregateValue = Math.max(maxAggregateValue, amc);
+						minAggregateValue = Math.min(minAggregateValue, amc);
+						break;
+					case 8:
+						// CC
+						result = this.getCCValueFor(version, className);
+						maxAggregateValue = Math.max(maxAggregateValue, cc);
+						minAggregateValue = Math.min(minAggregateValue, cc);
+						break;
+					default:
+						break;
+					}
+				}
+			}
+		}
+		try {
+			double score = Double.parseDouble(result);
+			
+			double ratio  = 0;
+			
+			if (maxAggregateValue != minAggregateValue)
+				ratio = 2 * (score - minAggregateValue)
+					/ (maxAggregateValue - minAggregateValue);
+			
+			double redValue = 255 * (1 - ratio);
+			double greenValue = 255 * (ratio - 1);
+			
+			int r = (int) Math.max(25, redValue > 255? 25:redValue);
+			int g = (int) Math.max(25, greenValue > 255? 25: greenValue);
+			int b = 0;
+			return new Color(r, g, b);
+		} catch (Exception e) {
+			return null;
+		}
 	}
 }
