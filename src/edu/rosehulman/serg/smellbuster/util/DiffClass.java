@@ -2,6 +2,7 @@ package edu.rosehulman.serg.smellbuster.util;
 
 public class DiffClass {
 		private String name;
+		private String packageName;
 		private char type;
 
 		public String getName() {
@@ -18,6 +19,14 @@ public class DiffClass {
 
 		public void setType(char type) {
 			this.type = type;
+		}
+
+		public String getPackageName() {
+			return packageName;
+		}
+
+		public void setPackageName(String packageName) {
+			this.packageName = packageName;
 		}
 
 

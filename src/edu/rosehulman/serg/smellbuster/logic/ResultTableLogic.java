@@ -14,11 +14,29 @@ public class ResultTableLogic {
 
 	private Map<String, ArrayList<JavaClass>> metricMap;
 	private Map<Integer, String> versionMap;
+	private double maxAggregateValue;
 
 	public ResultTableLogic(Map<Integer, String> versionMap) {
 		this.metricMap = new HashMap<>();
 		this.versionMap = versionMap;
 		parseMetrics();
+		this.initMaxMetricValue();
+	}
+
+	private void initMaxMetricValue() {
+		this.maxAggregateValue = Integer.MIN_VALUE;
+		for (String ver : metricMap.keySet()) {
+			for (JavaClass jc : metricMap.get(ver)) {
+				String name = jc.getName();
+				if (name != null && name.length() > 0) {
+					double value = Double.parseDouble(this
+							.getAggregateMetrics(name));
+					this.maxAggregateValue = Math.max(this.maxAggregateValue,
+							value);
+					break;
+				}
+			}
+		}
 	}
 
 	public ArrayList<JavaClass> createClassListMap(String className) {
@@ -368,7 +386,7 @@ public class ResultTableLogic {
 			String version) {
 		String result = "N/A";
 		double minAggregateValue = Integer.MAX_VALUE;
-		double maxAggregateValue = Integer.MIN_VALUE;
+
 		for (String ver : metricMap.keySet()) {
 			for (JavaClass jc : metricMap.get(ver)) {
 				if (jc != null && jc.getName().equals(className)) {
@@ -387,55 +405,57 @@ public class ResultTableLogic {
 						result = this.getAggregateValueFor(version, className);
 						double value = ((10 - noc) - wmc - cbo - lcom3
 								+ (2 * cam) - ic - cbm - (0.5 * amc) - cc);
-						maxAggregateValue = Math.max(maxAggregateValue, value);
+						// maxAggregateValue = Math.max(maxAggregateValue,
+						// value);
 						minAggregateValue = Math.min(minAggregateValue, value);
 						break;
 					case 1:
 						// WMC
 						result = this.getWMCValueFor(version, className);
-						maxAggregateValue = Math.max(maxAggregateValue, wmc);
+						// maxAggregateValue = Math.max(maxAggregateValue, wmc);
 						minAggregateValue = Math.min(minAggregateValue, wmc);
 						break;
 					case 2:
 						// NOC
 						result = this.getNOCValueFor(version, className);
-						maxAggregateValue = Math.max(maxAggregateValue, noc);
+						// maxAggregateValue = Math.max(maxAggregateValue, noc);
 						minAggregateValue = Math.min(minAggregateValue, noc);
 						break;
 					case 3:
 						// CBO
 						result = this.getCBOValueFor(version, className);
-						maxAggregateValue = Math.max(maxAggregateValue, cbo);
+						// maxAggregateValue = Math.max(maxAggregateValue, cbo);
 						minAggregateValue = Math.min(minAggregateValue, cbo);
 						break;
 					case 4:
 						// LCOM3
 						result = this.getLCOM3ValueFor(version, className);
-						maxAggregateValue = Math.max(maxAggregateValue, lcom3);
+						// maxAggregateValue = Math.max(maxAggregateValue,
+						// lcom3);
 						minAggregateValue = Math.min(minAggregateValue, lcom3);
 						break;
 					case 5:
 						// CAM
 						result = this.getCAMValueFor(version, className);
-						maxAggregateValue = Math.max(maxAggregateValue, cam);
+						// maxAggregateValue = Math.max(maxAggregateValue, cam);
 						minAggregateValue = Math.min(minAggregateValue, cam);
 						break;
 					case 6:
 						// CBM
 						result = this.getCBMValueFor(version, className);
-						maxAggregateValue = Math.max(maxAggregateValue, cbm);
+						// maxAggregateValue = Math.max(maxAggregateValue, cbm);
 						minAggregateValue = Math.min(minAggregateValue, cbm);
 						break;
 					case 7:
 						// AMC
 						result = this.getAMCValueFor(version, className);
-						maxAggregateValue = Math.max(maxAggregateValue, amc);
+						// maxAggregateValue = Math.max(maxAggregateValue, amc);
 						minAggregateValue = Math.min(minAggregateValue, amc);
 						break;
 					case 8:
 						// CC
 						result = this.getCCValueFor(version, className);
-						maxAggregateValue = Math.max(maxAggregateValue, cc);
+						// maxAggregateValue = Math.max(maxAggregateValue, cc);
 						minAggregateValue = Math.min(minAggregateValue, cc);
 						break;
 					default:
@@ -446,22 +466,35 @@ public class ResultTableLogic {
 		}
 		try {
 			double score = Double.parseDouble(result);
-			
-			double ratio  = 0;
-			
-			if (maxAggregateValue != minAggregateValue)
+
+			double ratio = 0;
+
+			if (this.maxAggregateValue > minAggregateValue)
 				ratio = 2 * (score - minAggregateValue)
-					/ (maxAggregateValue - minAggregateValue);
-			
+						/ (this.maxAggregateValue - minAggregateValue);
+
 			double redValue = 255 * (1 - ratio);
 			double greenValue = 255 * (ratio - 1);
-			
-			int r = (int) Math.max(25, redValue > 255? 25:redValue);
-			int g = (int) Math.max(25, greenValue > 255? 25: greenValue);
+
+			int r = (int) Math.max(25, redValue > 255 ? 255 : redValue);// >
+																		// 255?
+																		// 25:redValue);
+			int g = (int) Math.max(25, greenValue > 255 ? 255 : greenValue);// >
+																			// 255?
+																			// 25:
+																			// greenValue);
 			int b = 0;
 			return new Color(r, g, b);
 		} catch (Exception e) {
 			return null;
 		}
+	}
+
+	public void setMaxAggregateValue(double value) {
+		this.maxAggregateValue = value;
+	}
+
+	public double getMaxAggregateValue() {
+		return this.maxAggregateValue;
 	}
 }

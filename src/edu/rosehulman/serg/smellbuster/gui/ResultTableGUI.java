@@ -12,9 +12,13 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 
+import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -43,6 +47,10 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 	private MyTableModel tableModel;
 	private String[] metrics;
 	private int selectedMetric;
+	private JMenuBar menuBar;
+	private JMenu fileMenu;
+	private JMenuItem settingsMenuItem;
+	private JMenuItem quitMenuItem;
 
 	// Constructor of main frame
 	public ResultTableGUI(String[][] dataValues, Map<Integer, String> versionMap) {
@@ -56,11 +64,34 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 		this.dataValues = dataValues;
 		this.tableModel = new MyTableModel(dataValues, columnNames);
 
+		initMenu();
 		initTable();
 		initComboBox();
 		initPanel();
 		initFrame();
 
+	}
+	
+	private void initMenu(){
+		this.menuBar = new JMenuBar();
+		this.fileMenu = new JMenu("File");
+		if (OSDetector.isWindows()) {
+			this.settingsMenuItem = new JMenuItem("Settings", new ImageIcon(
+					"assets\\settings.png"));
+			this.quitMenuItem = new JMenuItem("Quit", new ImageIcon(
+					"assets\\quit.png"));
+		} else {
+			this.settingsMenuItem = new JMenuItem("Settings", new ImageIcon(
+					"assets/settings.png"));
+			this.quitMenuItem = new JMenuItem("Quit", new ImageIcon(
+					"assets/quit.png"));
+		}
+
+		this.menuBar.add(this.fileMenu);
+		this.fileMenu.add(this.settingsMenuItem);
+		this.fileMenu.add(this.quitMenuItem);
+		this.settingsMenuItem.addActionListener(this);
+		this.quitMenuItem.addActionListener(this);
 	}
 
 	private void loadMetrics() {
@@ -136,6 +167,7 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 	}
 
 	private void initFrame() {
+		setJMenuBar(this.menuBar);
 		setLayout(new BorderLayout());
 		getContentPane().add(this.topPanel, BorderLayout.NORTH);
 		getContentPane().add(tablePanel, BorderLayout.CENTER);
@@ -158,63 +190,21 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 				int column) {
 			Component c = (Component) super.getTableCellRendererComponent(
 					table, value, isSelected, hasFocus, row, column);
-//			switch (selectedMetric) {
-//			case 0:
 				if (value != null && value.toString().length() > 0) { 
 					Color color = ResultTableGUI.this.displayTableLogic
 							.getColorForMetricScore(selectedMetric, value.toString(), ResultTableGUI.this.columnNames[column]);
 					if (color == null){
-						c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY
+						c.setBackground(row % 2 == 0 ? Color.DARK_GRAY
 								: Color.WHITE);
 					}
 					else{
 						c.setBackground(color);
 					}
 				} else {
-					c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY
+					c.setBackground(row % 2 == 0 ? Color.DARK_GRAY
 							: Color.WHITE);
 				}
-//				break;
-//			case 1:
-//				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
-//				break;
-//			case 2:
-//				c.setBackground(row % 2 == 0 ? Color.CYAN : Color.WHITE);
-//				break;
-//			case 3:
-//				c.setBackground(row % 2 == 0 ? Color.BLUE : Color.WHITE);
-//				break;
-//			case 4:
-//				c.setBackground(row % 2 == 0 ? Color.GREEN : Color.WHITE);
-//				break;
-//			case 5:
-//				c.setBackground(row % 2 == 0 ? Color.GRAY : Color.WHITE);
-//				break;
-//			case 6:
-//				c.setBackground(row % 2 == 0 ? Color.RED : Color.WHITE);
-//				break;
-//			case 7:
-//				c.setBackground(row % 2 == 0 ? Color.YELLOW : Color.WHITE);
-//				break;
-//			case 8:
-//				c.setBackground(row % 2 == 0 ? Color.MAGENTA : Color.WHITE);
-//				break;
-//			case 9:
-//				c.setBackground(row % 2 == 0 ? Color.ORANGE : Color.WHITE);
-//				break;
-//			case 10:
-//				c.setBackground(row % 2 == 0 ? Color.PINK : Color.WHITE);
-//				break;
-//			case 11:
-//				c.setBackground(row % 2 == 0 ? Color.WHITE : Color.BLACK);
-//				break;
-//			case 12:
-//				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.RED);
-//				break;
-//			default:
-//				c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.BLUE);
-//				break;
-//			}
+				c.setForeground(Color.WHITE);
 			return c;
 		}
 	}
@@ -383,13 +373,26 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 				+ ResultTableGUI.this.displayTableLogic
 						.getAggregateMetricsOfMin(className) + "</td></tr>";
 	}
+	
+	public ResultTableLogic getResultTableLogic(){
+		return this.displayTableLogic;
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(this.metricComboBox)) {
-			this.selectedMetric = this.metricComboBox.getSelectedIndex();
-			this.tableModel.fireTableDataChanged();
+			updateTable();
+		} else if (e.getSource().equals(this.quitMenuItem)){
+			System.exit(0);
+		} else if (e.getSource().equals(this.settingsMenuItem)){
+			SettingsGUI settingsGUI = new SettingsGUI(this);
+			settingsGUI.setVisible(true);
 		}
+	}
+
+	public void updateTable() {
+		this.selectedMetric = this.metricComboBox.getSelectedIndex();
+		this.tableModel.fireTableDataChanged();
 	}
 
 }

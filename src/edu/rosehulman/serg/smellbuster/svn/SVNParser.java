@@ -64,14 +64,21 @@ public class SVNParser {
 								&& entryPath.getType() != 'D'
 								&& !(entryPath.getPath().contains("Test") || entryPath
 										.getPath().contains("Tests"))) {
+							
 							DiffClass dc = new DiffClass();
 							
 							String className = entryPath.getPath().replace("/", "\\");
 							String[] nameSplit = className.split("\\\\");
+							String packageName = "";
+							for(int i=0; i<nameSplit.length-1;i++){
+								packageName += nameSplit[i];
+							}
+							
 							className = nameSplit[nameSplit.length - 1];
 							
 							dc.setName(className);
 							dc.setType(entryPath.getType());
+							dc.setPackageName(packageName);
 							this.diffClassList.add(dc);
 						}
 					}

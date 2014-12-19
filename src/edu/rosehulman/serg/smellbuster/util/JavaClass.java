@@ -2,6 +2,7 @@ package edu.rosehulman.serg.smellbuster.util;
 
 public class JavaClass {
 		private String name;
+		private String packageName;
 		private double wmc;
 		private double dit;
 		private double noc;
@@ -32,6 +33,10 @@ public class JavaClass {
 			name = nameSplit[nameSplit.length - 1];
 			name += ".java";
 			this.name = name;
+			this.setPackageName("");
+			for (int i=0; i<nameSplit.length-1; i++){
+				this.setPackageName(this.getPackageName() + nameSplit[i]);
+			}
 		}
 
 		public double getWmc() {
@@ -198,5 +203,13 @@ public class JavaClass {
 			double score = ((10 - noc) - wmc - cbo - lcom3 + (2 * cam) - ic - cbm
 					- (0.5 * amc) - cc);
 			return String.valueOf(score);
+		}
+
+		public String getPackageName() {
+			return packageName;
+		}
+
+		public void setPackageName(String packageName) {
+			this.packageName = packageName;
 		}
 	}
