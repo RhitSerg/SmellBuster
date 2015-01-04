@@ -1,4 +1,4 @@
-package edu.rosehulman.serg.smellbuster.svn;
+package edu.rosehulman.serg.smellbuster.versioncontrol;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -15,7 +15,7 @@ import org.tmatesoft.svn.core.io.SVNRepositoryFactory;
 
 import edu.rosehulman.serg.smellbuster.util.DiffClass;
 
-public class SVNParser {
+public class SVNParser implements IVersionControlParser {
 
 	private String svnURL;
 	private long startRev;
@@ -41,7 +41,7 @@ public class SVNParser {
 		}
 	}
 
-	public void loadSVNInfo() {
+	public void loadVersionControlInfo() {
 		try {			
 			Collection<?> logEntries = null;
 

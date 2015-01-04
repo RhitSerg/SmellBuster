@@ -9,8 +9,8 @@ import java.util.Map;
 import javax.swing.JProgressBar;
 
 import edu.rosehulman.serg.smellbuster.gui.ResultTableGUI;
-import edu.rosehulman.serg.smellbuster.svn.SVNParser;
 import edu.rosehulman.serg.smellbuster.util.DiffClass;
+import edu.rosehulman.serg.smellbuster.versioncontrol.VersionControlParserFactory;
 
 public class SVNLoadLogic {
 	
@@ -39,9 +39,9 @@ public class SVNLoadLogic {
 		
 		while (itr.hasNext()) {
 			int end = itr.next();
-			SVNParser svnParser = new SVNParser(this.svnURL,
+			VersionControlParserFactory svnParser = new VersionControlParserFactory(this.svnURL,
 					(long) start, (long) end);
-			svnParser.loadSVNInfo();
+			svnParser.loadVersionControlInfo();
 			ArrayList<DiffClass> dcList = svnParser.getDiffClassList();
 
 			String version = this.versionMap.get(end);
