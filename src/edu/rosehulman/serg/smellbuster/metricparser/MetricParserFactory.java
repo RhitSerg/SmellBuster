@@ -24,8 +24,8 @@ public class MetricParserFactory implements IMetricParser {
 	}
 
 	@Override
-	public ArrayList<MetricDOMObject> getJavaClassList() {
-		return this.metricParser.getJavaClassList();
+	public ArrayList<MetricDOMObject> getDOMObjList() {
+		return this.metricParser.getDOMObjList();
 	}
 
 	@Override

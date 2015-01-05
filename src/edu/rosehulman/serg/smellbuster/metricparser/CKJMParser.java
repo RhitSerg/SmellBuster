@@ -102,7 +102,7 @@ public class CKJMParser implements IMetricParser {
 		}
 	}
 
-	public ArrayList<MetricDOMObject> getJavaClassList() {
+	public ArrayList<MetricDOMObject> getDOMObjList() {
 		return this.domObjectList;
 	}
 

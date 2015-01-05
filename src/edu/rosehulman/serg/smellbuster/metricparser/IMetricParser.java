@@ -9,7 +9,7 @@ public interface IMetricParser {
 
 	public void initializeDOMFromFile(String fileName);
 	public void parseXML();
-	public ArrayList<MetricDOMObject> getJavaClassList();
+	public ArrayList<MetricDOMObject> getDOMObjList();
 	public ArrayList<DiffClass> getDiffClassList();
 	public ArrayList<String> getBaseVersion();
 }
