@@ -1,4 +1,4 @@
-package edu.rosehulman.serg.smellbuster.xmlparser;
+package edu.rosehulman.serg.smellbuster.metricparser;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -13,16 +13,16 @@ import org.w3c.dom.NodeList;
 
 import edu.rosehulman.serg.smellbuster.util.*;
 
-public class DOMParser {
+public class CKJMParser implements IMetricParser {
 
 	private DocumentBuilderFactory factory = null;
 	private DocumentBuilder builder = null;
 	private Document document = null;
-	private ArrayList<JavaClass> jcList;
+	private ArrayList<MetricDOMObject> domObjectList;
 	private ArrayList<DiffClass> dcList;
 	private ArrayList<String> baseVersion;
 
-	public DOMParser() {
+	public CKJMParser() {
 		this.factory = DocumentBuilderFactory.newInstance();
 		try {
 			this.builder = this.factory.newDocumentBuilder();
@@ -31,7 +31,7 @@ public class DOMParser {
 		}
 	}
 
-	public void setFileName(String fileName) {
+	public void initializeDOMFromFile(String fileName) {
 		try {
 			File f = new File(fileName);
 			this.document = this.builder.parse(f);
@@ -42,7 +42,7 @@ public class DOMParser {
 
 	public void parseXML() {
 
-		this.jcList = new ArrayList<>();
+		this.domObjectList = new ArrayList<>();
 		this.dcList = new ArrayList<>();
 		this.baseVersion = new ArrayList<>();
 		NodeList nodeList = this.document.getDocumentElement().getChildNodes();
@@ -51,7 +51,7 @@ public class DOMParser {
 
 			Node node = nodeList.item(i);
 			if (node instanceof Element) {
-				JavaClass jc = new JavaClass();
+				MetricDOMObject metricDomObj = new MetricDOMObject();
 
 				NodeList childNodes = node.getChildNodes();
 				for (int j = 0; j < childNodes.getLength(); j++) {
@@ -61,61 +61,7 @@ public class DOMParser {
 								.trim();
 						switch (cNode.getNodeName()) {
 						case "name":
-							jc.setName(content);
-							break;
-						case "wmc":
-							jc.setWmc(Double.parseDouble(content));
-							break;
-						case "dit":
-							jc.setDit(Double.parseDouble(content));
-							break;
-						case "noc":
-							jc.setNoc(Double.parseDouble(content));
-							break;
-						case "cbo":
-							jc.setCbo(Double.parseDouble(content));
-							break;
-						case "rfc":
-							jc.setRfc(Double.parseDouble(content));
-							break;
-						case "lcom":
-							jc.setLcom(Double.parseDouble(content));
-							break;
-						case "ca":
-							jc.setCa(Double.parseDouble(content));
-							break;
-						case "ce":
-							jc.setCe(Double.parseDouble(content));
-							break;
-						case "npm":
-							jc.setNpm(Double.parseDouble(content));
-							break;
-						case "lcom3":
-							jc.setLcom3(Double.parseDouble(content));
-							break;
-						case "loc":
-							jc.setLoc(Double.parseDouble(content));
-							break;
-						case "dam":
-							jc.setDam(Double.parseDouble(content));
-							break;
-						case "moa":
-							jc.setMoa(Double.parseDouble(content));
-							break;
-						case "mfa":
-							jc.setMfa(Double.parseDouble(content));
-							break;
-						case "cam":
-							jc.setCam(Double.parseDouble(content));
-							break;
-						case "ic":
-							jc.setIc(Double.parseDouble(content));
-							break;
-						case "cbm":
-							jc.setCbm(Double.parseDouble(content));
-							break;
-						case "amc":
-							jc.setAmc(Double.parseDouble(content));
+							metricDomObj.setName(content);
 							break;
 						case "cc":
 							double cc = 0.0;
@@ -128,7 +74,7 @@ public class DOMParser {
 									cc += Double.parseDouble(ccScore);
 								}
 							}
-							jc.setCc(cc);
+							metricDomObj.setValueForMetric("cc", cc);
 							break;
 						case "path":
 							String type = cNode.getAttributes()
@@ -145,19 +91,19 @@ public class DOMParser {
 									.getTextContent().trim());
 							break;
 						default:
-							jc.setOther(content);
+							metricDomObj.setValueForMetric(cNode.getNodeName(), Double.parseDouble(content));
 							break;
 						}
 					}
 				}
-				this.jcList.add(jc);
+				this.domObjectList.add(metricDomObj);
 			}
 
 		}
 	}
 
-	public ArrayList<JavaClass> getJavaClassList() {
-		return this.jcList;
+	public ArrayList<MetricDOMObject> getJavaClassList() {
+		return this.domObjectList;
 	}
 
 	public ArrayList<DiffClass> getDiffClassList() {

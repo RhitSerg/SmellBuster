@@ -20,7 +20,7 @@ public class LineChart extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private ArrayList<JavaClass> classList;
+	private ArrayList<MetricDOMObject> classList;
 	String[] metrics = new String[] { "wmc", "noc", "cbo", "lcom", "ca", "ce",
 			"lcom3", "cam", "ic", "cbm", "amc" };
 	private final int CHART_WIDTH = 700;
@@ -34,7 +34,7 @@ public class LineChart extends JFrame {
 	 * 
 	 * @param title
 	 */
-	public LineChart(final String title, ArrayList<JavaClass> classList) {
+	public LineChart(final String title, ArrayList<MetricDOMObject> classList) {
 		super(title);
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.title = title;
@@ -50,7 +50,7 @@ public class LineChart extends JFrame {
 	 * @param sentimentMap
 	 * @return
 	 */
-	public JPanel getChartPanel(ArrayList<JavaClass> classList) {
+	public JPanel getChartPanel(ArrayList<MetricDOMObject> classList) {
 
 		JPanel charts = new JPanel();
 		charts.setLayout(new GridLayout(NUM_OF_ROWS, NUM_OF_COLS));
@@ -77,75 +77,11 @@ public class LineChart extends JFrame {
 		for (String metricName : this.metrics) {
 			int version = 1;
 			final XYSeries series = new XYSeries(metricName);
-			for (JavaClass jc : this.classList) {
-				switch (metricName) {
-				case "wmc":
-					if (jc == null)
-						series.add(version, -10.0);
-					else
-						series.add(version, jc.getWmc());
-					break;
-				case "noc":
-					if (jc == null)
-						series.add(version, -10.0);
-					else
-						series.add(version, jc.getNoc());
-					break;
-				case "cbo":
-					if (jc == null)
-						series.add(version, -10.0);
-					else
-						series.add(version, jc.getCbo());
-					break;
-				case "lcom":
-					if (jc == null)
-						series.add(version, -10.0);
-					else
-						series.add(version, jc.getLcom());
-					break;
-				case "ca":
-					if (jc == null)
-						series.add(version, -10.0);
-					else
-						series.add(version, jc.getCa());
-					break;
-				case "ce":
-					if (jc == null)
-						series.add(version, -10.0);
-					else
-						series.add(version, jc.getCe());
-					break;
-				case "lcom3":
-					if (jc == null)
-						series.add(version, -10.0);
-					else
-						series.add(version, jc.getLcom3());
-					break;
-				case "cam":
-					if (jc == null)
-						series.add(version, -10.0);
-					else
-						series.add(version, jc.getCam());
-					break;
-				case "ic":
-					if (jc == null)
-						series.add(version, -10.0);
-					else
-						series.add(version, jc.getIc());
-					break;
-				case "cbm":
-					if (jc == null)
-						series.add(version, -10.0);
-					else
-						series.add(version, jc.getCbm());
-					break;
-				case "amc":
-					if (jc == null)
-						series.add(version, -10.0);
-					else
-						series.add(version, jc.getAmc());
-					break;
-				}
+			for (MetricDOMObject metricDomObj : this.classList) {
+				if (metricDomObj == null)
+					series.add(version, -10.0);
+				else
+					series.add(version, metricDomObj.getValueForMetric(metricName));
 				version++;
 			}
 			dataset.addSeries(series);

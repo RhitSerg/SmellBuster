@@ -140,7 +140,7 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 							options[0]);
 					switch (selectedOption) {
 					case 1:
-						ArrayList<JavaClass> classList = ResultTableGUI.this.displayTableLogic
+						ArrayList<MetricDOMObject> classList = ResultTableGUI.this.displayTableLogic
 								.createClassListMap(className);
 						LineChart chart = new LineChart(className, classList);
 						chart.setSize(500, 500);
@@ -269,84 +269,84 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 	private String getMessageForWMC(String version, String className) {
 		return "<tr><td>Weighted Methods per Class (WMC)"
 				+ "</td><td>"
-				+ ResultTableGUI.this.displayTableLogic.getWMCValueFor(version,
+				+ ResultTableGUI.this.displayTableLogic.getMetricValueFor("wmc", version,
 						className) + "</td></tr>";
 	}
 
 	private String getMessageForNOC(String version, String className) {
 		return "<tr><td>Number of Children (NOC)"
 				+ "</td><td>"
-				+ ResultTableGUI.this.displayTableLogic.getNOCValueFor(version,
+				+ ResultTableGUI.this.displayTableLogic.getMetricValueFor("noc", version,
 						className) + "</td></tr>";
 	}
 
 	private String getMessageForCBO(String version, String className) {
 		return "<tr><td>Coupling Between Object Classes (CBO)"
 				+ "</td><td>"
-				+ ResultTableGUI.this.displayTableLogic.getCBOValueFor(version,
+				+ ResultTableGUI.this.displayTableLogic.getMetricValueFor("cbo", version,
 						className) + "</td></tr>";
 	}
 
 	private String getMessageForLCOM(String version, String className) {
 		return "<tr><td>Lack of Cohesion in Methods (LCOM)"
 				+ "</td><td>"
-				+ ResultTableGUI.this.displayTableLogic.getLCOMValueFor(
+				+ ResultTableGUI.this.displayTableLogic.getMetricValueFor("lcom", 
 						version, className) + "</td></tr>";
 	}
 
 	private String getMessageForCA(String version, String className) {
 		return "<tr><td>Afferent Coupling (Ca)"
 				+ "</td><td>"
-				+ ResultTableGUI.this.displayTableLogic.getCAValueFor(version,
+				+ ResultTableGUI.this.displayTableLogic.getMetricValueFor("ca", version,
 						className) + "</td></tr>";
 	}
 
 	private String getMessageForCE(String version, String className) {
 		return "<tr><td>Efferent Coupling (Ce)"
 				+ "</td><td>"
-				+ ResultTableGUI.this.displayTableLogic.getCEValueFor(version,
+				+ ResultTableGUI.this.displayTableLogic.getMetricValueFor("ce", version,
 						className) + "</td></tr>";
 	}
 
 	private String getMessageForLCOM3(String version, String className) {
 		return "<tr><td>Lack of Cohesion in Methods (LCOM3)"
 				+ "</td><td>"
-				+ ResultTableGUI.this.displayTableLogic.getLCOM3ValueFor(
+				+ ResultTableGUI.this.displayTableLogic.getMetricValueFor("lcom3", 
 						version, className) + "</td></tr>";
 	}
 
 	private String getMessageForCAM(String version, String className) {
 		return "<tr><td>Cohesion Among Methods of Class (CAM)"
 				+ "</td><td>"
-				+ ResultTableGUI.this.displayTableLogic.getCAMValueFor(version,
+				+ ResultTableGUI.this.displayTableLogic.getMetricValueFor("cam", version,
 						className) + "</td></tr>";
 	}
 
 	private String getMessageForIC(String version, String className) {
 		return "<tr><td>Inheritance Coupling (IC)"
 				+ "</td><td>"
-				+ ResultTableGUI.this.displayTableLogic.getICValueFor(version,
+				+ ResultTableGUI.this.displayTableLogic.getMetricValueFor("ic", version,
 						className) + "</td></tr>";
 	}
 
 	private String getMessageForCBM(String version, String className) {
 		return "<tr><td>Coupling Between Methods (CBM)"
 				+ "</td><td>"
-				+ ResultTableGUI.this.displayTableLogic.getCBMValueFor(version,
+				+ ResultTableGUI.this.displayTableLogic.getMetricValueFor("cbm", version,
 						className) + "</td></tr>";
 	}
 
 	private String getMessageForAMC(String version, String className) {
 		return "<tr><td>Average Method Complexity (AMC)"
 				+ "</td><td>"
-				+ ResultTableGUI.this.displayTableLogic.getAMCValueFor(version,
+				+ ResultTableGUI.this.displayTableLogic.getMetricValueFor("amc", version,
 						className) + "</td></tr>";
 	}
 
 	private String getMessageForCC(String version, String className) {
 		return "<tr><td>Cyclomatic Complexoty (CC)"
 				+ "</td><td>"
-				+ ResultTableGUI.this.displayTableLogic.getCCValueFor(version,
+				+ ResultTableGUI.this.displayTableLogic.getMetricValueFor("cc", version,
 						className) + "</td></tr>";
 	}
 
