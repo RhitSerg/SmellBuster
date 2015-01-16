@@ -22,7 +22,7 @@ public class ResultTableLogic {
 		parseMetrics();
 		this.metricLogic = new MetricLogic(this);
 	}
-	
+
 	public void parseMetrics() {
 		File[] files = new File("MetricAnalysis").listFiles();
 		MetricParserFactory parser = new MetricParserFactory();
@@ -70,8 +70,6 @@ public class ResultTableLogic {
 		return list;
 	}
 
-	
-
 	public String getMetricValueFor(String metric, String version,
 			String className) {
 		String value = "N/A";
@@ -105,18 +103,19 @@ public class ResultTableLogic {
 		}
 		return value;
 	}
-	
-	public String getAggregateMetricsOfMin(String className){
+
+	public String getAggregateMetricsOfMin(String className) {
 		return this.metricLogic.getAggregateMetricsOfMin(className);
 	}
-	
-	public String getAggregateMetricsOfMax(String className){
+
+	public String getAggregateMetricsOfMax(String className) {
 		return this.metricLogic.getAggregateMetricsOfMax(className);
 	}
 
 	public Color getColorForMetricScore(int index, String className,
-			String version){
-		return this.metricLogic.getColorForMetricScore(index, className, version);
+			String version) {
+		return this.metricLogic.getColorForMetricScore(index, className,
+				version);
 	}
 
 	public void setMaxAggregateValue(double value) {
@@ -126,8 +125,8 @@ public class ResultTableLogic {
 	public double getMaxAggregateValue() {
 		return this.metricLogic.getMaxAggregateValue();
 	}
-	
-	public Map<String, ArrayList<MetricDOMObject>> getMetricMap(){
+
+	public Map<String, ArrayList<MetricDOMObject>> getMetricMap() {
 		return this.metricMap;
 	}
 }

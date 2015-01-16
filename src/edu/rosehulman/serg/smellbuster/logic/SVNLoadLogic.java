@@ -13,22 +13,25 @@ import edu.rosehulman.serg.smellbuster.util.DiffClass;
 import edu.rosehulman.serg.smellbuster.versioncontrol.VersionControlParserFactory;
 
 public class SVNLoadLogic {
-	
+
 	private Map<Integer, String> versionMap;
 	private String svnURL;
 	private JProgressBar progressBar;
 	private Map<String, ArrayList<DiffClass>> diffMap;
 	private Map<String, ArrayList<String>> classMap;
-	
-	public SVNLoadLogic(Map<Integer, String> versionMap, String svnURL, JProgressBar progressBar){
+	private Map<String, ArrayList<String[]>> packageClassMap;
+
+	public SVNLoadLogic(Map<Integer, String> versionMap, String svnURL,
+			JProgressBar progressBar) {
 		this.versionMap = versionMap;
 		this.progressBar = progressBar;
 		this.svnURL = svnURL;
 		this.diffMap = new HashMap<>();
 		this.classMap = new HashMap<>();
+		this.packageClassMap = new HashMap<>();
 		this.loadData();
 	}
-	
+
 	public void parseVersionChanges() {
 
 		Iterator<Integer> itr = this.versionMap.keySet().iterator();
@@ -36,11 +39,11 @@ public class SVNLoadLogic {
 
 		int total = this.versionMap.keySet().size();
 		int current = 0;
-		
+
 		while (itr.hasNext()) {
 			int end = itr.next();
-			VersionControlParserFactory svnParser = new VersionControlParserFactory(this.svnURL,
-					(long) start, (long) end);
+			VersionControlParserFactory svnParser = new VersionControlParserFactory(
+					this.svnURL, (long) start, (long) end);
 			svnParser.loadVersionControlInfo();
 			ArrayList<DiffClass> dcList = svnParser.getDiffClassList();
 
@@ -48,20 +51,20 @@ public class SVNLoadLogic {
 
 			diffMap.put(version, dcList);
 			start = end;
-			
+
 			current++;
 			updateProgressBar(total, current);
 		}
 	}
 
 	private void updateProgressBar(int total, int current) {
-		int value = (int)(current * 100 / total);
+		int value = (int) (current * 100 / total);
 		progressBar.setStringPainted(true);
 		progressBar.setIndeterminate(false);
 		progressBar.setValue(value);
-		progressBar.setString(value+"%");
+		progressBar.setString(value + "%");
 	}
-	
+
 	public void loadData() {
 
 		this.parseVersionChanges();
@@ -97,39 +100,45 @@ public class SVNLoadLogic {
 
 	public void displayTable() {
 
-		int len = this.versionMap.keySet().size();
-		
-		ArrayList<String[]> values = getTableRowValues(len);
-		int size = getTableRowcount(values);
-		String[][] dataValues = getTableDataValues(len, values, size);
+		int colNum = this.versionMap.keySet().size();
 
-		ResultTableGUI resultsTable = new ResultTableGUI(dataValues, this.versionMap);
+		ArrayList<String[]> values = getTableRowValues(colNum);
+		this.groupRowsByPackageName(values);
+		int rowNum = getTableRowcount(values);
+		String[][] dataValues = getTableDataValues(colNum, rowNum);
+
+		ResultTableGUI resultsTable = new ResultTableGUI(dataValues,
+				this.versionMap);
 		resultsTable.setVisible(true);
 	}
 
-	private String[][] getTableDataValues(int len, ArrayList<String[]> values,
-			int size) {
-		String[][] dataValues = new String[size * 2][len];
+	private String[][] getTableDataValues(int colNum, int rowNum) {
+		String[][] dataValues = new String[rowNum][colNum];
 		for (String[] row : dataValues)
-		    Arrays.fill(row, "");
+			Arrays.fill(row, "");
+		Iterator<String> itr = this.packageClassMap.keySet().iterator();
 		int i = 0;
-		for (String[] value : values) {
-			if (didChange(value)) {
+		while (itr.hasNext()) {
+			String packageName = itr.next();
+			dataValues[i][0] = packageName;
+			i++;
+			for (String[] value : this.packageClassMap.get(packageName)) {
+
 				dataValues[i] = value;
 				i++;
-				dataValues[i] = new String[len];
-				i++;
 			}
+			i++;
 		}
 		return dataValues;
 	}
 
 	private int getTableRowcount(ArrayList<String[]> values) {
 		int size = 0;
-		for (String[] val : values) {
-			if (didChange(val)) {
-				size++;
-			}
+		for (String packageName : this.packageClassMap.keySet()) {
+			size++;
+			ArrayList<String[]> rows = this.packageClassMap.get(packageName);
+			size += rows.size();
+			size++;
 		}
 		return size;
 	}
@@ -144,8 +153,8 @@ public class SVNLoadLogic {
 			}
 
 			if (isValid) {
-				String[] taleRow = new String[len];
-				Arrays.fill(taleRow, "");
+				String[] tableRow = new String[len];
+				Arrays.fill(tableRow, "");
 				for (String version : classMap.get(name)) {
 					int j = 0;
 					itr = this.versionMap.keySet().iterator();
@@ -155,12 +164,54 @@ public class SVNLoadLogic {
 						}
 						j++;
 					}
-					taleRow[j] = name;
+					tableRow[j] = name;
 				}
-				values.add(taleRow);
+				if (didChange(tableRow))
+					values.add(tableRow);
 			}
 		}
 		return values;
+	}
+
+	private void groupRowsByPackageName(ArrayList<String[]> tableRows) {
+
+		for (String[] row : tableRows) {
+			String className = this.getClassNameFromRow(row);
+			DiffClass tempClass = this.getDiffClassFor(className);
+			String packageName = tempClass.getPackageName();
+			ArrayList<String[]> tempRows = new ArrayList<>();
+
+			if (this.packageClassMap.containsKey(packageName)) {
+				tempRows = this.packageClassMap.get(packageName);
+			}
+
+			tempRows.add(row);
+			this.packageClassMap.put(packageName, tempRows);
+		}
+
+	}
+
+	private DiffClass getDiffClassFor(String className) {
+
+		for (String version : this.diffMap.keySet()) {
+			ArrayList<DiffClass> diffClassList = this.diffMap.get(version);
+			for (DiffClass diffClass : diffClassList) {
+				if (className.toLowerCase().equals(
+						diffClass.getName().toLowerCase()))
+					return diffClass;
+			}
+
+		}
+		return null;
+	}
+
+	private String getClassNameFromRow(String[] row) {
+		for (String className : row) {
+			if (className.length() > 0) {
+				return className;
+			}
+		}
+		return "";
 	}
 
 }

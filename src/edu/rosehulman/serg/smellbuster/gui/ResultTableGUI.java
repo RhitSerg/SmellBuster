@@ -52,16 +52,18 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 	private JMenuItem settingsMenuItem;
 	private JMenuItem quitMenuItem;
 	private MetricGUI metricGUI;
+	private ArrayList<Integer> packageHeaders;
 
 	// Constructor of main frame
 	public ResultTableGUI(String[][] dataValues, Map<Integer, String> versionMap) {
 
 		this.versionMap = versionMap;
+		this.packageHeaders = new ArrayList<>();
 		this.displayTableLogic = new ResultTableLogic(this.versionMap);
 		this.selectedMetric = 0;
 		this.metricGUI = new MetricGUI(this.displayTableLogic);
 		this.metrics = this.metricGUI.getMetricDisplayList();
-		
+
 		this.columnNames = getColumnNames();
 		this.dataValues = dataValues;
 		this.tableModel = new MyTableModel(dataValues, columnNames);
@@ -73,8 +75,8 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 		initFrame();
 
 	}
-	
-	private void initMenu(){
+
+	private void initMenu() {
 		this.menuBar = new JMenuBar();
 		this.fileMenu = new JMenu("File");
 		if (OSDetector.isWindows()) {
@@ -122,7 +124,8 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 				final String version = columnNames[column];
 				final String className = ResultTableGUI.this.dataValues[row][column];
 				if (className != null && className.length() > 0) {
-					final String message = ResultTableGUI.this.metricGUI.getDisplayMessage(version, className);
+					final String message = ResultTableGUI.this.metricGUI
+							.getDisplayMessage(version, className);
 					final String[] options = new String[] { "Ok",
 							"Display Graph" };
 					int selectedOption = JOptionPane.showOptionDialog(null,
@@ -168,8 +171,6 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	}
 
-	
-
 	private class MyTableCellRenderer extends DefaultTableCellRenderer
 			implements TableCellRenderer {
 
@@ -181,21 +182,44 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 				int column) {
 			Component c = (Component) super.getTableCellRendererComponent(
 					table, value, isSelected, hasFocus, row, column);
-				if (value != null && value.toString().length() > 0) { 
-					Color color = ResultTableGUI.this.displayTableLogic
-							.getColorForMetricScore(selectedMetric, value.toString(), ResultTableGUI.this.columnNames[column]);
-					if (color == null){
-						c.setBackground(row % 2 == 0 ? Color.DARK_GRAY
-								: Color.WHITE);
-					}
-					else{
-						c.setBackground(color);
-					}
+			c.setForeground(Color.WHITE);
+			if (value != null && value.toString().length() > 0
+					&& !value.toString().contains("Package: ")) {
+				Color color = ResultTableGUI.this.displayTableLogic
+						.getColorForMetricScore(selectedMetric,
+								value.toString(),
+								ResultTableGUI.this.columnNames[column]);
+				if (color == null) {
+					c.setBackground(Color.LIGHT_GRAY);
+					c.setForeground(Color.BLACK);
 				} else {
-					c.setBackground(row % 2 == 0 ? Color.DARK_GRAY
-							: Color.WHITE);
+					c.setBackground(color);
+					int r = color.getRed();
+					int g = color.getGreen();
+					int b = color.getBlue();
+					int d = 0;
+					double a = 1 - (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+					if (a < 0.5)
+						d = 0;
+					else
+						d = 255;
+					Color newColor = new Color(d, d, d);
+					c.setForeground(newColor);
 				}
+			} else if (value != null && value.toString().length() > 0
+					&& value.toString().contains("Package: ")) {
+				ResultTableGUI.this.packageHeaders.add(row);
+				c.setBackground(Color.BLACK);
 				c.setForeground(Color.WHITE);
+			} else {
+				if (ResultTableGUI.this.packageHeaders.contains(row)) {
+					c.setBackground(Color.BLACK);
+					c.setForeground(Color.WHITE);
+				} else {
+					c.setBackground(Color.LIGHT_GRAY);
+					c.setForeground(Color.BLACK);
+				}
+			}
 			return c;
 		}
 	}
@@ -227,8 +251,8 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 
 		return colNames;
 	}
-	
-	public ResultTableLogic getResultTableLogic(){
+
+	public ResultTableLogic getResultTableLogic() {
 		return this.displayTableLogic;
 	}
 
@@ -236,9 +260,9 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(this.metricComboBox)) {
 			updateTable();
-		} else if (e.getSource().equals(this.quitMenuItem)){
+		} else if (e.getSource().equals(this.quitMenuItem)) {
 			System.exit(0);
-		} else if (e.getSource().equals(this.settingsMenuItem)){
+		} else if (e.getSource().equals(this.settingsMenuItem)) {
 			SettingsGUI settingsGUI = new SettingsGUI(this);
 			settingsGUI.setVisible(true);
 		}

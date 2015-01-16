@@ -36,13 +36,13 @@ public class SVNParser implements IVersionControlParser {
 					.parseURIEncoded(this.svnURL));
 			SVNDirEntry entry = this.repository.info(".", -1);
 			this.setLatestRevision(entry.getRevision());
-		} catch (Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	public void loadVersionControlInfo() {
-		try {			
+		try {
 			Collection<?> logEntries = null;
 
 			logEntries = repository.log(new String[] { "" }, null,
@@ -64,18 +64,23 @@ public class SVNParser implements IVersionControlParser {
 								&& entryPath.getType() != 'D'
 								&& !(entryPath.getPath().contains("Test") || entryPath
 										.getPath().contains("Tests"))) {
-							
+
 							DiffClass dc = new DiffClass();
-							
-							String className = entryPath.getPath().replace("/", "\\");
+
+							String className = entryPath.getPath().replace("/",
+									"\\");
 							String[] nameSplit = className.split("\\\\");
-							String packageName = "";
-							for(int i=0; i<nameSplit.length-1;i++){
-								packageName += nameSplit[i];
+							String packageName = "Package: ";
+							for (int i = 0; i < nameSplit.length - 1; i++) {
+								if (nameSplit[i].length() > 0) {
+									packageName += nameSplit[i];
+									if (i < nameSplit.length - 2)
+										packageName += ".";
+								}
 							}
-							
+
 							className = nameSplit[nameSplit.length - 1];
-							
+
 							dc.setName(className);
 							dc.setType(entryPath.getType());
 							dc.setPackageName(packageName);
