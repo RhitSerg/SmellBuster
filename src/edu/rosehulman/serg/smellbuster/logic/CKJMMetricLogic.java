@@ -135,65 +135,54 @@ public class CKJMMetricLogic implements IMetricLogic {
 						result = this.resultLogic.getAggregateValueFor(version, className);
 						double value = ((10 - noc) - wmc - cbo - lcom3
 								+ (2 * cam) - ic - cbm - (0.5 * amc) - cc);
-						// maxAggregateValue = Math.max(maxAggregateValue,
-						// value);
 						minAggregateValue = Math.min(minAggregateValue, value);
 						break;
 					case 1:
 						// WMC
 						result = this.resultLogic.getMetricValueFor("wmc", version,
 								className);
-						// maxAggregateValue = Math.max(maxAggregateValue, wmc);
 						minAggregateValue = Math.min(minAggregateValue, wmc);
 						break;
 					case 2:
 						// NOC
 						result = this.resultLogic.getMetricValueFor("noc", version,
 								className);
-						// maxAggregateValue = Math.max(maxAggregateValue, noc);
 						minAggregateValue = Math.min(minAggregateValue, noc);
 						break;
 					case 3:
 						// CBO
 						result = this.resultLogic.getMetricValueFor("cbo", version,
 								className);
-						// maxAggregateValue = Math.max(maxAggregateValue, cbo);
 						minAggregateValue = Math.min(minAggregateValue, cbo);
 						break;
 					case 4:
 						// LCOM3
 						result = this.resultLogic.getMetricValueFor("lcom3", version,
 								className);
-						// maxAggregateValue = Math.max(maxAggregateValue,
-						// lcom3);
 						minAggregateValue = Math.min(minAggregateValue, lcom3);
 						break;
 					case 5:
 						// CAM
 						result = this.resultLogic.getMetricValueFor("cam", version,
 								className);
-						// maxAggregateValue = Math.max(maxAggregateValue, cam);
 						minAggregateValue = Math.min(minAggregateValue, cam);
 						break;
 					case 6:
 						// CBM
 						result = this.resultLogic.getMetricValueFor("cbm", version,
 								className);
-						// maxAggregateValue = Math.max(maxAggregateValue, cbm);
 						minAggregateValue = Math.min(minAggregateValue, cbm);
 						break;
 					case 7:
 						// AMC
 						result = this.resultLogic.getMetricValueFor("amc", version,
 								className);
-						// maxAggregateValue = Math.max(maxAggregateValue, amc);
 						minAggregateValue = Math.min(minAggregateValue, amc);
 						break;
 					case 8:
 						// CC
 						result = this.resultLogic.getMetricValueFor("cc", version,
 								className);
-						// maxAggregateValue = Math.max(maxAggregateValue, cc);
 						minAggregateValue = Math.min(minAggregateValue, cc);
 						break;
 					default:
@@ -202,30 +191,43 @@ public class CKJMMetricLogic implements IMetricLogic {
 				}
 			}
 		}
-		try {
-			double score = Double.parseDouble(result);
+		
+		return getColorForMetric(result, minAggregateValue);
+	}
+	
+	private Color getColorForMetric(String result, double minAggregateValue){
+		double score = Double.parseDouble(result);
 
-			double ratio = 0;
+		double ratio = 0;
+		
+		double spread = this.maxAggregateValue - minAggregateValue;
 
-			if (this.maxAggregateValue > minAggregateValue)
-				ratio = 2 * (score - minAggregateValue)
-						/ (this.maxAggregateValue - minAggregateValue);
-
-			double redValue = 255 * (1 - ratio);
-			double greenValue = 255 * (ratio - 1);
-
-			int r = (int) Math.max(25, redValue > 255 ? 255 : redValue);// >
-																		// 255?
-																		// 25:redValue);
-			int g = (int) Math.max(25, greenValue > 255 ? 255 : greenValue);// >
-																			// 255?
-																			// 25:
-																			// greenValue);
-			int b = 0;
-			return new Color(r, g, b);
-		} catch (Exception e) {
-			return null;
+		if (this.maxAggregateValue > minAggregateValue) {
+			ratio = 2 * (score - minAggregateValue) / spread;
 		}
+		
+		double r = 0;
+		double g = 0;
+		
+		if (ratio < 0.25){
+			r = 0.50;
+			g = 6 * ratio;
+		} else if (ratio < 0.5) {
+			g = 0.55;
+			r = 1 + 6 * (minAggregateValue - score + 0.25 * spread) / spread;
+		} else if (ratio < 0.75) {
+			g = 1;
+			r = 4 * (score - minAggregateValue - 0.5 * spread) / spread ;
+		} else {
+			r = 1;
+			g = 1 + 4 * (minAggregateValue - score + 0.75 * spread) / spread;
+		}
+
+		int red = (int) Math.max(25, (r * 255) > 255 ? 255 : (r * 255));
+		
+		int green = (int) Math.max(25, (g * 255) > 255 ? 255 : (g * 255));
+		
+		return new Color(red, green, 0);
 	}
 	
 	@Override
