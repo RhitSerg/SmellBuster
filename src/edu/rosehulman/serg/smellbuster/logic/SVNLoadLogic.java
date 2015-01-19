@@ -2,6 +2,8 @@ package edu.rosehulman.serg.smellbuster.logic;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -117,11 +119,26 @@ public class SVNLoadLogic {
 		for (String[] row : dataValues)
 			Arrays.fill(row, "");
 		Iterator<String> itr = this.packageClassMap.keySet().iterator();
+		
+		ArrayList<String> tempList = new ArrayList<>();
+		while (itr.hasNext()){
+			tempList.add(itr.next());
+		}
+		
+		Comparator<String> comp = getPackageSortComparator();
+		Collections.sort(tempList, comp);
+		itr = tempList.iterator();
+		
 		int i = 0;
 		while (itr.hasNext()) {
 			String packageName = itr.next();
 			dataValues[i][0] = packageName;
 			i++;
+			ArrayList<String[]> classList = this.packageClassMap.get(packageName);
+			
+			Comparator<String[]> comparator = getClassSortComparator();
+			
+			Collections.sort(classList, comparator);
 			for (String[] value : this.packageClassMap.get(packageName)) {
 
 				dataValues[i] = value;
@@ -130,6 +147,46 @@ public class SVNLoadLogic {
 			i++;
 		}
 		return dataValues;
+	}
+
+	private Comparator<String[]> getClassSortComparator() {
+		Comparator<String[]> comparator = new Comparator<String[]>() {
+
+		    @Override
+		    public int compare(String[] o1, String[] o2) {
+		    	String s1 = "";
+		    	String s2 = "";
+		    	for (String t1: o1){
+		    		if(t1.length() > 0){
+		    			s1 = t1;
+		    			break;
+		    		}
+		    	}
+		    	for (String t2: o2){
+		    		if(t2.length() > 0){
+		    			s2 = t2;
+		    			break;
+		    		}
+		    	}
+		    	return s1.compareTo(s2);
+		    }
+		};
+		return comparator;
+	}
+	
+	private Comparator<String> getPackageSortComparator() {
+		Comparator<String> comparator = new Comparator<String>() {
+
+		    @Override
+		    public int compare(String o1, String o2) {
+		    	o1 = o1.substring(9);
+		    	o2 = o2.substring(9);
+		    	o1 = o1.replace(".", "");
+		    	o2 = o2.replace(".", "");
+		    	return o1.compareTo(o2);
+		    }
+		};
+		return comparator;
 	}
 
 	private int getTableRowcount(ArrayList<String[]> values) {
