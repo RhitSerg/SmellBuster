@@ -72,6 +72,32 @@
 			<artifactId>svnkit</artifactId>
 			<version>1.8.5</version>
 		</dependency>
+		<dependency>
+			<groupId>org.eclipse.mylyn.github</groupId>
+			<artifactId>org.eclipse.egit.github.core</artifactId>
+			<version>2.1.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.kohsuke</groupId>
+			<artifactId>github-api</artifactId>
+			<version>1.59</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jcabi</groupId>
+			<artifactId>jcabi-github</artifactId>
+			<version>0.18.7</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.bit-man</groupId>
+			<artifactId>javagit</artifactId>
+			<version>0.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jgit</groupId>
+			<artifactId>org.eclipse.jgit</artifactId>
+			<version>3.6.1.201501031845-r</version>
+		</dependency>
+
 	</dependencies>
 
 </project>

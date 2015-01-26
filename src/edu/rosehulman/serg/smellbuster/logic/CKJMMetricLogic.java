@@ -11,13 +11,13 @@ public class CKJMMetricLogic implements IMetricLogic {
 	private double maxAggregateValue;
 	private Map<String, ArrayList<MetricDOMObject>> metricMap;
 	private ResultTableLogic resultLogic;
-	
-	public CKJMMetricLogic(ResultTableLogic resultLogic){
+
+	public CKJMMetricLogic(ResultTableLogic resultLogic) {
 		this.resultLogic = resultLogic;
 		this.metricMap = resultLogic.getMetricMap();
 		this.initMaxMetricValue();
 	}
-	
+
 	private void initMaxMetricValue() {
 		this.maxAggregateValue = Integer.MIN_VALUE;
 		for (String ver : metricMap.keySet()) {
@@ -33,12 +33,13 @@ public class CKJMMetricLogic implements IMetricLogic {
 			}
 		}
 	}
-	
+
 	@Override
 	public String getAggregateMetrics(String className) {
 		String value = "N/A";
 		double score = 0.0;
-		ArrayList<MetricDOMObject> classList = this.resultLogic.createClassListMap(className);
+		ArrayList<MetricDOMObject> classList = this.resultLogic
+				.createClassListMap(className);
 		for (MetricDOMObject metricDomObj : classList) {
 			if (metricDomObj != null) {
 				double wmc = metricDomObj.getValueForMetric("wmc");
@@ -61,7 +62,8 @@ public class CKJMMetricLogic implements IMetricLogic {
 	@Override
 	public String getAggregateMetricsOfMax(String className) {
 		String value = "N/A";
-		ArrayList<MetricDOMObject> classList = this.resultLogic.createClassListMap(className);
+		ArrayList<MetricDOMObject> classList = this.resultLogic
+				.createClassListMap(className);
 		double score = Integer.MIN_VALUE;
 		for (MetricDOMObject metricDomObj : classList) {
 			if (metricDomObj != null) {
@@ -86,7 +88,8 @@ public class CKJMMetricLogic implements IMetricLogic {
 	@Override
 	public String getAggregateMetricsOfMin(String className) {
 		String value = "N/A";
-		ArrayList<MetricDOMObject> classList = this.resultLogic.createClassListMap(className);
+		ArrayList<MetricDOMObject> classList = this.resultLogic
+				.createClassListMap(className);
 		double score = Integer.MAX_VALUE;
 		for (MetricDOMObject metricDomObj : classList) {
 			if (metricDomObj != null) {
@@ -132,57 +135,58 @@ public class CKJMMetricLogic implements IMetricLogic {
 					switch (index) {
 					case 0:
 						// All
-						result = this.resultLogic.getAggregateValueFor(version, className);
+						result = this.resultLogic.getAggregateValueFor(version,
+								className);
 						double value = ((10 - noc) - wmc - cbo - lcom3
 								+ (2 * cam) - ic - cbm - (0.5 * amc) - cc);
 						minAggregateValue = Math.min(minAggregateValue, value);
 						break;
 					case 1:
 						// WMC
-						result = this.resultLogic.getMetricValueFor("wmc", version,
-								className);
+						result = this.resultLogic.getMetricValueFor("wmc",
+								version, className);
 						minAggregateValue = Math.min(minAggregateValue, wmc);
 						break;
 					case 2:
 						// NOC
-						result = this.resultLogic.getMetricValueFor("noc", version,
-								className);
+						result = this.resultLogic.getMetricValueFor("noc",
+								version, className);
 						minAggregateValue = Math.min(minAggregateValue, noc);
 						break;
 					case 3:
 						// CBO
-						result = this.resultLogic.getMetricValueFor("cbo", version,
-								className);
+						result = this.resultLogic.getMetricValueFor("cbo",
+								version, className);
 						minAggregateValue = Math.min(minAggregateValue, cbo);
 						break;
 					case 4:
 						// LCOM3
-						result = this.resultLogic.getMetricValueFor("lcom3", version,
-								className);
+						result = this.resultLogic.getMetricValueFor("lcom3",
+								version, className);
 						minAggregateValue = Math.min(minAggregateValue, lcom3);
 						break;
 					case 5:
 						// CAM
-						result = this.resultLogic.getMetricValueFor("cam", version,
-								className);
+						result = this.resultLogic.getMetricValueFor("cam",
+								version, className);
 						minAggregateValue = Math.min(minAggregateValue, cam);
 						break;
 					case 6:
 						// CBM
-						result = this.resultLogic.getMetricValueFor("cbm", version,
-								className);
+						result = this.resultLogic.getMetricValueFor("cbm",
+								version, className);
 						minAggregateValue = Math.min(minAggregateValue, cbm);
 						break;
 					case 7:
 						// AMC
-						result = this.resultLogic.getMetricValueFor("amc", version,
-								className);
+						result = this.resultLogic.getMetricValueFor("amc",
+								version, className);
 						minAggregateValue = Math.min(minAggregateValue, amc);
 						break;
 					case 8:
 						// CC
-						result = this.resultLogic.getMetricValueFor("cc", version,
-								className);
+						result = this.resultLogic.getMetricValueFor("cc",
+								version, className);
 						minAggregateValue = Math.min(minAggregateValue, cc);
 						break;
 					default:
@@ -191,25 +195,30 @@ public class CKJMMetricLogic implements IMetricLogic {
 				}
 			}
 		}
-		
+
 		return getColorForMetric(result, minAggregateValue);
 	}
-	
-	private Color getColorForMetric(String result, double minAggregateValue){
-		double score = Double.parseDouble(result);
+
+	private Color getColorForMetric(String result, double minAggregateValue) {
+		double score = 0;
+		try {
+			score = Double.parseDouble(result);
+		} catch (Exception e) {
+			return Color.LIGHT_GRAY;
+		}
 
 		double ratio = 0;
-		
+
 		double spread = this.maxAggregateValue - minAggregateValue;
 
 		if (this.maxAggregateValue > minAggregateValue) {
 			ratio = 2 * (score - minAggregateValue) / spread;
 		}
-		
+
 		double r = 0;
 		double g = 0;
-		
-		if (ratio < 0.25){
+
+		if (ratio < 0.25 && ratio != 0) {
 			r = 0.50;
 			g = 6 * ratio;
 		} else if (ratio < 0.5) {
@@ -217,19 +226,19 @@ public class CKJMMetricLogic implements IMetricLogic {
 			r = 1 + 6 * (minAggregateValue - score + 0.25 * spread) / spread;
 		} else if (ratio < 0.75) {
 			g = 1;
-			r = 4 * (score - minAggregateValue - 0.5 * spread) / spread ;
+			r = 4 * (score - minAggregateValue - 0.5 * spread) / spread;
 		} else {
 			r = 1;
 			g = 1 + 4 * (minAggregateValue - score + 0.75 * spread) / spread;
 		}
 
-		int red = (int) Math.max(25, (r * 255) > 255 ? 255 : (r * 255));
-		
-		int green = (int) Math.max(25, (g * 255) > 255 ? 255 : (g * 255));
-		
+		int red = (int) Math.max(0, (r * 255) > 255 ? 255 : (r * 255));
+
+		int green = (int) Math.max(0, (g * 255) > 255 ? 255 : (g * 255));
+
 		return new Color(red, green, 0);
 	}
-	
+
 	@Override
 	public void setMaxAggregateValue(double value) {
 		this.maxAggregateValue = value;
