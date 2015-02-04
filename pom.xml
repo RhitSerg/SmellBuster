@@ -97,6 +97,18 @@
 			<artifactId>org.eclipse.jgit</artifactId>
 			<version>3.6.1.201501031845-r</version>
 		</dependency>
+		<dependency>
+			<groupId>com.jtattoo</groupId>
+			<artifactId>JTattoo</artifactId>
+			<version>1.6.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.ant</groupId>
+			<artifactId>ant</artifactId>
+			<version>1.9.4</version>
+		</dependency>
+
+
 
 	</dependencies>
 

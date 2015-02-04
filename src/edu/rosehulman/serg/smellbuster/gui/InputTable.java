@@ -33,6 +33,7 @@ public class InputTable extends JPanel {
 		table.setRowSelectionAllowed(false);
 		table.setCellSelectionEnabled(true);
 		table.setBackground(Color.LIGHT_GRAY);
+		table.setForeground(Color.BLACK);
 
 		TableCellListener tcl = new TableCellListener();
 		this.table.addPropertyChangeListener(tcl);

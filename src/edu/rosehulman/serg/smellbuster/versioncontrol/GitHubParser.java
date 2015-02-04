@@ -179,4 +179,10 @@ public class GitHubParser implements IVersionControlParser {
 		GitHubParser parser = new GitHubParser();
 	}
 
+	@Override
+	public void checkoutRepo(long revision, File workingDir) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

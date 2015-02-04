@@ -1,5 +1,6 @@
 package edu.rosehulman.serg.smellbuster.versioncontrol;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -12,6 +13,10 @@ import org.tmatesoft.svn.core.SVNURL;
 import org.tmatesoft.svn.core.internal.io.dav.DAVRepositoryFactory;
 import org.tmatesoft.svn.core.io.SVNRepository;
 import org.tmatesoft.svn.core.io.SVNRepositoryFactory;
+import org.tmatesoft.svn.core.wc.SVNRevision;
+import org.tmatesoft.svn.core.wc2.SvnCheckout;
+import org.tmatesoft.svn.core.wc2.SvnOperationFactory;
+import org.tmatesoft.svn.core.wc2.SvnTarget;
 
 import edu.rosehulman.serg.smellbuster.util.DiffClass;
 
@@ -39,6 +44,28 @@ public class SVNParser implements IVersionControlParser {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public SVNParser(String url) {
+		this.svnURL = url;	
+	}
+	
+	public void checkoutRepo(long revision, File workingDir){
+		final SvnOperationFactory svnOperationFactory = new SvnOperationFactory();
+		try {
+			final SvnCheckout checkout = svnOperationFactory.createCheckout();
+			checkout.setSingleTarget(SvnTarget.fromFile(workingDir));
+			checkout.setSource(SvnTarget.fromURL(SVNURL
+					.parseURIEncoded(this.svnURL)));
+			checkout.setRevision(SVNRevision.create(revision));
+			checkout.run();
+			svnOperationFactory.dispose();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			svnOperationFactory.dispose();
+		}
+
 	}
 
 	public void loadVersionControlInfo() {

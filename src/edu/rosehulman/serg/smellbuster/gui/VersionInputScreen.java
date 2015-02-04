@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextField;
@@ -33,8 +34,18 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 	private JMenuItem quitMenuItem;
 	private JPanel bottomPanel;
 	private JPanel svnFieldPanel;
+	private JPanel svnDirPanel;
+	private JPanel buildFilePanel;
+	private JPanel projectNamePanel;
+	private JPanel topPanel;
 	private JLabel svnLabel;
+	private JLabel svnDirLabel;
+	private JLabel buildFileLabel;
+	private JLabel projectNameLabel;
 	private JTextField svnField;
+	private JTextField svnDirField;
+	private JTextField buildFileField;
+	private JTextField projectNameField;
 	private JButton addButton;
 	private InputTable inputTable;
 	private Map<Integer, String> versionMap;
@@ -51,11 +62,15 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 		initProgressBar();
 		initializeMenu();
 		initializeBottomPanel();
+		initializeProjectNamePanel();
 		initializeSVNPanel();
+		initializeSVNDirPanel();
+		initializeBuildFilePanel();
+		initializeTopPanel();
 
 		setLayout(new BorderLayout());
 		setJMenuBar(this.menuBar);
-		add(this.svnFieldPanel, BorderLayout.NORTH);
+		add(this.topPanel, BorderLayout.NORTH);
 		add(this.inputTable, BorderLayout.CENTER);
 		add(this.bottomPanel, BorderLayout.SOUTH);
 		setSize(700, 450);
@@ -66,12 +81,32 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 		this.addButton = new JButton("Display Table");
 		this.addButton.addActionListener(this);
 
-		this.svnLabel = new JLabel("SVN Repo URL:");
+		this.svnLabel = new JLabel("SVN Repository Url:");
 		this.svnLabel.setSize(250, 50);
+
+		this.svnDirLabel = new JLabel("SVN Repository Dir:");
+		this.svnDirLabel.setSize(250, 50);
+
+		this.buildFileLabel = new JLabel("Build File Location: ");
+		this.buildFileLabel.setSize(250, 50);
+
+		this.projectNameLabel = new JLabel("Project Name:          ");
+		this.projectNameLabel.setSize(250, 50);
 
 		this.svnField = new JTextField(
 				"http://svn.code.sf.net/p/jfreechart/code/branches/");
 		this.svnField.setSize(450, 50);
+
+		this.svnDirField = new JTextField(System.getProperty("user.dir")
+				+ "\\repo");
+		this.svnDirField.setSize(450, 50);
+
+		this.buildFileField = new JTextField(
+				"jfreechart-1.0.x-branch\\ant\\build.xml");
+		this.buildFileField.setSize(450, 50);
+
+		this.projectNameField = new JTextField("JFreeChart");
+		this.projectNameField.setSize(450, 50);
 	}
 
 	private void initProgressBar() {
@@ -125,18 +160,62 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 		this.svnFieldPanel.add(this.svnField, BorderLayout.CENTER);
 	}
 
+	private void initializeSVNDirPanel() {
+		this.svnDirPanel = new JPanel();
+		this.svnDirPanel.setLayout(new BorderLayout());
+
+		this.svnDirPanel.add(this.svnDirLabel, BorderLayout.WEST);
+		this.svnDirPanel.add(this.svnDirField, BorderLayout.CENTER);
+	}
+
+	private void initializeBuildFilePanel() {
+		this.buildFilePanel = new JPanel();
+		this.buildFilePanel.setLayout(new BorderLayout());
+
+		this.buildFilePanel.add(this.buildFileLabel, BorderLayout.WEST);
+		this.buildFilePanel.add(this.buildFileField, BorderLayout.CENTER);
+	}
+
+	private void initializeProjectNamePanel() {
+		this.projectNamePanel = new JPanel();
+		this.projectNamePanel.setLayout(new BorderLayout());
+
+		this.projectNamePanel.add(this.projectNameLabel, BorderLayout.WEST);
+		this.projectNamePanel.add(this.projectNameField, BorderLayout.CENTER);
+	}
+
+	private void initializeTopPanel() {
+		this.topPanel = new JPanel();
+		this.topPanel.setLayout(new GridLayout(4, 1));
+
+		this.topPanel.add(this.projectNamePanel);
+		this.topPanel.add(this.svnFieldPanel);
+		this.topPanel.add(this.svnDirPanel);
+		this.topPanel.add(this.buildFilePanel);
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
 		loadVersionMap();
 
 		if (e.getSource().equals(this.addButton)) {
+
+			if (this.versionMap.keySet().size() <= 1) {
+				JOptionPane
+						.showMessageDialog(this,
+								"Please enter at least 2 product version and svn revision numbers");
+				return;
+			}
+
 			this.progressBar.setIndeterminate(true);
 
 			Thread t = new Thread() {
 				public void run() {
-					SVNLoadLogic svnLoadLogic = new SVNLoadLogic(versionMap,
-							svnField.getText(), progressBar);
+					SVNLoadLogic svnLoadLogic = new SVNLoadLogic(
+							projectNameField.getText(), versionMap,
+							svnField.getText(), svnDirField.getText(),
+							buildFileField.getText(), progressBar);
 					dispose();
 					svnLoadLogic.displayTable();
 				}

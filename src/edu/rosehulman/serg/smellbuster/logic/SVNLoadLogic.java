@@ -1,5 +1,6 @@
 package edu.rosehulman.serg.smellbuster.logic;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -7,7 +8,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import javax.swing.JProgressBar;
 
 import edu.rosehulman.serg.smellbuster.gui.ResultTableGUI;
@@ -18,29 +20,91 @@ public class SVNLoadLogic {
 
 	private Map<Integer, String> versionMap;
 	private String svnURL;
-	private JProgressBar progressBar;
+	private String svnDir;
+	private String buildFileLoc;
+	private static JProgressBar progressBar;
+	public static int totalProgress;
+	public static int currentProgress;
+	private String projectName;
 	private Map<String, ArrayList<DiffClass>> diffMap;
 	private Map<String, ArrayList<String>> classMap;
 	private Map<String, ArrayList<String[]>> packageClassMap;
 
-	public SVNLoadLogic(Map<Integer, String> versionMap, String svnURL,
-			JProgressBar progressBar) {
+	public SVNLoadLogic(String projectName, Map<Integer, String> versionMap, String svnURL,
+			String svnDir, String buildFileLoc, JProgressBar progressBar) {
+		this.projectName = projectName;
 		this.versionMap = versionMap;
-		this.progressBar = progressBar;
+		SVNLoadLogic.progressBar = progressBar;
 		this.svnURL = svnURL;
+		this.svnDir = svnDir;
+		this.buildFileLoc = buildFileLoc;
 		this.diffMap = new HashMap<>();
 		this.classMap = new HashMap<>();
 		this.packageClassMap = new HashMap<>();
+		totalProgress = this.versionMap.keySet().size()*3;
+		currentProgress = 0;
+		this.checkoutRepo();
+		this.buildProject();
 		this.loadData();
+	}
+
+	private void checkoutRepo() {
+
+		this.createSvnDirIfNotExist();
+
+		VersionControlParserFactory vcParser = new VersionControlParserFactory(
+				this.svnURL);
+		
+		ExecutorService executor = Executors.newFixedThreadPool(this.versionMap.keySet().size());
+		
+		for (int revision : this.versionMap.keySet()) {
+			String svnDirLocation = this.svnDir + "\\" + revision;
+
+			Runnable worker = new RepoCheckoutRunnable(svnDirLocation, (long) revision, vcParser);
+
+			executor.execute(worker);
+			
+		}
+		
+		executor.shutdown();
+		while (!executor.isTerminated()) {
+			// Wait until all threads are finish			
+		}
+	}
+
+	private void createSvnDirIfNotExist() {
+		File svnRepoDir = new File(this.svnDir);
+
+		if (!svnRepoDir.exists()) {
+			try {
+				svnRepoDir.mkdir();
+			} catch (SecurityException se) {
+				se.printStackTrace();
+			}
+		}
+	}
+	
+	private void buildProject(){
+		ExecutorService executor = Executors.newFixedThreadPool(this.versionMap.keySet().size());
+		
+		for (int revision : this.versionMap.keySet()) {
+			String svnBuildDirLocation = this.svnDir + "\\" + revision + "\\" + this.buildFileLoc;
+			
+			Runnable worker = new ProjectBuildRunnable(svnBuildDirLocation, "all");
+			executor.execute(worker);
+			
+		}
+		
+		executor.shutdown();
+		while (!executor.isTerminated()) {
+			// Wait until all threads are finish			
+		}
 	}
 
 	public void parseVersionChanges() {
 
 		Iterator<Integer> itr = this.versionMap.keySet().iterator();
 		int start = 0;
-
-		int total = this.versionMap.keySet().size();
-		int current = 0;
 
 		while (itr.hasNext()) {
 			int end = itr.next();
@@ -54,13 +118,13 @@ public class SVNLoadLogic {
 			diffMap.put(version, dcList);
 			start = end;
 
-			current++;
-			updateProgressBar(total, current);
+			updateProgressBar();
 		}
 	}
 
-	private void updateProgressBar(int total, int current) {
-		int value = (int) (current * 100 / total);
+	public static void updateProgressBar() {
+		currentProgress++;
+		int value = (int) (currentProgress * 100 / totalProgress);
 		progressBar.setStringPainted(true);
 		progressBar.setIndeterminate(false);
 		progressBar.setValue(value);
@@ -119,25 +183,26 @@ public class SVNLoadLogic {
 		for (String[] row : dataValues)
 			Arrays.fill(row, "");
 		Iterator<String> itr = this.packageClassMap.keySet().iterator();
-		
+
 		ArrayList<String> tempList = new ArrayList<>();
-		while (itr.hasNext()){
+		while (itr.hasNext()) {
 			tempList.add(itr.next());
 		}
-		
+
 		Comparator<String> comp = getPackageSortComparator();
 		Collections.sort(tempList, comp);
 		itr = tempList.iterator();
-		
+
 		int i = 0;
 		while (itr.hasNext()) {
 			String packageName = itr.next();
 			dataValues[i][0] = packageName;
 			i++;
-			ArrayList<String[]> classList = this.packageClassMap.get(packageName);
-			
+			ArrayList<String[]> classList = this.packageClassMap
+					.get(packageName);
+
 			Comparator<String[]> comparator = getClassSortComparator();
-			
+
 			Collections.sort(classList, comparator);
 			for (String[] value : this.packageClassMap.get(packageName)) {
 
@@ -152,39 +217,39 @@ public class SVNLoadLogic {
 	private Comparator<String[]> getClassSortComparator() {
 		Comparator<String[]> comparator = new Comparator<String[]>() {
 
-		    @Override
-		    public int compare(String[] o1, String[] o2) {
-		    	String s1 = "";
-		    	String s2 = "";
-		    	for (String t1: o1){
-		    		if(t1.length() > 0){
-		    			s1 = t1;
-		    			break;
-		    		}
-		    	}
-		    	for (String t2: o2){
-		    		if(t2.length() > 0){
-		    			s2 = t2;
-		    			break;
-		    		}
-		    	}
-		    	return s1.compareTo(s2);
-		    }
+			@Override
+			public int compare(String[] o1, String[] o2) {
+				String s1 = "";
+				String s2 = "";
+				for (String t1 : o1) {
+					if (t1.length() > 0) {
+						s1 = t1;
+						break;
+					}
+				}
+				for (String t2 : o2) {
+					if (t2.length() > 0) {
+						s2 = t2;
+						break;
+					}
+				}
+				return s1.compareTo(s2);
+			}
 		};
 		return comparator;
 	}
-	
+
 	private Comparator<String> getPackageSortComparator() {
 		Comparator<String> comparator = new Comparator<String>() {
 
-		    @Override
-		    public int compare(String o1, String o2) {
-		    	o1 = o1.substring(9);
-		    	o2 = o2.substring(9);
-		    	o1 = o1.replace(".", "");
-		    	o2 = o2.replace(".", "");
-		    	return o1.compareTo(o2);
-		    }
+			@Override
+			public int compare(String o1, String o2) {
+				o1 = o1.substring(9);
+				o2 = o2.substring(9);
+				o1 = o1.replace(".", "");
+				o2 = o2.replace(".", "");
+				return o1.compareTo(o2);
+			}
 		};
 		return comparator;
 	}
