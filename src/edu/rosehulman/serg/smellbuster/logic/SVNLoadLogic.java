@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
 import javax.swing.JProgressBar;
 
 import edu.rosehulman.serg.smellbuster.gui.ResultTableGUI;
@@ -30,21 +31,23 @@ public class SVNLoadLogic {
 	private Map<String, ArrayList<String>> classMap;
 	private Map<String, ArrayList<String[]>> packageClassMap;
 
-	public SVNLoadLogic(String projectName, Map<Integer, String> versionMap, String svnURL,
-			String svnDir, String buildFileLoc, JProgressBar progressBar) {
+	public SVNLoadLogic(String projectName, Map<Integer, String> versionMap,
+			String svnURL, String buildFileLoc, JProgressBar progressBar) {
 		this.projectName = projectName;
 		this.versionMap = versionMap;
 		SVNLoadLogic.progressBar = progressBar;
 		this.svnURL = svnURL;
-		this.svnDir = svnDir;
+		this.svnDir = System.getProperty("user.dir") + "\\repo\\"
+				+ this.projectName;
 		this.buildFileLoc = buildFileLoc;
 		this.diffMap = new HashMap<>();
 		this.classMap = new HashMap<>();
 		this.packageClassMap = new HashMap<>();
-		totalProgress = this.versionMap.keySet().size()*3;
+		totalProgress = this.versionMap.keySet().size() * 3;
 		currentProgress = 0;
 		this.checkoutRepo();
 		this.buildProject();
+		this.runMetricAnalysis();
 		this.loadData();
 	}
 
@@ -54,21 +57,21 @@ public class SVNLoadLogic {
 
 		VersionControlParserFactory vcParser = new VersionControlParserFactory(
 				this.svnURL);
-		
-		ExecutorService executor = Executors.newFixedThreadPool(this.versionMap.keySet().size());
-		
+
+		ExecutorService executor = Executors.newFixedThreadPool(this.versionMap
+				.keySet().size());
+
 		for (int revision : this.versionMap.keySet()) {
 			String svnDirLocation = this.svnDir + "\\" + revision;
 
-			Runnable worker = new RepoCheckoutRunnable(svnDirLocation, (long) revision, vcParser);
-
+			Runnable worker = new RepoCheckoutRunnable(svnDirLocation,
+					(long) revision, vcParser);
 			executor.execute(worker);
-			
 		}
-		
+
 		executor.shutdown();
 		while (!executor.isTerminated()) {
-			// Wait until all threads are finish			
+			// Wait until all threads are finish
 		}
 	}
 
@@ -83,21 +86,65 @@ public class SVNLoadLogic {
 			}
 		}
 	}
-	
-	private void buildProject(){
-		ExecutorService executor = Executors.newFixedThreadPool(this.versionMap.keySet().size());
-		
+
+	private void buildProject() {
+		ExecutorService executor = Executors.newFixedThreadPool(this.versionMap
+				.keySet().size());
+
 		for (int revision : this.versionMap.keySet()) {
-			String svnBuildDirLocation = this.svnDir + "\\" + revision + "\\" + this.buildFileLoc;
-			
-			Runnable worker = new ProjectBuildRunnable(svnBuildDirLocation, "all");
+			String svnBuildDirLocation = this.svnDir + "\\" + revision + "\\"
+					+ this.buildFileLoc;
+
+			Runnable worker = new ProjectBuildRunnable(svnBuildDirLocation,
+					"C:\\Program Files\\apache-maven-3.2.3\\");
 			executor.execute(worker);
-			
 		}
-		
+
 		executor.shutdown();
 		while (!executor.isTerminated()) {
-			// Wait until all threads are finish			
+			// Wait until all threads are finish
+		}
+	}
+
+	private void createMetricAnalysisDirIfNotExist() {
+		File metricAnalysisDir = new File("MetricAnalysis");
+
+		if (!metricAnalysisDir.exists()) {
+			try {
+				metricAnalysisDir.mkdir();
+			} catch (SecurityException se) {
+				se.printStackTrace();
+			}
+		}
+
+		File projectDir = new File("MetricAnalysis\\" + this.projectName);
+		if (!projectDir.exists()) {
+			try {
+				projectDir.mkdir();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	private void runMetricAnalysis() {
+		ExecutorService executor = Executors.newFixedThreadPool(this.versionMap
+				.keySet().size());
+
+		this.createMetricAnalysisDirIfNotExist();
+
+		for (int revision : this.versionMap.keySet()) {
+			String jarFileLocation = this.svnDir + "\\" + revision + "\\target";
+
+			Runnable worker = new MetricAnalyserRunnable(jarFileLocation,
+					"MetricAnalysis\\" + this.projectName + "\\"
+							+ this.versionMap.get(revision) + ".xml");
+			executor.execute(worker);
+		}
+
+		executor.shutdown();
+		while (!executor.isTerminated()) {
+			// Wait until all threads are finish
 		}
 	}
 
@@ -174,7 +221,7 @@ public class SVNLoadLogic {
 		String[][] dataValues = getTableDataValues(colNum, rowNum);
 
 		ResultTableGUI resultsTable = new ResultTableGUI(dataValues,
-				this.versionMap);
+				this.versionMap, this.projectName);
 		resultsTable.setVisible(true);
 	}
 

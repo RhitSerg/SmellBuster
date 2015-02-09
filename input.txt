@@ -1,3 +1,7 @@
+JFreeChart
+http://svn.code.sf.net/p/jfreechart/code/branches/
+ant\build.xml
+C:\\Program Files\\apache-maven-3.2.3\\
 1.0.6;91
 1.0.7;588
 1.0.8;655

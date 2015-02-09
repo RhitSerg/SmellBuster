@@ -16,9 +16,11 @@ public class FileChooser extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private Map<Integer, String> versionMap;
 	private JFileChooser chooser;
+	private Map<String, String> inputMap;
 
 	public FileChooser() {
 		this.versionMap = new TreeMap<>();
+		this.inputMap = new TreeMap<>();
 		this.chooser = new JFileChooser();
 		File workingDirectory = new File(System.getProperty("user.dir"));
 		chooser.setCurrentDirectory(workingDirectory);
@@ -47,11 +49,15 @@ public class FileChooser extends JFrame {
 		}
 	}
 
-	public void saveFile(Map<Integer, String> versionMap) {
+	public void saveFile(Map<Integer, String> versionMap, Map<String, String> inputMap) {
 		File saveFile = this.getSaveFile();
 		if (saveFile != null) {
 			try {
 				PrintWriter writer = new PrintWriter(saveFile);
+				writer.println(inputMap.get("project"));
+				writer.println(inputMap.get("svnURL"));
+				writer.println(inputMap.get("buildFile"));
+				writer.println(inputMap.get("mavenHome"));
 				for (Integer release : versionMap.keySet()) {
 					writer.println(versionMap.get(release) + ";" + release);
 				}
@@ -66,9 +72,21 @@ public class FileChooser extends JFrame {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(selectedFile));
 			String line;
+			int lineNum = 0;
 			while ((line = br.readLine()) != null && line.length() > 0) {
-				String[] inputs = line.split(";");
-				this.versionMap.put(Integer.parseInt(inputs[1]), inputs[0]);
+				if (lineNum == 0){
+					this.inputMap.put("project", line.trim());
+				} else if (lineNum == 1){
+					this.inputMap.put("svnURL", line.trim());
+				} else if (lineNum == 2){
+					this.inputMap.put("buildFile", line.trim());
+				} else if (lineNum == 3){
+					this.inputMap.put("mavenHome", line.trim());
+				}else {
+					String[] inputs = line.split(";");
+					this.versionMap.put(Integer.parseInt(inputs[1]), inputs[0]);
+				}
+				lineNum++;
 			}
 			br.close();
 		} catch (Exception e) {
@@ -76,9 +94,17 @@ public class FileChooser extends JFrame {
 		}
 	}
 
-	public Map<Integer, String> getVersionMap() {
+	public void loadInput(){
+		this.versionMap.clear();
 		this.chooseFile();
+	}
+	
+	public Map<Integer, String> getVersionMap() {
 		return this.versionMap;
+	}
+	
+	public Map<String, String> getInputMap() {
+		return this.inputMap;
 	}
 
 }

@@ -55,11 +55,11 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 	private ArrayList<Integer> packageHeaders;
 
 	// Constructor of main frame
-	public ResultTableGUI(String[][] dataValues, Map<Integer, String> versionMap) {
+	public ResultTableGUI(String[][] dataValues, Map<Integer, String> versionMap, String projectName) {
 
 		this.versionMap = versionMap;
 		this.packageHeaders = new ArrayList<>();
-		this.displayTableLogic = new ResultTableLogic(this.versionMap);
+		this.displayTableLogic = new ResultTableLogic(this.versionMap, projectName);
 		this.selectedMetric = 0;
 		this.metricGUI = new MetricGUI(this.displayTableLogic);
 		this.metrics = this.metricGUI.getMetricDisplayList();

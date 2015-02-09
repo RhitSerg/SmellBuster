@@ -15,16 +15,19 @@ public class ResultTableLogic {
 	private Map<String, ArrayList<MetricDOMObject>> metricMap;
 	private Map<Integer, String> versionMap;
 	private MetricLogic metricLogic;
+	private final String metricFilesLocation = "MetricAnalysis";
+	private String projectName;
 
-	public ResultTableLogic(Map<Integer, String> versionMap) {
+	public ResultTableLogic(Map<Integer, String> versionMap, String projectName) {
 		this.metricMap = new HashMap<>();
 		this.versionMap = versionMap;
+		this.projectName = projectName;
 		parseMetrics();
 		this.metricLogic = new MetricLogic(this);
 	}
 
 	public void parseMetrics() {
-		File[] files = new File("MetricAnalysis").listFiles();
+		File[] files = new File(this.metricFilesLocation + "\\" + this.projectName).listFiles();
 		MetricParserFactory parser = new MetricParserFactory();
 
 		for (int i = 0; i < files.length; i++) {
@@ -33,8 +36,7 @@ public class ResultTableLogic {
 
 			ArrayList<MetricDOMObject> domObjList = parser.getDOMObjList();
 
-			String[] nameParts = files[i].getName().split("-");
-			String version = nameParts[nameParts.length - 1];
+			String version = files[i].getName();
 			version = version.substring(0, version.length() - 4);
 
 			metricMap.put(version, domObjList);
