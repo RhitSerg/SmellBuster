@@ -1,0 +1,1828 @@
+<classes>	<class>
+		<name>org.cyberneko.html.LostText</name>
+		<wmc>4</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>5</cbo>
+		<rfc>19</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>4</ce>
+		<npm>3</npm>
+		<lcom3>0.0</lcom3>
+		<loc>58</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.4375</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>13.25</amc>
+		<cc>
+			<method name="public void add(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">3</method>
+			<method name="void _init_()">0</method>
+			<method name="public boolean isEmpty()">1</method>
+			<method name="public void refeed(org.apache.xerces.xni.XMLDocumentHandler tagBalancer)">2</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.filters.NamespaceBinder</name>
+		<wmc>15</wmc>
+		<dit>0</dit>
+		<noc>0</noc>
+		<cbo>15</cbo>
+		<rfc>60</rfc>
+		<lcom>51</lcom>
+		<ca>1</ca>
+		<ce>14</ce>
+		<npm>10</npm>
+		<lcom3>0.9371428571428572</lcom3>
+		<loc>747</loc>
+		<dam>0.88</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.25396825396825395</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>47.13333333333333</amc>
+		<cc>
+			<method name="public String[] getRecognizedFeatures()">1</method>
+			<method name="protected static final String modifyName(String name, short mode)">4</method>
+			<method name="public void _init_()">0</method>
+			<method name="static void _clinit_()">0</method>
+			<method name="public Object getPropertyDefault(String propertyId)">3</method>
+			<method name="protected static void splitQName(org.apache.xerces.xni.QName qname)">2</method>
+			<method name="public String[] getRecognizedProperties()">1</method>
+			<method name="public void emptyElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attrs, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void reset(org.apache.xerces.xni.parser.XMLComponentManager manager)">1</method>
+			<method name="protected static final short getNamesValue(String value)">3</method>
+			<method name="public void startElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attrs, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void endElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public Boolean getFeatureDefault(String featureId)">3</method>
+			<method name="protected void bindNamespaces(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attrs)">30</method>
+			<method name="public void startDocument(org.apache.xerces.xni.XMLLocator locator, String encoding, org.apache.xerces.xni.NamespaceContext nscontext, org.apache.xerces.xni.Augmentations augs)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.filters.ElementRemover</name>
+		<wmc>23</wmc>
+		<dit>0</dit>
+		<noc>0</noc>
+		<cbo>9</cbo>
+		<rfc>50</rfc>
+		<lcom>0</lcom>
+		<ca>0</ca>
+		<ce>9</ce>
+		<npm>19</npm>
+		<lcom3>0.5818181818181819</lcom3>
+		<loc>381</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.3</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>15.347826086956522</amc>
+		<cc>
+			<method name="protected boolean handleOpenTag(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attributes)">6</method>
+			<method name="public void processingInstruction(String target, org.apache.xerces.xni.XMLString data, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startDocument(org.apache.xerces.xni.XMLLocator locator, String encoding, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void _init_()">0</method>
+			<method name="public void removeElement(String element)">1</method>
+			<method name="static void _clinit_()">0</method>
+			<method name="protected boolean elementRemoved(String element)">1</method>
+			<method name="public void acceptElement(String element, String[] attributes)">3</method>
+			<method name="public void startCDATA(org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void comment(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void textDecl(String version, String encoding, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startPrefixMapping(String prefix, String uri, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void characters(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attributes, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startGeneralEntity(String name, org.apache.xerces.xni.XMLResourceIdentifier id, String encoding, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void endGeneralEntity(String name, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void endElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void endCDATA(org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void emptyElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attributes, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="protected boolean elementAccepted(String element)">1</method>
+			<method name="public void endPrefixMapping(String prefix, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startDocument(org.apache.xerces.xni.XMLLocator locator, String encoding, org.apache.xerces.xni.NamespaceContext nscontext, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void ignorableWhitespace(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.LostText$Entry</name>
+		<wmc>3</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>4</cbo>
+		<rfc>7</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>3</ce>
+		<npm>1</npm>
+		<lcom3>0.5</lcom3>
+		<loc>44</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.4166666666666667</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>13.0</amc>
+		<cc>
+			<method name="public void _init_(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">0</method>
+			<method name="static org.apache.xerces.xni.Augmentations access$100(org.cyberneko.html.LostText$Entry x0)">1</method>
+			<method name="static org.apache.xerces.xni.XMLString access$000(org.cyberneko.html.LostText$Entry x0)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.ObjectFactory</name>
+		<wmc>10</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>3</cbo>
+		<rfc>46</rfc>
+		<lcom>31</lcom>
+		<ca>1</ca>
+		<ce>2</ce>
+		<npm>0</npm>
+		<lcom3>0.8888888888888888</lcom3>
+		<loc>495</loc>
+		<dam>0.8333333333333334</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.3333333333333333</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>47.9</amc>
+		<cc>
+			<method name="static Object newInstance(String className, ClassLoader cl, boolean doFallback)">1</method>
+			<method name="static Object createObject(String factoryId, String propertiesFilename, String fallbackClassName)">1</method>
+			<method name="static Class class$(String x0)">1</method>
+			<method name="private static void debugPrintln(String msg)">1</method>
+			<method name="static Object createObject(String factoryId, String fallbackClassName)">1</method>
+			<method name="void _init_()">0</method>
+			<method name="static void _clinit_()">0</method>
+			<method name="private static Object findJarServiceProvider(String factoryId)">1</method>
+			<method name="static Class findProviderClass(String className, ClassLoader cl, boolean doFallback)">1</method>
+			<method name="static ClassLoader findClassLoader()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.xercesbridge.XercesBridge</name>
+		<wmc>11</wmc>
+		<dit>1</dit>
+		<noc>3</noc>
+		<cbo>16</cbo>
+		<rfc>15</rfc>
+		<lcom>53</lcom>
+		<ca>10</ca>
+		<ce>6</ce>
+		<npm>8</npm>
+		<lcom3>0.9</lcom3>
+		<loc>85</loc>
+		<dam>1.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.2875</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>6.636363636363637</amc>
+		<cc>
+			<method name="public void XMLDocumentHandler_endPrefixMapping(org.apache.xerces.xni.XMLDocumentHandler documentHandler, String prefix, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void NamespaceContext_declarePrefix(org.apache.xerces.xni.NamespaceContext namespaceContext, String ns, String avalue)">1</method>
+			<method name="public void XMLDocumentFilter_setDocumentSource(org.apache.xerces.xni.parser.XMLDocumentFilter filter, org.apache.xerces.xni.parser.XMLDocumentSource lastSource)">1</method>
+			<method name="public abstract String getVersion()">1</method>
+			<method name="public void _init_()">0</method>
+			<method name="static void _clinit_()">0</method>
+			<method name="public abstract void XMLDocumentHandler_startDocument(org.apache.xerces.xni.XMLDocumentHandler, org.apache.xerces.xni.XMLLocator, String, org.apache.xerces.xni.NamespaceContext, org.apache.xerces.xni.Augmentations)">1</method>
+			<method name="private static org.cyberneko.html.xercesbridge.XercesBridge newInstanceOrNull(String className)">1</method>
+			<method name="public static org.cyberneko.html.xercesbridge.XercesBridge getInstance()">1</method>
+			<method name="private static org.cyberneko.html.xercesbridge.XercesBridge makeInstance()">3</method>
+			<method name="public void XMLDocumentHandler_startPrefixMapping(org.apache.xerces.xni.XMLDocumentHandler documentHandler, String prefix, String uri, org.apache.xerces.xni.Augmentations augs)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLTagBalancer$Info</name>
+		<wmc>3</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>6</cbo>
+		<rfc>21</rfc>
+		<lcom>1</lcom>
+		<ca>2</ca>
+		<ce>4</ce>
+		<npm>3</npm>
+		<lcom3>0.33333333333333326</lcom3>
+		<loc>94</loc>
+		<dam>0.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.6666666666666666</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>29.333333333333332</amc>
+		<cc>
+			<method name="public void _init_(org.cyberneko.html.HTMLElements$Element element, org.apache.xerces.xni.QName qname)">0</method>
+			<method name="public void _init_(org.cyberneko.html.HTMLElements$Element element, org.apache.xerces.xni.QName qname, org.apache.xerces.xni.XMLAttributes attributes)">0</method>
+			<method name="public String toString()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLScanner$PlaybackInputStream</name>
+		<wmc>7</wmc>
+		<dit>3</dit>
+		<noc>0</noc>
+		<cbo>2</cbo>
+		<rfc>12</rfc>
+		<lcom>0</lcom>
+		<ca>2</ca>
+		<ce>0</ce>
+		<npm>7</npm>
+		<lcom3>0.40740740740740744</lcom3>
+		<loc>387</loc>
+		<dam>0.7777777777777778</dam>
+		<moa>0</moa>
+		<mfa>0.75</mfa>
+		<cam>0.34285714285714286</cam>
+		<ic>2</ic>
+		<cbm>2</cbm>
+		<amc>53.0</amc>
+		<cc>
+			<method name="public void clear()">2</method>
+			<method name="public void playback()">1</method>
+			<method name="public void detectEncoding(String[] encodings)">1</method>
+			<method name="public int read()">1</method>
+			<method name="public int read(byte[] array)">1</method>
+			<method name="public int read(byte[] array, int offset, int length)">1</method>
+			<method name="public void _init_(java.io.InputStream in)">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLScanner$ContentScanner</name>
+		<wmc>19</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>21</cbo>
+		<rfc>126</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>21</ce>
+		<npm>2</npm>
+		<lcom3>0.5</lcom3>
+		<loc>3271</loc>
+		<dam>1.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.19473684210526315</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>171.0</amc>
+		<cc>
+			<method name="public boolean scan(boolean complete)">1</method>
+			<method name="protected void scanCDATA()">1</method>
+			<method name="private String removeSpaces(String content)">5</method>
+			<method name="private boolean changeEncoding(String charset)">10</method>
+			<method name="protected void scanComment()">1</method>
+			<method name="protected void addLocationItem(org.apache.xerces.xni.XMLAttributes attributes, int index)">1</method>
+			<method name="private void scanScriptContent()">1</method>
+			<method name="protected void scanCharacters()">1</method>
+			<method name="protected boolean scanPseudoAttribute(org.apache.xerces.util.XMLAttributesImpl attributes)">1</method>
+			<method name="protected boolean scanAttribute(org.apache.xerces.util.XMLAttributesImpl attributes, boolean[] empty)">1</method>
+			<method name="protected void scanPI()">1</method>
+			<method name="protected boolean scanAttribute(org.apache.xerces.util.XMLAttributesImpl attributes, boolean[] empty, char endc)">1</method>
+			<method name="protected void scanEndElement()">1</method>
+			<method name="private void scanUntilEndTag(String tagName)">1</method>
+			<method name="protected boolean scanMarkupContent(org.apache.xerces.util.XMLStringBuffer buffer, char cend)">1</method>
+			<method name="protected String scanStartElement(boolean[] empty)">1</method>
+			<method name="private boolean isEnded(String ename)">2</method>
+			<method name="public void _init_(org.cyberneko.html.HTMLScanner)">0</method>
+			<method name="protected String nextContent(int len)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.parsers.SAXParser</name>
+		<wmc>1</wmc>
+		<dit>0</dit>
+		<noc>0</noc>
+		<cbo>3</cbo>
+		<rfc>3</rfc>
+		<lcom>0</lcom>
+		<ca>0</ca>
+		<ce>3</ce>
+		<npm>1</npm>
+		<lcom3>2.0</lcom3>
+		<loc>7</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>1.0</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>6.0</amc>
+		<cc>
+			<method name="public void _init_()">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLTagBalancer$ElementEntry</name>
+		<wmc>3</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>4</cbo>
+		<rfc>6</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>3</ce>
+		<npm>0</npm>
+		<lcom3>0.5</lcom3>
+		<loc>30</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.4166666666666667</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>8.333333333333334</amc>
+		<cc>
+			<method name="static org.apache.xerces.xni.QName access$000(org.cyberneko.html.HTMLTagBalancer$ElementEntry x0)">1</method>
+			<method name="static org.apache.xerces.xni.Augmentations access$100(org.cyberneko.html.HTMLTagBalancer$ElementEntry x0)">1</method>
+			<method name="void _init_(org.apache.xerces.xni.QName element, org.apache.xerces.xni.Augmentations augs)">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLScanner$CurrentEntity</name>
+		<wmc>32</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>4</cbo>
+		<rfc>37</rfc>
+		<lcom>296</lcom>
+		<ca>3</ca>
+		<ce>1</ce>
+		<npm>2</npm>
+		<lcom3>0.8018433179723502</lcom3>
+		<loc>417</loc>
+		<dam>0.35714285714285715</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.21875</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>11.59375</amc>
+		<cc>
+			<method name="private int getCharacterOffset()">1</method>
+			<method name="static String access$100(org.cyberneko.html.HTMLScanner$CurrentEntity x0)">1</method>
+			<method name="private char getCurrentChar()">1</method>
+			<method name="private void resetBuffer(org.apache.xerces.util.XMLStringBuffer buffer, int lineNumber, int columnNumber, int characterOffset)">1</method>
+			<method name="static void access$600(org.cyberneko.html.HTMLScanner$CurrentEntity x0, int x1)">1</method>
+			<method name="protected int load(int offset)">1</method>
+			<method name="static void access$000(org.cyberneko.html.HTMLScanner$CurrentEntity x0)">1</method>
+			<method name="private void rewind()">1</method>
+			<method name="private void incLine(int nbLines)">1</method>
+			<method name="static void access$1400(org.cyberneko.html.HTMLScanner$CurrentEntity x0, org.apache.xerces.util.XMLStringBuffer x1, int x2, int x3, int x4)">1</method>
+			<method name="boolean hasNext()">2</method>
+			<method name="static void access$400(org.cyberneko.html.HTMLScanner$CurrentEntity x0)">1</method>
+			<method name="static void access$1600(org.cyberneko.html.HTMLScanner$CurrentEntity x0, java.io.InputStreamReader x1)">1</method>
+			<method name="protected int read()">1</method>
+			<method name="static void access$1500(org.cyberneko.html.HTMLScanner$CurrentEntity x0)">1</method>
+			<method name="private void incLine()">1</method>
+			<method name="private int getColumnNumber()">1</method>
+			<method name="public void _init_(java.io.Reader stream, String encoding, String publicId, String baseSystemId, String literalSystemId, String expandedSystemId)">0</method>
+			<method name="private void debugBufferIfNeeded(String prefix, String suffix)">1</method>
+			<method name="public int getLineNumber()">1</method>
+			<method name="static char access$700(org.cyberneko.html.HTMLScanner$CurrentEntity x0)">1</method>
+			<method name="private void setStream(java.io.InputStreamReader inputStreamReader)">1</method>
+			<method name="static void access$800(org.cyberneko.html.HTMLScanner$CurrentEntity x0, int x1)">1</method>
+			<method name="private void restorePosition(int originalOffset, int originalColumnNumber, int originalCharacterOffset)">1</method>
+			<method name="static int access$200(org.cyberneko.html.HTMLScanner$CurrentEntity x0)">1</method>
+			<method name="private void rewind(int i)">1</method>
+			<method name="private char getNextChar()">1</method>
+			<method name="static int access$300(org.cyberneko.html.HTMLScanner$CurrentEntity x0)">1</method>
+			<method name="static char access$500(org.cyberneko.html.HTMLScanner$CurrentEntity x0)">1</method>
+			<method name="static void access$1300(org.cyberneko.html.HTMLScanner$CurrentEntity x0, int x1, int x2, int x3)">1</method>
+			<method name="private void debugBufferIfNeeded(String prefix)">1</method>
+			<method name="private void closeQuietly()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLEventInfo$SynthesizedItem</name>
+		<wmc>9</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>4</cbo>
+		<rfc>10</rfc>
+		<lcom>36</lcom>
+		<ca>3</ca>
+		<ce>1</ce>
+		<npm>9</npm>
+		<lcom3>2.0</lcom3>
+		<loc>28</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>1.0</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>2.111111111111111</amc>
+		<cc>
+			<method name="public boolean isSynthesized()">1</method>
+			<method name="public int getBeginCharacterOffset()">1</method>
+			<method name="public void _init_()">0</method>
+			<method name="public int getEndColumnNumber()">1</method>
+			<method name="public int getEndCharacterOffset()">1</method>
+			<method name="public String toString()">1</method>
+			<method name="public int getBeginLineNumber()">1</method>
+			<method name="public int getEndLineNumber()">1</method>
+			<method name="public int getBeginColumnNumber()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.filters.Writer</name>
+		<wmc>20</wmc>
+		<dit>0</dit>
+		<noc>0</noc>
+		<cbo>17</cbo>
+		<rfc>74</rfc>
+		<lcom>98</lcom>
+		<ca>0</ca>
+		<ce>17</ce>
+		<npm>13</npm>
+		<lcom3>0.8377192982456141</lcom3>
+		<loc>768</loc>
+		<dam>0.75</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.2076923076923077</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>36.8</amc>
+		<cc>
+			<method name="static Class class$(String x0)">1</method>
+			<method name="public void startDocument(org.apache.xerces.xni.XMLLocator locator, String encoding, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="protected void printAttributeValue(String text)">3</method>
+			<method name="public void _init_()">0</method>
+			<method name="public void _init_(java.io.OutputStream outputStream, String encoding)">0</method>
+			<method name="protected void printEntity(String name)">1</method>
+			<method name="protected void printCharacters(org.apache.xerces.xni.XMLString text, boolean normalize)">5</method>
+			<method name="public void comment(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void _init_(java.io.Writer writer, String encoding)">0</method>
+			<method name="public void characters(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attributes, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startGeneralEntity(String name, org.apache.xerces.xni.XMLResourceIdentifier id, String encoding, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void endGeneralEntity(String name, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="private static void printUsage()">2</method>
+			<method name="public void endElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void emptyElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attributes, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public static void main(String[] argv)">1</method>
+			<method name="protected void printStartElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attributes)">14</method>
+			<method name="protected void printEndElement(org.apache.xerces.xni.QName element)">1</method>
+			<method name="public void startDocument(org.apache.xerces.xni.XMLLocator locator, String encoding, org.apache.xerces.xni.NamespaceContext nscontext, org.apache.xerces.xni.Augmentations augs)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.filters.NamespaceBinder$NamespaceSupport$Entry</name>
+		<wmc>1</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>1</cbo>
+		<rfc>2</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>0</ce>
+		<npm>1</npm>
+		<lcom3>2.0</lcom3>
+		<loc>12</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>1.0</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>9.0</amc>
+		<cc>
+			<method name="public void _init_(String prefix, String uri)">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLScanner$SpecialScanner</name>
+		<wmc>4</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>10</cbo>
+		<rfc>33</rfc>
+		<lcom>0</lcom>
+		<ca>2</ca>
+		<ce>9</ce>
+		<npm>3</npm>
+		<lcom3>0.5714285714285715</lcom3>
+		<loc>447</loc>
+		<dam>1.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.375</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>109.0</amc>
+		<cc>
+			<method name="public boolean scan(boolean complete)">1</method>
+			<method name="public org.cyberneko.html.HTMLScanner$Scanner setElementName(String ename)">1</method>
+			<method name="protected void scanCharacters(org.apache.xerces.util.XMLStringBuffer buffer, int delimiter)">1</method>
+			<method name="public void _init_(org.cyberneko.html.HTMLScanner)">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLTagBalancer$InfoStack</name>
+		<wmc>5</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>2</cbo>
+		<rfc>11</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>1</ce>
+		<npm>5</npm>
+		<lcom3>0.125</lcom3>
+		<loc>102</loc>
+		<dam>0.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.6</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>19.0</amc>
+		<cc>
+			<method name="public org.cyberneko.html.HTMLTagBalancer$Info pop()">1</method>
+			<method name="public void _init_()">0</method>
+			<method name="public org.cyberneko.html.HTMLTagBalancer$Info peek()">1</method>
+			<method name="public void push(org.cyberneko.html.HTMLTagBalancer$Info info)">2</method>
+			<method name="public String toString()">3</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLConfiguration</name>
+		<wmc>26</wmc>
+		<dit>0</dit>
+		<noc>0</noc>
+		<cbo>27</cbo>
+		<rfc>74</rfc>
+		<lcom>237</lcom>
+		<ca>5</ca>
+		<ce>23</ce>
+		<npm>21</npm>
+		<lcom3>0.965925925925926</lcom3>
+		<loc>675</loc>
+		<dam>0.9629629629629629</dam>
+		<moa>4</moa>
+		<mfa>0.0</mfa>
+		<cam>0.13666666666666666</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>23.923076923076923</amc>
+		<cc>
+			<method name="public void setDTDContentModelHandler(org.apache.xerces.xni.XMLDTDContentModelHandler handler)">1</method>
+			<method name="protected void reset()">1</method>
+			<method name="public void setDTDHandler(org.apache.xerces.xni.XMLDTDHandler handler)">1</method>
+			<method name="public java.util.Locale getLocale()">1</method>
+			<method name="public org.apache.xerces.xni.XMLDocumentHandler getDocumentHandler()">1</method>
+			<method name="public org.apache.xerces.xni.XMLDTDContentModelHandler getDTDContentModelHandler()">1</method>
+			<method name="static void _clinit_()">0</method>
+			<method name="public void evaluateInputSource(org.apache.xerces.xni.parser.XMLInputSource inputSource)">1</method>
+			<method name="public void setProperty(String propertyId, Object value)">1</method>
+			<method name="public void pushInputSource(org.apache.xerces.xni.parser.XMLInputSource inputSource)">1</method>
+			<method name="public void setEntityResolver(org.apache.xerces.xni.parser.XMLEntityResolver resolver)">1</method>
+			<method name="public boolean parse(boolean complete)">1</method>
+			<method name="public void setErrorHandler(org.apache.xerces.xni.parser.XMLErrorHandler handler)">1</method>
+			<method name="public void setDocumentHandler(org.apache.xerces.xni.XMLDocumentHandler handler)">2</method>
+			<method name="public void setInputSource(org.apache.xerces.xni.parser.XMLInputSource inputSource)">1</method>
+			<method name="public org.apache.xerces.xni.parser.XMLEntityResolver getEntityResolver()">1</method>
+			<method name="public void parse(org.apache.xerces.xni.parser.XMLInputSource source)">1</method>
+			<method name="static Class class$(String x0)">1</method>
+			<method name="public void setLocale(java.util.Locale locale)">2</method>
+			<method name="public void _init_()">0</method>
+			<method name="public org.apache.xerces.xni.parser.XMLErrorHandler getErrorHandler()">1</method>
+			<method name="protected org.cyberneko.html.HTMLScanner createDocumentScanner()">1</method>
+			<method name="public org.apache.xerces.xni.XMLDTDHandler getDTDHandler()">1</method>
+			<method name="public void cleanup()">1</method>
+			<method name="public void setFeature(String featureId, boolean state)">1</method>
+			<method name="protected void addComponent(org.cyberneko.html.HTMLComponent component)">7</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.SecuritySupport</name>
+		<wmc>11</wmc>
+		<dit>1</dit>
+		<noc>1</noc>
+		<cbo>2</cbo>
+		<rfc>20</rfc>
+		<lcom>53</lcom>
+		<ca>2</ca>
+		<ce>1</ce>
+		<npm>0</npm>
+		<lcom3>0.9</lcom3>
+		<loc>90</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.4</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>7.090909090909091</amc>
+		<cc>
+			<method name="ClassLoader getSystemClassLoader()">1</method>
+			<method name="long getLastModified(java.io.File f)">1</method>
+			<method name="void _init_()">0</method>
+			<method name="String getSystemProperty(String propName)">1</method>
+			<method name="static void _clinit_()">0</method>
+			<method name="ClassLoader getParentClassLoader(ClassLoader cl)">1</method>
+			<method name="java.io.FileInputStream getFileInputStream(java.io.File file)">1</method>
+			<method name="ClassLoader getContextClassLoader()">1</method>
+			<method name="static org.cyberneko.html.SecuritySupport getInstance()">1</method>
+			<method name="boolean getFileExists(java.io.File f)">1</method>
+			<method name="java.io.InputStream getResourceAsStream(ClassLoader cl, String name)">2</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLComponent</name>
+		<wmc>2</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>5</cbo>
+		<rfc>2</rfc>
+		<lcom>1</lcom>
+		<ca>4</ca>
+		<ce>1</ce>
+		<npm>2</npm>
+		<lcom3>2.0</lcom3>
+		<loc>2</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>1.0</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>0.0</amc>
+		<cc>
+			<method name="public abstract Object getPropertyDefault(String)">1</method>
+			<method name="public abstract Boolean getFeatureDefault(String)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.parsers.DOMFragmentParser</name>
+		<wmc>31</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>18</cbo>
+		<rfc>82</rfc>
+		<lcom>323</lcom>
+		<ca>0</ca>
+		<ce>18</ce>
+		<npm>30</npm>
+		<lcom3>0.9</lcom3>
+		<loc>511</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.18666666666666668</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>15.129032258064516</amc>
+		<cc>
+			<method name="public void endDocument(org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void processingInstruction(String target, org.apache.xerces.xni.XMLString data, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="static void _clinit_()">0</method>
+			<method name="public void setProperty(String propertyId, Object value)">1</method>
+			<method name="public boolean getFeature(String featureId)">1</method>
+			<method name="public void emptyElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attrs, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void textDecl(String version, String encoding, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public Object getProperty(String propertyId)">1</method>
+			<method name="public void startPrefixMapping(String prefix, String uri, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void characters(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startGeneralEntity(String name, org.apache.xerces.xni.XMLResourceIdentifier id, String encoding, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void endGeneralEntity(String name, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void endCDATA(org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void setDocumentSource(org.apache.xerces.xni.parser.XMLDocumentSource source)">1</method>
+			<method name="public void startDocument(org.apache.xerces.xni.XMLLocator locator, String encoding, org.apache.xerces.xni.NamespaceContext nscontext, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startDocument(org.apache.xerces.xni.XMLLocator locator, String encoding, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void _init_()">0</method>
+			<method name="public void setErrorHandler(org.xml.sax.ErrorHandler errorHandler)">1</method>
+			<method name="public void parse(org.xml.sax.InputSource source, org.w3c.dom.DocumentFragment fragment)">1</method>
+			<method name="public void parse(String systemId, org.w3c.dom.DocumentFragment fragment)">1</method>
+			<method name="public void xmlDecl(String version, String encoding, String standalone, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startCDATA(org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public org.apache.xerces.xni.parser.XMLDocumentSource getDocumentSource()">1</method>
+			<method name="public void comment(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void doctypeDecl(String root, String pubid, String sysid, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attrs, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void endElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public org.xml.sax.ErrorHandler getErrorHandler()">1</method>
+			<method name="public void setFeature(String featureId, boolean state)">1</method>
+			<method name="public void endPrefixMapping(String prefix, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void ignorableWhitespace(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.SecuritySupport12$1</name>
+		<wmc>2</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>1</cbo>
+		<rfc>5</rfc>
+		<lcom>1</lcom>
+		<ca>1</ca>
+		<ce>1</ce>
+		<npm>1</npm>
+		<lcom3>1.0</lcom3>
+		<loc>18</loc>
+		<dam>1.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.75</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>7.5</amc>
+		<cc>
+			<method name="public Object run()">1</method>
+			<method name="void _init_(org.cyberneko.html.SecuritySupport12)">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.SecuritySupport12$2</name>
+		<wmc>2</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>1</cbo>
+		<rfc>4</rfc>
+		<lcom>1</lcom>
+		<ca>1</ca>
+		<ce>1</ce>
+		<npm>1</npm>
+		<lcom3>1.0</lcom3>
+		<loc>17</loc>
+		<dam>1.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.75</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>7.0</amc>
+		<cc>
+			<method name="public Object run()">1</method>
+			<method name="void _init_(org.cyberneko.html.SecuritySupport12)">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLEntities</name>
+		<wmc>6</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>3</cbo>
+		<rfc>30</rfc>
+		<lcom>11</lcom>
+		<ca>2</ca>
+		<ce>1</ce>
+		<npm>3</npm>
+		<lcom3>0.8</lcom3>
+		<loc>124</loc>
+		<dam>0.6666666666666666</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.3</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>19.166666666666668</amc>
+		<cc>
+			<method name="static Class class$(String x0)">1</method>
+			<method name="private static void load0(java.util.Properties props, String filename)">2</method>
+			<method name="public void _init_()">0</method>
+			<method name="static void _clinit_()">0</method>
+			<method name="public static int get(String name)">2</method>
+			<method name="public static String get(int c)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.xercesbridge.XercesBridge_2_3</name>
+		<wmc>3</wmc>
+		<dit>0</dit>
+		<noc>0</noc>
+		<cbo>2</cbo>
+		<rfc>11</rfc>
+		<lcom>3</lcom>
+		<ca>0</ca>
+		<ce>2</ce>
+		<npm>2</npm>
+		<lcom3>1.0</lcom3>
+		<loc>69</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.5555555555555556</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>21.333333333333332</amc>
+		<cc>
+			<method name="static Class class$(String x0)">1</method>
+			<method name="public void NamespaceContext_declarePrefix(org.apache.xerces.xni.NamespaceContext namespaceContext, String ns, String avalue)">1</method>
+			<method name="public void _init_()">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLConfiguration$ErrorReporter</name>
+		<wmc>6</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>6</cbo>
+		<rfc>20</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>6</ce>
+		<npm>3</npm>
+		<lcom3>0.6</lcom3>
+		<loc>154</loc>
+		<dam>1.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.7083333333333334</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>24.166666666666668</amc>
+		<cc>
+			<method name="protected String formatSimpleMessage(String key, Object[] args)">5</method>
+			<method name="public void reportError(String key, Object[] args)">1</method>
+			<method name="public void reportWarning(String key, Object[] args)">1</method>
+			<method name="protected void _init_(org.cyberneko.html.HTMLConfiguration)">0</method>
+			<method name="public String formatMessage(String key, Object[] args)">4</method>
+			<method name="protected org.apache.xerces.xni.parser.XMLParseException createException(String key, Object[] args)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.xercesbridge.XercesBridge_2_1</name>
+		<wmc>4</wmc>
+		<dit>0</dit>
+		<noc>0</noc>
+		<cbo>8</cbo>
+		<rfc>11</rfc>
+		<lcom>6</lcom>
+		<ca>0</ca>
+		<ce>8</ce>
+		<npm>4</npm>
+		<lcom3>2.0</lcom3>
+		<loc>33</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.34375</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>7.25</amc>
+		<cc>
+			<method name="public String getVersion()">1</method>
+			<method name="public void XMLDocumentFilter_setDocumentSource(org.apache.xerces.xni.parser.XMLDocumentFilter filter, org.apache.xerces.xni.parser.XMLDocumentSource lastSource)">1</method>
+			<method name="public void _init_()">0</method>
+			<method name="public void XMLDocumentHandler_startDocument(org.apache.xerces.xni.XMLDocumentHandler documentHandler, org.apache.xerces.xni.XMLLocator locator, String encoding, org.apache.xerces.xni.NamespaceContext nscontext, org.apache.xerces.xni.Augmentations augs)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.xercesbridge.XercesBridge_2_2</name>
+		<wmc>5</wmc>
+		<dit>0</dit>
+		<noc>1</noc>
+		<cbo>9</cbo>
+		<rfc>11</rfc>
+		<lcom>10</lcom>
+		<ca>1</ca>
+		<ce>8</ce>
+		<npm>4</npm>
+		<lcom3>2.0</lcom3>
+		<loc>33</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.375</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>5.6</amc>
+		<cc>
+			<method name="public String getVersion()">1</method>
+			<method name="public void XMLDocumentFilter_setDocumentSource(org.apache.xerces.xni.parser.XMLDocumentFilter filter, org.apache.xerces.xni.parser.XMLDocumentSource lastSource)">1</method>
+			<method name="protected void _init_()">0</method>
+			<method name="public void XMLDocumentHandler_startDocument(org.apache.xerces.xni.XMLDocumentHandler documentHandler, org.apache.xerces.xni.XMLLocator locator, String encoding, org.apache.xerces.xni.NamespaceContext nscontext, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void XMLDocumentHandler_startPrefixMapping(org.apache.xerces.xni.XMLDocumentHandler documentHandler, String prefix, String uri, org.apache.xerces.xni.Augmentations augs)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.xercesbridge.XercesBridge_2_0</name>
+		<wmc>5</wmc>
+		<dit>0</dit>
+		<noc>0</noc>
+		<cbo>6</cbo>
+		<rfc>9</rfc>
+		<lcom>10</lcom>
+		<ca>0</ca>
+		<ce>6</ce>
+		<npm>4</npm>
+		<lcom3>2.0</lcom3>
+		<loc>27</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.5333333333333333</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>4.4</amc>
+		<cc>
+			<method name="public void XMLDocumentHandler_endPrefixMapping(org.apache.xerces.xni.XMLDocumentHandler documentHandler, String prefix, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public String getVersion()">1</method>
+			<method name="protected void _init_()">0</method>
+			<method name="public void XMLDocumentHandler_startDocument(org.apache.xerces.xni.XMLDocumentHandler documentHandler, org.apache.xerces.xni.XMLLocator locator, String encoding, org.apache.xerces.xni.NamespaceContext nscontext, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void XMLDocumentHandler_startPrefixMapping(org.apache.xerces.xni.XMLDocumentHandler documentHandler, String prefix, String uri, org.apache.xerces.xni.Augmentations augs)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLElements$ElementList</name>
+		<wmc>2</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>2</cbo>
+		<rfc>4</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>1</ce>
+		<npm>2</npm>
+		<lcom3>0.5</lcom3>
+		<loc>46</loc>
+		<dam>0.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.75</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>21.0</amc>
+		<cc>
+			<method name="public void _init_()">0</method>
+			<method name="public void addElement(org.cyberneko.html.HTMLElements$Element element)">2</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.parsers.DOMParser</name>
+		<wmc>3</wmc>
+		<dit>0</dit>
+		<noc>0</noc>
+		<cbo>6</cbo>
+		<rfc>16</rfc>
+		<lcom>3</lcom>
+		<ca>0</ca>
+		<ce>6</ce>
+		<npm>2</npm>
+		<lcom3>2.0</lcom3>
+		<loc>87</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.4444444444444444</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>28.0</amc>
+		<cc>
+			<method name="public void _init_()">0</method>
+			<method name="private static int getParserSubVersion()">2</method>
+			<method name="public void doctypeDecl(String root, String pubid, String sysid, org.apache.xerces.xni.Augmentations augs)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.SecuritySupport12</name>
+		<wmc>9</wmc>
+		<dit>0</dit>
+		<noc>0</noc>
+		<cbo>9</cbo>
+		<rfc>23</rfc>
+		<lcom>36</lcom>
+		<ca>9</ca>
+		<ce>9</ce>
+		<npm>0</npm>
+		<lcom3>2.0</lcom3>
+		<loc>82</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.4444444444444444</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>8.11111111111111</amc>
+		<cc>
+			<method name="ClassLoader getSystemClassLoader()">1</method>
+			<method name="long getLastModified(java.io.File f)">1</method>
+			<method name="void _init_()">0</method>
+			<method name="String getSystemProperty(String propName)">1</method>
+			<method name="ClassLoader getParentClassLoader(ClassLoader cl)">1</method>
+			<method name="java.io.FileInputStream getFileInputStream(java.io.File file)">1</method>
+			<method name="ClassLoader getContextClassLoader()">1</method>
+			<method name="boolean getFileExists(java.io.File f)">1</method>
+			<method name="java.io.InputStream getResourceAsStream(ClassLoader cl, String name)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.SecuritySupport12$6</name>
+		<wmc>2</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>1</cbo>
+		<rfc>5</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>1</ce>
+		<npm>1</npm>
+		<lcom3>0.33333333333333326</lcom3>
+		<loc>33</loc>
+		<dam>1.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.625</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>14.0</amc>
+		<cc>
+			<method name="public Object run()">2</method>
+			<method name="void _init_(org.cyberneko.html.SecuritySupport12, ClassLoader, String)">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.filters.NamespaceBinder$NamespaceSupport</name>
+		<wmc>11</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>4</cbo>
+		<rfc>19</rfc>
+		<lcom>0</lcom>
+		<ca>2</ca>
+		<ce>2</ce>
+		<npm>11</npm>
+		<lcom3>0.2666666666666666</lcom3>
+		<loc>297</loc>
+		<dam>1.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.45454545454545453</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>25.727272727272727</amc>
+		<cc>
+			<method name="public String getURI(String prefix)">3</method>
+			<method name="public void popContext()">2</method>
+			<method name="public org.apache.xerces.xni.NamespaceContext getParentContext()">1</method>
+			<method name="public int getDeclaredPrefixCount()">1</method>
+			<method name="public void _init_()">0</method>
+			<method name="public void pushContext()">2</method>
+			<method name="public void reset()">1</method>
+			<method name="public boolean declarePrefix(String prefix, String uri)">4</method>
+			<method name="public String getDeclaredPrefixAt(int index)">1</method>
+			<method name="public java.util.Enumeration getAllPrefixes()">3</method>
+			<method name="public String getPrefix(String uri)">3</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.SecuritySupport12$5</name>
+		<wmc>2</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>1</cbo>
+		<rfc>4</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>1</ce>
+		<npm>1</npm>
+		<lcom3>0.5</lcom3>
+		<loc>19</loc>
+		<dam>1.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.6666666666666666</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>7.5</amc>
+		<cc>
+			<method name="public Object run()">1</method>
+			<method name="void _init_(org.cyberneko.html.SecuritySupport12, java.io.File)">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.SecuritySupport12$4</name>
+		<wmc>2</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>1</cbo>
+		<rfc>4</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>1</ce>
+		<npm>1</npm>
+		<lcom3>0.5</lcom3>
+		<loc>17</loc>
+		<dam>1.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.6666666666666666</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>6.5</amc>
+		<cc>
+			<method name="public Object run()">1</method>
+			<method name="void _init_(org.cyberneko.html.SecuritySupport12, String)">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.SecuritySupport12$3</name>
+		<wmc>2</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>1</cbo>
+		<rfc>4</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>1</ce>
+		<npm>1</npm>
+		<lcom3>0.5</lcom3>
+		<loc>29</loc>
+		<dam>1.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.6666666666666666</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>12.5</amc>
+		<cc>
+			<method name="public Object run()">2</method>
+			<method name="void _init_(org.cyberneko.html.SecuritySupport12, ClassLoader)">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLScanner$LocationItem</name>
+		<wmc>11</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>4</cbo>
+		<rfc>16</rfc>
+		<lcom>13</lcom>
+		<ca>3</ca>
+		<ce>1</ce>
+		<npm>10</npm>
+		<lcom3>0.7</lcom3>
+		<loc>133</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.3939393939393939</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>10.545454545454545</amc>
+		<cc>
+			<method name="public boolean isSynthesized()">1</method>
+			<method name="public void setValues(int beginLine, int beginColumn, int beginOffset, int endLine, int endColumn, int endOffset)">1</method>
+			<method name="public int getBeginCharacterOffset()">1</method>
+			<method name="public void _init_()">0</method>
+			<method name="public int getEndColumnNumber()">1</method>
+			<method name="public int getEndCharacterOffset()">1</method>
+			<method name="public String toString()">1</method>
+			<method name="public int getBeginLineNumber()">1</method>
+			<method name="void _init_(org.cyberneko.html.HTMLScanner$LocationItem other)">0</method>
+			<method name="public int getEndLineNumber()">1</method>
+			<method name="public int getBeginColumnNumber()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.SecuritySupport12$8</name>
+		<wmc>2</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>1</cbo>
+		<rfc>5</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>1</ce>
+		<npm>1</npm>
+		<lcom3>0.5</lcom3>
+		<loc>18</loc>
+		<dam>1.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.6666666666666666</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>7.0</amc>
+		<cc>
+			<method name="public Object run()">1</method>
+			<method name="void _init_(org.cyberneko.html.SecuritySupport12, java.io.File)">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLAugmentations</name>
+		<wmc>8</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>7</cbo>
+		<rfc>20</rfc>
+		<lcom>0</lcom>
+		<ca>5</ca>
+		<ce>2</ce>
+		<npm>7</npm>
+		<lcom3>0.0</lcom3>
+		<loc>83</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.40625</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>9.25</amc>
+		<cc>
+			<method name="public void clear()">1</method>
+			<method name="public Object removeItem(String key)">1</method>
+			<method name="public void _init_()">0</method>
+			<method name="public Object putItem(String key, Object item)">1</method>
+			<method name="public java.util.Enumeration keys()">1</method>
+			<method name="public Object getItem(String key)">1</method>
+			<method name="public void removeAllItems()">1</method>
+			<method name="void _init_(org.apache.xerces.xni.Augmentations augs)">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.SecuritySupport12$7</name>
+		<wmc>2</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>1</cbo>
+		<rfc>5</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>1</ce>
+		<npm>1</npm>
+		<lcom3>0.5</lcom3>
+		<loc>18</loc>
+		<dam>1.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.6666666666666666</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>7.0</amc>
+		<cc>
+			<method name="public Object run()">1</method>
+			<method name="void _init_(org.cyberneko.html.SecuritySupport12, java.io.File)">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLScanner</name>
+		<wmc>60</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>30</cbo>
+		<rfc>159</rfc>
+		<lcom>1128</lcom>
+		<ca>4</ca>
+		<ce>28</ce>
+		<npm>25</npm>
+		<lcom3>0.9875818090283605</lcom3>
+		<loc>3018</loc>
+		<dam>0.7920792079207921</dam>
+		<moa>9</moa>
+		<mfa>0.0</mfa>
+		<cam>0.1162227602905569</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>47.61666666666667</amc>
+		<cc>
+			<method name="public String getPublicId()">2</method>
+			<method name="public String[] getRecognizedFeatures()">1</method>
+			<method name="protected boolean skipSpaces()">1</method>
+			<method name="protected static final String modifyName(String name, short mode)">4</method>
+			<method name="static void _clinit_()">0</method>
+			<method name="public void evaluateInputSource(org.apache.xerces.xni.parser.XMLInputSource inputSource)">2</method>
+			<method name="public void setProperty(String propertyId, Object value)">1</method>
+			<method name="public void pushInputSource(org.apache.xerces.xni.parser.XMLInputSource inputSource)">1</method>
+			<method name="protected int fixWindowsCharacter(int origChar)">2</method>
+			<method name="public void setInputSource(org.apache.xerces.xni.parser.XMLInputSource source)">1</method>
+			<method name="public int getColumnNumber()">2</method>
+			<method name="static org.apache.xerces.util.XMLStringBuffer access$1700(org.cyberneko.html.HTMLScanner x0)">1</method>
+			<method name="protected String scanName(boolean strict)">1</method>
+			<method name="protected int readPreservingBufferContent()">1</method>
+			<method name="protected int scanEntityRef(org.apache.xerces.util.XMLStringBuffer str, boolean content)">1</method>
+			<method name="private boolean endsWith(org.apache.xerces.util.XMLStringBuffer buffer, String string)">2</method>
+			<method name="protected int skipNewlines()">1</method>
+			<method name="public boolean scanDocument(boolean complete)">1</method>
+			<method name="protected String scanLiteral()">1</method>
+			<method name="public void _init_()">0</method>
+			<method name="protected void setScannerState(short state)">1</method>
+			<method name="protected final org.apache.xerces.xni.Augmentations synthesizedAugs()">2</method>
+			<method name="public Object getPropertyDefault(String propertyId)">4</method>
+			<method name="static org.apache.xerces.util.XMLStringBuffer access$1800(org.cyberneko.html.HTMLScanner x0)">1</method>
+			<method name="public String[] getRecognizedProperties()">1</method>
+			<method name="static boolean access$1100(org.cyberneko.html.HTMLScanner x0, org.apache.xerces.util.XMLStringBuffer x1, String x2)">1</method>
+			<method name="static boolean access$1200(org.cyberneko.html.HTMLScanner x0)">1</method>
+			<method name="private java.io.Reader getReader(org.apache.xerces.xni.parser.XMLInputSource inputSource)">2</method>
+			<method name="public Boolean getFeatureDefault(String featureId)">4</method>
+			<method name="protected static String fixURI(String str)">5</method>
+			<method name="static boolean[] access$900(org.cyberneko.html.HTMLScanner x0)">1</method>
+			<method name="protected final org.apache.xerces.xni.Augmentations locationAugs()">2</method>
+			<method name="private void appendChar(org.apache.xerces.util.XMLStringBuffer str, int value)">2</method>
+			<method name="private boolean endCommentAvailable()">1</method>
+			<method name="static void reduceToContent(org.apache.xerces.util.XMLStringBuffer buffer, String startMarker, String endMarker)">10</method>
+			<method name="public String getXMLVersion()">2</method>
+			<method name="public org.apache.xerces.xni.XMLDocumentHandler getDocumentHandler()">1</method>
+			<method name="static void access$1000(org.cyberneko.html.HTMLScanner x0, org.apache.xerces.util.XMLStringBuffer x1, int x2)">1</method>
+			<method name="public String getEncoding()">2</method>
+			<method name="protected void scanDoctype()">1</method>
+			<method name="public static String expandSystemId(String systemId, String baseSystemId)">10</method>
+			<method name="public String getLiteralSystemId()">2</method>
+			<method name="public void cleanup(boolean closeall)">6</method>
+			<method name="protected final org.apache.xerces.xni.XMLResourceIdentifier resourceId()">1</method>
+			<method name="protected boolean skipMarkup(boolean balance)">1</method>
+			<method name="public String getExpandedSystemId()">2</method>
+			<method name="public void setDocumentHandler(org.apache.xerces.xni.XMLDocumentHandler handler)">1</method>
+			<method name="protected int read()">1</method>
+			<method name="public int getCharacterOffset()">2</method>
+			<method name="public int getLineNumber()">2</method>
+			<method name="boolean isEncodingCompatible(String encoding1, String encoding2)">1</method>
+			<method name="private void appendChar(StringBuffer str, int value)">2</method>
+			<method name="protected static boolean builtinXmlRef(String name)">6</method>
+			<method name="protected void setScanner(org.cyberneko.html.HTMLScanner$Scanner scanner)">1</method>
+			<method name="public String getBaseSystemId()">2</method>
+			<method name="public void reset(org.apache.xerces.xni.parser.XMLComponentManager manager)">1</method>
+			<method name="protected static String getValue(org.apache.xerces.xni.XMLAttributes attrs, String aname)">4</method>
+			<method name="protected static final short getNamesValue(String value)">3</method>
+			<method name="protected boolean skip(String s, boolean caseSensitive)">1</method>
+			<method name="public void setFeature(String featureId, boolean state)">14</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.filters.Purifier</name>
+		<wmc>23</wmc>
+		<dit>0</dit>
+		<noc>0</noc>
+		<cbo>18</cbo>
+		<rfc>76</rfc>
+		<lcom>181</lcom>
+		<ca>1</ca>
+		<ce>17</ce>
+		<npm>14</npm>
+		<lcom3>0.8770053475935828</lcom3>
+		<loc>732</loc>
+		<dam>0.9411764705882353</dam>
+		<moa>2</moa>
+		<mfa>0.0</mfa>
+		<cam>0.24380165289256198</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>30.08695652173913</amc>
+		<cc>
+			<method name="protected void handleStartDocument()">1</method>
+			<method name="public void processingInstruction(String target, org.apache.xerces.xni.XMLString data, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startDocument(org.apache.xerces.xni.XMLLocator locator, String encoding, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void _init_()">0</method>
+			<method name="static void _clinit_()">0</method>
+			<method name="protected final org.apache.xerces.xni.Augmentations synthesizedAugs()">2</method>
+			<method name="public void xmlDecl(String version, String encoding, String standalone, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="protected String purifyName(String name, boolean localpart)">11</method>
+			<method name="public void comment(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startCDATA(org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void doctypeDecl(String root, String pubid, String sysid, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="protected org.apache.xerces.xni.XMLString purifyText(org.apache.xerces.xni.XMLString text)">3</method>
+			<method name="public void emptyElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attrs, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="protected void handleStartElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attrs)">13</method>
+			<method name="public void reset(org.apache.xerces.xni.parser.XMLComponentManager manager)">1</method>
+			<method name="public void characters(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="protected org.apache.xerces.xni.QName purifyQName(org.apache.xerces.xni.QName qname)">1</method>
+			<method name="public void startElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attrs, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="protected static String toHexString(int c, int padlen)">2</method>
+			<method name="protected void synthesizeBinding(org.apache.xerces.xni.XMLAttributes attrs, String ns)">1</method>
+			<method name="public void endElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void endCDATA(org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startDocument(org.apache.xerces.xni.XMLLocator locator, String encoding, org.apache.xerces.xni.NamespaceContext nscontext, org.apache.xerces.xni.Augmentations augs)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLElements</name>
+		<wmc>5</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>6</cbo>
+		<rfc>16</rfc>
+		<lcom>4</lcom>
+		<ca>4</ca>
+		<ce>2</ce>
+		<npm>4</npm>
+		<lcom3>1.235655737704918</lcom3>
+		<loc>2378</loc>
+		<dam>0.01639344262295082</dam>
+		<moa>3</moa>
+		<mfa>0.0</mfa>
+		<cam>0.3125</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>450.2</amc>
+		<cc>
+			<method name="public static final org.cyberneko.html.HTMLElements$Element getElement(String ename, org.cyberneko.html.HTMLElements$Element element)">9</method>
+			<method name="public void _init_()">0</method>
+			<method name="static void _clinit_()">0</method>
+			<method name="public static final org.cyberneko.html.HTMLElements$Element getElement(short code)">1</method>
+			<method name="public static final org.cyberneko.html.HTMLElements$Element getElement(String ename)">2</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.ObjectFactory$ConfigurationError</name>
+		<wmc>2</wmc>
+		<dit>3</dit>
+		<noc>0</noc>
+		<cbo>1</cbo>
+		<rfc>3</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>0</ce>
+		<npm>0</npm>
+		<lcom3>0.0</lcom3>
+		<loc>13</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.9545454545454546</mfa>
+		<cam>0.6666666666666666</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>5.0</amc>
+		<cc>
+			<method name="Exception getException()">1</method>
+			<method name="void _init_(String msg, Exception x)">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLElements$Element</name>
+		<wmc>14</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>7</cbo>
+		<rfc>21</rfc>
+		<lcom>45</lcom>
+		<ca>7</ca>
+		<ce>0</ce>
+		<npm>14</npm>
+		<lcom3>0.8269230769230769</lcom3>
+		<loc>204</loc>
+		<dam>0.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.336734693877551</cam>
+		<ic>1</ic>
+		<cbm>1</cbm>
+		<amc>12.714285714285714</amc>
+		<cc>
+			<method name="public boolean closes(short tag)">4</method>
+			<method name="public final boolean isSpecial()">2</method>
+			<method name="public boolean equals(Object o)">1</method>
+			<method name="public boolean isParent(org.cyberneko.html.HTMLElements$Element element)">4</method>
+			<method name="public final boolean isInline()">2</method>
+			<method name="public void _init_(short code, String name, int flags, short parent, short[] closes)">0</method>
+			<method name="public final boolean isBlock()">2</method>
+			<method name="public final boolean isContainer()">2</method>
+			<method name="public void _init_(short code, String name, int flags, short[] parents, short bounds, short[] closes)">0</method>
+			<method name="public final boolean isEmpty()">2</method>
+			<method name="public int hashCode()">1</method>
+			<method name="public String toString()">1</method>
+			<method name="public void _init_(short code, String name, int flags, short parent, short bounds, short[] closes)">0</method>
+			<method name="public void _init_(short code, String name, int flags, short[] parents, short[] closes)">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.filters.Identity</name>
+		<wmc>5</wmc>
+		<dit>0</dit>
+		<noc>0</noc>
+		<cbo>7</cbo>
+		<rfc>11</rfc>
+		<lcom>10</lcom>
+		<ca>1</ca>
+		<ce>6</ce>
+		<npm>4</npm>
+		<lcom3>1.25</lcom3>
+		<loc>54</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.65</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>9.4</amc>
+		<cc>
+			<method name="public void startElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attributes, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void _init_()">0</method>
+			<method name="protected static boolean synthesized(org.apache.xerces.xni.Augmentations augs)">2</method>
+			<method name="public void endElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void emptyElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attributes, org.apache.xerces.xni.Augmentations augs)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLScanner$Scanner</name>
+		<wmc>1</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>3</cbo>
+		<rfc>1</rfc>
+		<lcom>0</lcom>
+		<ca>3</ca>
+		<ce>0</ce>
+		<npm>1</npm>
+		<lcom3>2.0</lcom3>
+		<loc>1</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>1.0</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>0.0</amc>
+		<cc>
+			<method name="public abstract boolean scan(boolean)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLEventInfo</name>
+		<wmc>7</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>6</cbo>
+		<rfc>7</rfc>
+		<lcom>21</lcom>
+		<ca>6</ca>
+		<ce>0</ce>
+		<npm>7</npm>
+		<lcom3>2.0</lcom3>
+		<loc>7</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>1.0</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>0.0</amc>
+		<cc>
+			<method name="public abstract int getEndColumnNumber()">1</method>
+			<method name="public abstract int getEndCharacterOffset()">1</method>
+			<method name="public abstract boolean isSynthesized()">1</method>
+			<method name="public abstract int getBeginLineNumber()">1</method>
+			<method name="public abstract int getEndLineNumber()">1</method>
+			<method name="public abstract int getBeginCharacterOffset()">1</method>
+			<method name="public abstract int getBeginColumnNumber()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLErrorReporter</name>
+		<wmc>3</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>7</cbo>
+		<rfc>3</rfc>
+		<lcom>3</lcom>
+		<ca>6</ca>
+		<ce>1</ce>
+		<npm>3</npm>
+		<lcom3>2.0</lcom3>
+		<loc>3</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>1.0</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>0.0</amc>
+		<cc>
+			<method name="public abstract void reportWarning(String, Object[])">1</method>
+			<method name="public abstract String formatMessage(String, Object[])">1</method>
+			<method name="public abstract void reportError(String, Object[])">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLEntities$IntProperties$Entry</name>
+		<wmc>1</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>1</cbo>
+		<rfc>2</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>0</ce>
+		<npm>1</npm>
+		<lcom3>2.0</lcom3>
+		<loc>16</loc>
+		<dam>0.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>1.0</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>12.0</amc>
+		<cc>
+			<method name="public void _init_(int key, String value, org.cyberneko.html.HTMLEntities$IntProperties$Entry next)">0</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.filters.DefaultFilter</name>
+		<wmc>32</wmc>
+		<dit>1</dit>
+		<noc>5</noc>
+		<cbo>20</cbo>
+		<rfc>53</rfc>
+		<lcom>114</lcom>
+		<ca>5</ca>
+		<ce>15</ce>
+		<npm>31</npm>
+		<lcom3>0.6612903225806451</lcom3>
+		<loc>281</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.17291666666666666</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>7.71875</amc>
+		<cc>
+			<method name="public void reset(org.apache.xerces.xni.parser.XMLComponentManager componentManager)">1</method>
+			<method name="public void endDocument(org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public String[] getRecognizedFeatures()">1</method>
+			<method name="public void processingInstruction(String target, org.apache.xerces.xni.XMLString data, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public org.apache.xerces.xni.XMLDocumentHandler getDocumentHandler()">1</method>
+			<method name="public void setProperty(String propertyId, Object value)">1</method>
+			<method name="public void textDecl(String version, String encoding, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void characters(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startPrefixMapping(String prefix, String uri, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startGeneralEntity(String name, org.apache.xerces.xni.XMLResourceIdentifier id, String encoding, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void endGeneralEntity(String name, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void endCDATA(org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void setDocumentHandler(org.apache.xerces.xni.XMLDocumentHandler handler)">1</method>
+			<method name="public void startDocument(org.apache.xerces.xni.XMLLocator locator, String encoding, org.apache.xerces.xni.NamespaceContext nscontext, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void setDocumentSource(org.apache.xerces.xni.parser.XMLDocumentSource source)">1</method>
+			<method name="public void startDocument(org.apache.xerces.xni.XMLLocator locator, String encoding, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void _init_()">0</method>
+			<method name="public void doctypeDecl(String root, String publicId, String systemId, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public Object getPropertyDefault(String propertyId)">1</method>
+			<method name="public void xmlDecl(String version, String encoding, String standalone, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public String[] getRecognizedProperties()">1</method>
+			<method name="public void comment(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public org.apache.xerces.xni.parser.XMLDocumentSource getDocumentSource()">1</method>
+			<method name="public void startCDATA(org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="protected static String[] merge(String[] array1, String[] array2)">4</method>
+			<method name="public void startElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attributes, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void endElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public Boolean getFeatureDefault(String featureId)">1</method>
+			<method name="public void emptyElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attributes, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void setFeature(String featureId, boolean state)">1</method>
+			<method name="public void endPrefixMapping(String prefix, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void ignorableWhitespace(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.Version</name>
+		<wmc>3</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>0</cbo>
+		<rfc>5</rfc>
+		<lcom>3</lcom>
+		<ca>0</ca>
+		<ce>0</ce>
+		<npm>3</npm>
+		<lcom3>2.0</lcom3>
+		<loc>12</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.3333333333333333</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>3.0</amc>
+		<cc>
+			<method name="public void _init_()">0</method>
+			<method name="public static void main(String[] argv)">1</method>
+			<method name="public static String getVersion()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLTagBalancer</name>
+		<wmc>49</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>28</cbo>
+		<rfc>117</rfc>
+		<lcom>598</lcom>
+		<ca>1</ca>
+		<ce>27</ce>
+		<npm>31</npm>
+		<lcom3>0.8822115384615384</lcom3>
+		<loc>2282</loc>
+		<dam>0.9807692307692307</dam>
+		<moa>7</moa>
+		<mfa>0.0</mfa>
+		<cam>0.13773148148148148</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>44.51020408163265</amc>
+		<cc>
+			<method name="public void endDocument(org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="protected final void callEndElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public String[] getRecognizedFeatures()">1</method>
+			<method name="public void processingInstruction(String target, org.apache.xerces.xni.XMLString data, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="protected static final String modifyName(String name, short mode)">4</method>
+			<method name="public org.apache.xerces.xni.XMLDocumentHandler getDocumentHandler()">1</method>
+			<method name="private boolean forceStartElement(org.apache.xerces.xni.QName elem, org.apache.xerces.xni.XMLAttributes attrs, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="static void _clinit_()">0</method>
+			<method name="public void setProperty(String propertyId, Object value)">1</method>
+			<method name="private void consumeBufferedEndElements()">2</method>
+			<method name="protected org.cyberneko.html.HTMLElements$Element getElement(org.apache.xerces.xni.QName elementName)">4</method>
+			<method name="private void forceStartBody()">2</method>
+			<method name="public void emptyElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attrs, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void textDecl(String version, String encoding, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startPrefixMapping(String prefix, String uri, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void characters(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="private void consumeEarlyTextIfNeeded()">3</method>
+			<method name="protected final org.apache.xerces.xni.XMLAttributes emptyAttributes()">1</method>
+			<method name="public void startGeneralEntity(String name, org.apache.xerces.xni.XMLResourceIdentifier id, String encoding, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void endGeneralEntity(String name, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="protected final int getElementDepth(org.cyberneko.html.HTMLElements$Element element)">14</method>
+			<method name="public void endCDATA(org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void setDocumentHandler(org.apache.xerces.xni.XMLDocumentHandler handler)">1</method>
+			<method name="public void setDocumentSource(org.apache.xerces.xni.parser.XMLDocumentSource source)">1</method>
+			<method name="public void startDocument(org.apache.xerces.xni.XMLLocator locator, String encoding, org.apache.xerces.xni.NamespaceContext nscontext, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void startDocument(org.apache.xerces.xni.XMLLocator locator, String encoding, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void _init_()">0</method>
+			<method name="private org.apache.xerces.xni.QName createQName(String tagName)">1</method>
+			<method name="private void notifyDiscardedStartElement(org.apache.xerces.xni.QName elem, org.apache.xerces.xni.XMLAttributes attrs, org.apache.xerces.xni.Augmentations augs)">2</method>
+			<method name="protected final org.apache.xerces.xni.Augmentations synthesizedAugs()">2</method>
+			<method name="public void doctypeDecl(String rootElementName, String publicId, String systemId, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public Object getPropertyDefault(String propertyId)">4</method>
+			<method name="public void xmlDecl(String version, String encoding, String standalone, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public String[] getRecognizedProperties()">1</method>
+			<method name="public org.apache.xerces.xni.parser.XMLDocumentSource getDocumentSource()">1</method>
+			<method name="public void startCDATA(org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void comment(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="void setTagBalancingListener(org.cyberneko.html.HTMLTagBalancingListener tagBalancingListener)">1</method>
+			<method name="public void reset(org.apache.xerces.xni.parser.XMLComponentManager manager)">1</method>
+			<method name="protected static final short getNamesValue(String value)">3</method>
+			<method name="protected final void callStartElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.XMLAttributes attrs, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="private void notifyDiscardedEndElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.Augmentations augs)">2</method>
+			<method name="public void endElement(org.apache.xerces.xni.QName element, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="protected int getParentDepth(org.cyberneko.html.HTMLElements$Element[] parents, short bounds)">6</method>
+			<method name="public Boolean getFeatureDefault(String featureId)">4</method>
+			<method name="public void startElement(org.apache.xerces.xni.QName elem, org.apache.xerces.xni.XMLAttributes attrs, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void endPrefixMapping(String prefix, org.apache.xerces.xni.Augmentations augs)">1</method>
+			<method name="public void setFeature(String featureId, boolean state)">1</method>
+			<method name="public void ignorableWhitespace(org.apache.xerces.xni.XMLString text, org.apache.xerces.xni.Augmentations augs)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLEntities$IntProperties</name>
+		<wmc>3</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>2</cbo>
+		<rfc>5</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>1</ce>
+		<npm>2</npm>
+		<lcom3>0.0</lcom3>
+		<loc>59</loc>
+		<dam>1.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.6666666666666666</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>18.333333333333332</amc>
+		<cc>
+			<method name="void _init_()">0</method>
+			<method name="public void put(int key, String value)">1</method>
+			<method name="public String get(int key)">3</method>
+		</cc>
+	</class>
+	<class>
+		<name>org.cyberneko.html.HTMLTagBalancingListener</name>
+		<wmc>2</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>5</cbo>
+		<rfc>2</rfc>
+		<lcom>1</lcom>
+		<ca>2</ca>
+		<ce>3</ce>
+		<npm>2</npm>
+		<lcom3>2.0</lcom3>
+		<loc>2</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.875</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>0.0</amc>
+		<cc>
+			<method name="public abstract void ignoredStartElement(org.apache.xerces.xni.QName, org.apache.xerces.xni.XMLAttributes, org.apache.xerces.xni.Augmentations)">1</method>
+			<method name="public abstract void ignoredEndElement(org.apache.xerces.xni.QName, org.apache.xerces.xni.Augmentations)">1</method>
+		</cc>
+	</class>
+</classes>

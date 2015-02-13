@@ -1,11 +1,15 @@
 package edu.rosehulman.serg.smellbuster.metricparser;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.apache.commons.io.FileUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -34,10 +38,28 @@ public class CKJMParser implements IMetricParser {
 	public void initializeDOMFromFile(String fileName) {
 		try {
 			File f = new File(fileName);
+
+			formatFile(f);
+
 			this.document = this.builder.parse(f);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	private void formatFile(File f) throws FileNotFoundException, IOException {
+		
+		String file = FileUtils.readFileToString(f);
+
+		String classesTag = file.substring(0, 9);
+		if (!classesTag.equals("<classes>")){
+			file = "<classes>" + file;
+			file = file + "</classes>";
+		}
+		
+		FileOutputStream outputStream = new FileOutputStream(f, false);
+		outputStream.write(file.getBytes());
+		outputStream.close();
 	}
 
 	public void parseXML() {
@@ -91,7 +113,8 @@ public class CKJMParser implements IMetricParser {
 									.getTextContent().trim());
 							break;
 						default:
-							metricDomObj.setValueForMetric(cNode.getNodeName(), Double.parseDouble(content));
+							metricDomObj.setValueForMetric(cNode.getNodeName(),
+									Double.parseDouble(content));
 							break;
 						}
 					}

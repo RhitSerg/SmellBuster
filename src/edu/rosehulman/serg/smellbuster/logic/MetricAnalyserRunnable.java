@@ -29,15 +29,31 @@ public class MetricAnalyserRunnable implements Runnable {
 						// File("C:\\Users\\Dharmin\\Documents\\GitHub\\SmellBuster\\repo\\JFreeChart\\91\\jfreechart-1.0.x-branch\\jfreechart-1.0.6.jar"));
 						// ckjmTask.execute();
 
-						ProcessBuilder builder = new ProcessBuilder(
-								"java -jar " + System.getProperty("user.dir")
-										+ "\\lib\\ckjm.jar -x "
-										+ file.getAbsolutePath() + " >> "
-										+ System.getProperty("user.dir") + "\\"
-										+ this.destLocation);
-						builder.redirectErrorStream(true);
+						String currentDir = System.getProperty("user.dir");
+						currentDir = currentDir.replace("\\", "/");
+						this.destLocation = this.destLocation
+								.replace("\\", "/");
 
-						builder.start();
+						String filePath = file.getAbsolutePath().replace("\\",
+								"/");
+
+//						ProcessBuilder builder = new ProcessBuilder(
+//								"java -jar " + currentDir + "/lib/ckjm.jar -x "
+//										+ filePath + " >> " + currentDir + "/"
+//										+ this.destLocation);
+//						builder.redirectErrorStream(true);
+//
+//						builder.start();
+
+						String[] cmd = {
+								"java",
+								"-jar",
+								currentDir + "/lib/ckjm.jar",
+								"-x",
+								"C:/Users/Dharmin/Documents/GitHub/SmellBuster/repo/JFreeChart/91/jfreechart-1.0.x-branch/jfreechart-1.0.6.jar",
+								">>",
+								currentDir + "/" + this.destLocation };
+						Runtime.getRuntime().exec(cmd);
 
 					}
 				}

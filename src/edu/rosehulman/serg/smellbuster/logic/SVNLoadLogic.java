@@ -47,7 +47,7 @@ public class SVNLoadLogic {
 		currentProgress = 0;
 		this.checkoutRepo();
 		this.buildProject();
-		this.runMetricAnalysis();
+		//this.runMetricAnalysis();
 		this.loadData();
 	}
 

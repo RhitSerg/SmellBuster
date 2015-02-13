@@ -9,6 +9,7 @@ import java.util.TreeMap;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class FileChooser extends JFrame {
@@ -71,9 +72,20 @@ public class FileChooser extends JFrame {
 	private void parseInputFile(File selectedFile) {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(selectedFile));
-			String line;
+			String line = br.readLine();
 			int lineNum = 0;
-			while ((line = br.readLine()) != null && line.length() > 0) {
+			
+			if (line == null || line.length() == 0){
+				JOptionPane
+				.showMessageDialog(this,
+						"Incorrect input file format");
+				br.close();
+				return;
+			} else {
+				this.versionMap.clear();
+			}
+			
+			while (line != null && line.length() > 0) {	
 				if (lineNum == 0){
 					this.inputMap.put("project", line.trim());
 				} else if (lineNum == 1){
@@ -87,6 +99,7 @@ public class FileChooser extends JFrame {
 					this.versionMap.put(Integer.parseInt(inputs[1]), inputs[0]);
 				}
 				lineNum++;
+				line = br.readLine();
 			}
 			br.close();
 		} catch (Exception e) {
@@ -94,8 +107,7 @@ public class FileChooser extends JFrame {
 		}
 	}
 
-	public void loadInput(){
-		this.versionMap.clear();
+	public void loadInput(){	
 		this.chooseFile();
 	}
 	
