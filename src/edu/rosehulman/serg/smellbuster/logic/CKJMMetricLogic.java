@@ -206,37 +206,38 @@ public class CKJMMetricLogic implements IMetricLogic {
 		} catch (Exception e) {
 			return Color.LIGHT_GRAY;
 		}
-
+		
 		double ratio = 0;
-
 		double spread = this.maxAggregateValue - minAggregateValue;
-
 		if (this.maxAggregateValue > minAggregateValue) {
 			ratio = 2 * (score - minAggregateValue) / spread;
 		}
+		
+		double red = 0;
+		double green = 0;
 
-		double r = 0;
-		double g = 0;
+	    if (ratio < 0.25) {
+	        red = 0.5;
+	        green = 6 * ratio;
+	    }
+	    else if (ratio < 0.5){
+	        green = 0.55;
+	        red = 1 + 6 * (minAggregateValue - score + 0.25 * spread) / spread;
+	    }
+	    else if (ratio < 0.75) {
+	        green = 1;
+	        red = 4 * (score - minAggregateValue - 0.5 * spread) / spread;
+	    }
+	    else {
+	        green = 1;
+	        red = 1 + 4 * (minAggregateValue - score + 0.75 * spread) / spread;
+	    }
 
-		if (ratio < 0.25 && ratio != 0) {
-			r = 0.50;
-			g = 6 * ratio;
-		} else if (ratio < 0.5) {
-			g = 0.55;
-			r = 1 + 6 * (minAggregateValue - score + 0.25 * spread) / spread;
-		} else if (ratio < 0.75) {
-			g = 1;
-			r = 4 * (score - minAggregateValue - 0.5 * spread) / spread;
-		} else {
-			r = 1;
-			g = 1 + 4 * (minAggregateValue - score + 0.75 * spread) / spread;
-		}
+		int r = (int) Math.max(0, (red * 255) > 255 ? 255 : (red * 255));
 
-		int red = (int) Math.max(0, (r * 255) > 255 ? 255 : (r * 255));
+		int g = (int) Math.max(0, (green * 255) > 255 ? 255 : (green * 255));
 
-		int green = (int) Math.max(0, (g * 255) > 255 ? 255 : (g * 255));
-
-		return new Color(red, green, 0);
+		return new Color(r, g, 0);
 	}
 
 	@Override
