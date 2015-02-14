@@ -1,6 +1,5 @@
-<classes>
-    <class>
-        <name>org.cyberneko.html.LostText</name>
+<classes>	<class>
+		<name>org.cyberneko.html.LostText</name>
 		<wmc>4</wmc>
 		<dit>1</dit>
 		<noc>0</noc>
@@ -1766,4 +1765,5 @@
 			<method name="public abstract void ignoredStartElement(org.apache.xerces.xni.QName, org.apache.xerces.xni.XMLAttributes, org.apache.xerces.xni.Augmentations)">1</method>
 			<method name="public abstract void ignoredEndElement(org.apache.xerces.xni.QName, org.apache.xerces.xni.Augmentations)">1</method>
 		</cc>
-</class></classes>
+	</class>
+</classes>

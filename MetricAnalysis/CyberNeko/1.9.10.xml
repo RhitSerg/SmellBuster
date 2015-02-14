@@ -1,5 +1,4 @@
-<classes>
-    <class>
+<classes>	<class>
 		<name>org.cyberneko.html.filters.NamespaceBinder</name>
 		<wmc>15</wmc>
 		<dit>0</dit>

@@ -43,11 +43,11 @@ public class SVNLoadLogic {
 		this.diffMap = new HashMap<>();
 		this.classMap = new HashMap<>();
 		this.packageClassMap = new HashMap<>();
-		totalProgress = this.versionMap.keySet().size() * 3;
+		totalProgress = this.versionMap.keySet().size() * 4;
 		currentProgress = 0;
 		this.checkoutRepo();
 		this.buildProject();
-		//this.runMetricAnalysis();
+		this.runMetricAnalysis();
 		this.loadData();
 	}
 

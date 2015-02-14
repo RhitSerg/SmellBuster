@@ -210,18 +210,18 @@ public class CKJMMetricLogic implements IMetricLogic {
 		double ratio = 0;
 		double spread = this.maxAggregateValue - minAggregateValue;
 		if (this.maxAggregateValue > minAggregateValue) {
-			ratio = 2 * (score - minAggregateValue) / spread;
+			ratio =  (score - minAggregateValue) / spread;
 		}
 		
 		double red = 0;
 		double green = 0;
 
 	    if (ratio < 0.25) {
-	        red = 0.5;
+	        red = 1;
 	        green = 6 * ratio;
 	    }
 	    else if (ratio < 0.5){
-	        green = 0.55;
+	        green = 0.75;
 	        red = 1 + 6 * (minAggregateValue - score + 0.25 * spread) / spread;
 	    }
 	    else if (ratio < 0.75) {
