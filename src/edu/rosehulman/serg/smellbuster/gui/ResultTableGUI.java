@@ -136,7 +136,7 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 					case 1:
 						ArrayList<MetricDOMObject> classList = ResultTableGUI.this.displayTableLogic
 								.createClassListMap(className);
-						LineChart chart = new LineChart(className, classList);
+						LineChart chart = new LineChart(className, classList, ResultTableGUI.this.versionMap.keySet());
 						chart.setSize(500, 500);
 						chart.setVisible(true);
 						break;

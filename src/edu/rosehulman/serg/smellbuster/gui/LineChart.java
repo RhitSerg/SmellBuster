@@ -1,4 +1,5 @@
 package edu.rosehulman.serg.smellbuster.gui;
+
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -14,6 +15,7 @@ import javax.swing.*;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Set;
 
 public class LineChart extends JFrame {
 	/**
@@ -21,25 +23,36 @@ public class LineChart extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private ArrayList<MetricDOMObject> classList;
-	String[] metrics = new String[] { "wmc", "noc", "cbo", "lcom", "ca", "ce",
-			"lcom3", "cam", "ic", "cbm", "amc" };
+	String[] metrics = new String[] { "wmc", "noc", "cbo", "lcom3", "cam",
+			"ic", "cbm", "amc", "cc" };
 	private final int CHART_WIDTH = 700;
 	private final int CHART_HEIGHT = 270;
 	private final int NUM_OF_ROWS = 1;
 	private final int NUM_OF_COLS = 1;
 	private String title;
+	private double[] xaxisLabels;
 
 	/**
 	 * Constructor for initializing the charts with provided title.
 	 * 
 	 * @param title
 	 */
-	public LineChart(final String title, ArrayList<MetricDOMObject> classList) {
+	public LineChart(final String title, ArrayList<MetricDOMObject> classList, Set<Integer> labels) {
 		super(title);
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.title = title;
 		this.classList = classList;
+		this.setXAxisLables(labels);
 		setContentPane(getChartPanel(this.classList));
+	}
+	
+	private void setXAxisLables(Set<Integer> labels){
+		this.xaxisLabels = new double[labels.size()];
+		int pos = 0;
+		for (int repoVersion: labels){
+			this.xaxisLabels[pos] = repoVersion;
+			pos++;
+		}
 	}
 
 	/**
@@ -75,13 +88,14 @@ public class LineChart extends JFrame {
 
 		final XYSeriesCollection dataset = new XYSeriesCollection();
 		for (String metricName : this.metrics) {
-			int version = 1;
+			int version = 0;
 			final XYSeries series = new XYSeries(metricName);
 			for (MetricDOMObject metricDomObj : this.classList) {
 				if (metricDomObj == null)
-					series.add(version, -10.0);
+					series.add(this.xaxisLabels[version], -10.0);
 				else
-					series.add(version, metricDomObj.getValueForMetric(metricName));
+					series.add(this.xaxisLabels[version],
+							metricDomObj.getValueForMetric(metricName));
 				version++;
 			}
 			dataset.addSeries(series);

@@ -206,38 +206,64 @@ public class CKJMMetricLogic implements IMetricLogic {
 		} catch (Exception e) {
 			return Color.LIGHT_GRAY;
 		}
-		
-		double ratio = 0;
+
+		//double ratio = 0;
 		double spread = this.maxAggregateValue - minAggregateValue;
-		if (this.maxAggregateValue > minAggregateValue) {
-			ratio =  (score - minAggregateValue) / spread;
+		double offset = spread / 8;
+
+		double category1 = minAggregateValue + (offset * 1);
+		double category2 = minAggregateValue + (offset * 2);
+		double category3 = minAggregateValue + (offset * 3);
+		double category4 = minAggregateValue + (offset * 4);
+		double category5 = minAggregateValue + (offset * 5);
+		double category6 = minAggregateValue + (offset * 6);
+		double category7 = minAggregateValue + (offset * 7);
+
+		if (score >= minAggregateValue && score < category1) {
+			return new Color(255, 0, 0);
+		} else if (score >= category1 && score < category2) {
+			return new Color(204, 0, 0);
+		} else if (score >= category2 && score < category3) {
+			return new Color(159, 95, 0);
+		} else if (score >= category3 && score < category4) {
+			return new Color(255, 102, 0);
+		} else if (score >= category4 && score < category5) {
+			return new Color(255, 102, 0);
+		} else if (score >= category5 && score < category6) {
+			return new Color(255, 204, 0);
+		} else if (score >= category6 && score < category7) {
+			return new Color(95, 159, 0);
+		} else {
+			return new Color(0, 255, 0);
 		}
-		
-		double red = 0;
-		double green = 0;
 
-	    if (ratio < 0.25) {
-	        red = 1;
-	        green = 6 * ratio;
-	    }
-	    else if (ratio < 0.5){
-	        green = 0.75;
-	        red = 1 + 6 * (minAggregateValue - score + 0.25 * spread) / spread;
-	    }
-	    else if (ratio < 0.75) {
-	        green = 1;
-	        red = 4 * (score - minAggregateValue - 0.5 * spread) / spread;
-	    }
-	    else {
-	        green = 1;
-	        red = 1 + 4 * (minAggregateValue - score + 0.75 * spread) / spread;
-	    }
+		// if (this.maxAggregateValue > minAggregateValue) {
+		// ratio = (score - minAggregateValue) / spread;
+		// }
 
-		int r = (int) Math.max(0, (red * 255) > 255 ? 255 : (red * 255));
-
-		int g = (int) Math.max(0, (green * 255) > 255 ? 255 : (green * 255));
-
-		return new Color(r, g, 0);
+		// double red = 0;
+		// double green = 0;
+		//
+		// if (ratio < 0.25) {
+		// red = 1;
+		// green = 6 * ratio;
+		// }
+		// else if (ratio < 0.5){
+		// green = 0.75;
+		// red = 1 + 6 * (minAggregateValue - score + 0.25 * spread) / spread;
+		// }
+		// else if (ratio < 0.75) {
+		// green = 1;
+		// red = 4 * (score - minAggregateValue - 0.5 * spread) / spread;
+		// }
+		// else {
+		// green = 1;
+		// red = 1 + 4 * (minAggregateValue - score + 0.75 * spread) / spread;
+		// }
+		//
+		// int r = (int) Math.max(0, (red * 255) > 255 ? 255 : (red * 255));
+		//
+		// int g = (int) Math.max(0, (green * 255) > 255 ? 255 : (green * 255));
 	}
 
 	@Override
