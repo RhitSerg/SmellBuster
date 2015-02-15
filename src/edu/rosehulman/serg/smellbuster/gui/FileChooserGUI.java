@@ -12,14 +12,14 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-public class FileChooser extends JFrame {
+public class FileChooserGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private Map<Integer, String> versionMap;
 	private JFileChooser chooser;
 	private Map<String, String> inputMap;
 
-	public FileChooser() {
+	public FileChooserGUI() {
 		this.versionMap = new TreeMap<>();
 		this.inputMap = new TreeMap<>();
 		this.chooser = new JFileChooser();
@@ -31,7 +31,7 @@ public class FileChooser extends JFrame {
 	}
 
 	private void chooseFile() {
-		int option = chooser.showOpenDialog(FileChooser.this);
+		int option = chooser.showOpenDialog(FileChooserGUI.this);
 		if (option == JFileChooser.APPROVE_OPTION
 				&& chooser.getSelectedFile() != null) {
 			this.parseInputFile(chooser.getSelectedFile());
@@ -41,7 +41,7 @@ public class FileChooser extends JFrame {
 	}
 
 	private File getSaveFile() {
-		int option = chooser.showSaveDialog(FileChooser.this);
+		int option = chooser.showSaveDialog(FileChooserGUI.this);
 		if (option == JFileChooser.APPROVE_OPTION
 				&& chooser.getSelectedFile() != null) {
 			return chooser.getSelectedFile();

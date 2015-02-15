@@ -12,7 +12,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class InputTable extends JPanel {
+public class InputTableGUI extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JTable table;
@@ -20,7 +20,7 @@ public class InputTable extends JPanel {
 	private DefaultTableModel tableModel;
 	private String[] columnNames;
 
-	public InputTable() {
+	public InputTableGUI() {
 		setBackground(Color.gray);
 		setLayout(new BorderLayout());
 
@@ -72,7 +72,7 @@ public class InputTable extends JPanel {
 		public void propertyChange(PropertyChangeEvent e) {
 
 			if ("tableCellEditor".equals(e.getPropertyName())) {
-				int row = InputTable.this.table.getSelectedRow();
+				int row = InputTableGUI.this.table.getSelectedRow();
 
 				int rows = table.getRowCount();
 				int cols = table.getColumnCount();
@@ -80,13 +80,13 @@ public class InputTable extends JPanel {
 				if (row == (rows - 1)) {
 					boolean isCellEmpty = false;
 					for (int i = 0; i < cols; i++) {
-						String cell = InputTable.this.table.getValueAt(row, i)
+						String cell = InputTableGUI.this.table.getValueAt(row, i)
 								.toString();
 						if (cell.equals(""))
 							isCellEmpty = true;
 					}
 					if (!isCellEmpty) {
-						InputTable.this.tableModel
+						InputTableGUI.this.tableModel
 								.addRow(new Object[] { "", "" });
 					}
 				}

@@ -17,7 +17,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Set;
 
-public class LineChart extends JFrame {
+public class LineChartGUI extends JFrame {
 	/**
 	 * 
 	 */
@@ -37,7 +37,7 @@ public class LineChart extends JFrame {
 	 * 
 	 * @param title
 	 */
-	public LineChart(final String title, ArrayList<MetricDOMObject> classList, Set<Integer> labels) {
+	public LineChartGUI(final String title, ArrayList<MetricDOMObject> classList, Set<Integer> labels) {
 		super(title);
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.title = title;

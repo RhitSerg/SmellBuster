@@ -1,7 +1,8 @@
-package edu.rosehulman.serg.smellbuster.logic;
+package edu.rosehulman.serg.smellbuster.runnable;
 
 import java.io.File;
 
+import edu.rosehulman.serg.smellbuster.logic.SVNLoadLogic;
 import edu.rosehulman.serg.smellbuster.versioncontrol.VersionControlParserFactory;
 
 public class RepoCheckoutRunnable implements Runnable {

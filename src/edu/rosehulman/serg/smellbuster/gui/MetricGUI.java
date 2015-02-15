@@ -7,7 +7,7 @@ public class MetricGUI implements IMetricGUI {
 	IMetricGUI metricGUI;
 	
 	public MetricGUI(ResultTableLogic displayTableLogic){
-		this.metricGUI = new CKJMGui(displayTableLogic);
+		this.metricGUI = new CkjmGUI(displayTableLogic);
 	}
 
 	@Override

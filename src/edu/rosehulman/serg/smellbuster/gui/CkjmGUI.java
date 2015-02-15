@@ -2,12 +2,12 @@ package edu.rosehulman.serg.smellbuster.gui;
 
 import edu.rosehulman.serg.smellbuster.logic.ResultTableLogic;
 
-public class CKJMGui implements IMetricGUI {
+public class CkjmGUI implements IMetricGUI {
 
 	private String[] metrics;
 	private ResultTableLogic displayTableLogic;
 
-	public CKJMGui(ResultTableLogic displayTableLogic) {
+	public CkjmGUI(ResultTableLogic displayTableLogic) {
 		this.displayTableLogic = displayTableLogic;
 		this.metrics = new String[] { "All", "Weighted Method Per Class (WMC)",
 				"Number of Children (NOC)",

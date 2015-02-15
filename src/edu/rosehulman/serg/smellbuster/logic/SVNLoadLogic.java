@@ -14,6 +14,9 @@ import java.util.concurrent.Executors;
 import javax.swing.JProgressBar;
 
 import edu.rosehulman.serg.smellbuster.gui.ResultTableGUI;
+import edu.rosehulman.serg.smellbuster.runnable.MetricAnalyserRunnable;
+import edu.rosehulman.serg.smellbuster.runnable.ProjectBuildRunnable;
+import edu.rosehulman.serg.smellbuster.runnable.RepoCheckoutRunnable;
 import edu.rosehulman.serg.smellbuster.util.DiffClass;
 import edu.rosehulman.serg.smellbuster.versioncontrol.VersionControlParserFactory;
 

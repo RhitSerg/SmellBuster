@@ -23,7 +23,7 @@ import javax.swing.table.TableModel;
 import edu.rosehulman.serg.smellbuster.logic.SVNLoadLogic;
 import edu.rosehulman.serg.smellbuster.util.OSDetector;
 
-public class VersionInputScreen extends JFrame implements ActionListener {
+public class VersionInputScreenGUI extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JProgressBar progressBar;
@@ -44,16 +44,16 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 	private JTextField buildFileField;
 	private JTextField projectNameField;
 	private JButton addButton;
-	private InputTable inputTable;
+	private InputTableGUI inputTable;
 	private Map<Integer, String> versionMap;
-	private FileChooser fileChooser;
+	private FileChooserGUI fileChooser;
 
-	public VersionInputScreen() {
+	public VersionInputScreenGUI() {
 		super("SmellBuster");
 
 		this.versionMap = new TreeMap<>();
-		this.inputTable = new InputTable();
-		this.fileChooser = new FileChooser();
+		this.inputTable = new InputTableGUI();
+		this.fileChooser = new FileChooserGUI();
 
 		initializeComponents();
 		initProgressBar();

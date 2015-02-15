@@ -4,7 +4,7 @@ import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.WindowConstants;
 
-import edu.rosehulman.serg.smellbuster.gui.VersionInputScreen;
+import edu.rosehulman.serg.smellbuster.gui.VersionInputScreenGUI;
 
 public class SmellBuster  {
 
@@ -34,7 +34,7 @@ public class SmellBuster  {
 		}
 		
 
-		VersionInputScreen frame = new VersionInputScreen();
+		VersionInputScreenGUI frame = new VersionInputScreenGUI();
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
