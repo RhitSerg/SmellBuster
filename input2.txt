@@ -1,7 +1,6 @@
 CyberNeko
 http://svn.code.sf.net/p/nekohtml/code/trunk/
-pom.xml
-C:\\Program Files\\apache-maven-3.2.3\\
+build.xml
 1.9.7;167
 1.9.8;186
 1.9.9;196

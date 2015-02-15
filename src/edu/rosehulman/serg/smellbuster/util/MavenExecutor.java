@@ -11,14 +11,12 @@ import org.apache.maven.shared.invoker.MavenInvocationException;
 
 public class MavenExecutor {
 
-	public static void executeMavenTask(String buildFilePath, String mavenHome) {
+	public static void executeMavenTask(String buildFilePath) {
 		InvocationRequest request = new DefaultInvocationRequest();
 		request.setPomFile(new File(buildFilePath));
-		request.setGoals(Collections.singletonList("package"));
+		request.setGoals(Collections.singletonList("install"));
 		
 		Invoker invoker = new DefaultInvoker();
-		invoker.setMavenHome(new File(mavenHome));
-
 		try {
 			invoker.execute(request);
 		} catch (MavenInvocationException e) {

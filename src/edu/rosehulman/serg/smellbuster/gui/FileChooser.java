@@ -50,7 +50,8 @@ public class FileChooser extends JFrame {
 		}
 	}
 
-	public void saveFile(Map<Integer, String> versionMap, Map<String, String> inputMap) {
+	public void saveFile(Map<Integer, String> versionMap,
+			Map<String, String> inputMap) {
 		File saveFile = this.getSaveFile();
 		if (saveFile != null) {
 			try {
@@ -58,7 +59,6 @@ public class FileChooser extends JFrame {
 				writer.println(inputMap.get("project"));
 				writer.println(inputMap.get("svnURL"));
 				writer.println(inputMap.get("buildFile"));
-				writer.println(inputMap.get("mavenHome"));
 				for (Integer release : versionMap.keySet()) {
 					writer.println(versionMap.get(release) + ";" + release);
 				}
@@ -74,27 +74,24 @@ public class FileChooser extends JFrame {
 			BufferedReader br = new BufferedReader(new FileReader(selectedFile));
 			String line = br.readLine();
 			int lineNum = 0;
-			
-			if (line == null || line.length() == 0){
-				JOptionPane
-				.showMessageDialog(this,
+
+			if (line == null || line.length() == 0) {
+				JOptionPane.showMessageDialog(this,
 						"Incorrect input file format");
 				br.close();
 				return;
 			} else {
 				this.versionMap.clear();
 			}
-			
-			while (line != null && line.length() > 0) {	
-				if (lineNum == 0){
+
+			while (line != null && line.length() > 0) {
+				if (lineNum == 0) {
 					this.inputMap.put("project", line.trim());
-				} else if (lineNum == 1){
+				} else if (lineNum == 1) {
 					this.inputMap.put("svnURL", line.trim());
-				} else if (lineNum == 2){
+				} else if (lineNum == 2) {
 					this.inputMap.put("buildFile", line.trim());
-				} else if (lineNum == 3){
-					this.inputMap.put("mavenHome", line.trim());
-				}else {
+				} else {
 					String[] inputs = line.split(";");
 					this.versionMap.put(Integer.parseInt(inputs[1]), inputs[0]);
 				}
@@ -107,14 +104,14 @@ public class FileChooser extends JFrame {
 		}
 	}
 
-	public void loadInput(){	
+	public void loadInput() {
 		this.chooseFile();
 	}
-	
+
 	public Map<Integer, String> getVersionMap() {
 		return this.versionMap;
 	}
-	
+
 	public Map<String, String> getInputMap() {
 		return this.inputMap;
 	}

@@ -95,8 +95,7 @@ public class SVNLoadLogic {
 			String svnBuildDirLocation = this.svnDir + "\\" + revision + "\\"
 					+ this.buildFileLoc;
 
-			Runnable worker = new ProjectBuildRunnable(svnBuildDirLocation,
-					"C:\\Program Files\\apache-maven-3.2.3\\");
+			Runnable worker = new ProjectBuildRunnable(svnBuildDirLocation, this.versionMap.get(revision));
 			executor.execute(worker);
 		}
 

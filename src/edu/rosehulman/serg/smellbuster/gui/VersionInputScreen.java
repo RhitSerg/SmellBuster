@@ -36,16 +36,13 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 	private JPanel svnFieldPanel;
 	private JPanel buildFilePanel;
 	private JPanel projectNamePanel;
-	private JPanel mavenHomeLocationPanel;
 	private JPanel topPanel;
 	private JLabel svnLabel;
 	private JLabel buildFileLabel;
 	private JLabel projectNameLabel;
-	private JLabel mavenHomeLocationLabel;
 	private JTextField svnField;
 	private JTextField buildFileField;
 	private JTextField projectNameField;
-	private JTextField mavenHomeLocationField;
 	private JButton addButton;
 	private InputTable inputTable;
 	private Map<Integer, String> versionMap;
@@ -65,7 +62,6 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 		initializeProjectNamePanel();
 		initializeSVNPanel();
 		initializeBuildFilePanel();
-		initializeMavenHomeLocationPanel();
 		initializeTopPanel();
 
 		setLayout(new BorderLayout());
@@ -89,9 +85,6 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 
 		this.projectNameLabel = new JLabel("Project Name:          ");
 		this.projectNameLabel.setSize(250, 50);
-		
-		this.mavenHomeLocationLabel = new JLabel("Maven Home:           ");
-		this.mavenHomeLocationLabel.setSize(250, 50);
 
 		this.svnField = new JTextField();
 		this.svnField.setSize(450, 50);
@@ -101,9 +94,6 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 
 		this.projectNameField = new JTextField();
 		this.projectNameField.setSize(450, 50);
-		
-		this.mavenHomeLocationField = new JTextField();
-		this.mavenHomeLocationField.setSize(450, 50);
 	}
 
 	private void initProgressBar() {
@@ -172,23 +162,14 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 		this.projectNamePanel.add(this.projectNameLabel, BorderLayout.WEST);
 		this.projectNamePanel.add(this.projectNameField, BorderLayout.CENTER);
 	}
-	
-	private void initializeMavenHomeLocationPanel(){
-		this.mavenHomeLocationPanel = new JPanel();
-		this.mavenHomeLocationPanel.setLayout(new BorderLayout());
-		
-		this.mavenHomeLocationPanel.add(this.mavenHomeLocationLabel, BorderLayout.WEST);
-		this.mavenHomeLocationPanel.add(this.mavenHomeLocationField, BorderLayout.CENTER);
-	}
 
 	private void initializeTopPanel() {
 		this.topPanel = new JPanel();
-		this.topPanel.setLayout(new GridLayout(4, 1));
+		this.topPanel.setLayout(new GridLayout(3, 1));
 
 		this.topPanel.add(this.projectNamePanel);
 		this.topPanel.add(this.svnFieldPanel);
 		this.topPanel.add(this.buildFilePanel);
-		this.topPanel.add(this.mavenHomeLocationPanel);
 	}
 
 	@Override
@@ -228,7 +209,6 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 			this.projectNameField.setText(inputMap.get("project"));
 			this.svnField.setText(inputMap.get("svnURL"));
 			this.buildFileField.setText(inputMap.get("buildFile"));
-			this.mavenHomeLocationField.setText(inputMap.get("mavenHome"));
 			
 		} else if (e.getSource().equals(this.saveMenuItem)) {
 			loadVersionMap();
@@ -245,7 +225,6 @@ public class VersionInputScreen extends JFrame implements ActionListener {
 		inputMap.put("project", this.projectNameField.getText().trim());
 		inputMap.put("svnURL", this.svnField.getText().trim());
 		inputMap.put("buildFile", this.buildFileField.getText().trim());
-		inputMap.put("mavenHome", this.mavenHomeLocationField.getText().trim());
 		return inputMap;
 	}
 

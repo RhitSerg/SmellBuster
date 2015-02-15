@@ -2,16 +2,17 @@ package edu.rosehulman.serg.smellbuster.logic;
 
 import java.io.File;
 
+import edu.rosehulman.serg.smellbuster.util.AntExecutor;
 import edu.rosehulman.serg.smellbuster.util.MavenExecutor;
 
 public class ProjectBuildRunnable implements Runnable {
 
 	private String svnBuildDirLocation;
-	private String mavenHome;
+	private String version;
 
-	public ProjectBuildRunnable(String svnBuildDirLocation, String mavenHome) {
+	public ProjectBuildRunnable(String svnBuildDirLocation, String version) {
 		this.svnBuildDirLocation = svnBuildDirLocation;
-		this.mavenHome = mavenHome;
+		this.version = version;
 	}
 
 	@Override
@@ -21,16 +22,25 @@ public class ProjectBuildRunnable implements Runnable {
 			String dirLocation = this.svnBuildDirLocation.substring(0,
 					this.svnBuildDirLocation.length() - 7);
 			File dir = new File(dirLocation);
-			if (!dir.exists()) {
+			if (dir.exists()) {
 				try {
-					MavenExecutor.executeMavenTask(svnBuildDirLocation,
-							mavenHome);
+					MavenExecutor.executeMavenTask(svnBuildDirLocation);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		} else if (this.svnBuildDirLocation.contains("build.xml")) {
-			// do ant build.
+			String dirLocation = this.svnBuildDirLocation.substring(0,
+					this.svnBuildDirLocation.length() - 9);
+			File dir = new File(dirLocation);
+			if (dir.exists()) {
+				try {
+					AntExecutor.executeAntTask(this.svnBuildDirLocation, this.version);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
 		}
 
 		SVNLoadLogic.updateProgressBar();
