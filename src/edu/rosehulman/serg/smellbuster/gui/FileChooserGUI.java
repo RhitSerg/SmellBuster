@@ -59,6 +59,7 @@ public class FileChooserGUI extends JFrame {
 				writer.println(inputMap.get("project"));
 				writer.println(inputMap.get("svnURL"));
 				writer.println(inputMap.get("buildFile"));
+				writer.println(inputMap.get("jarProperty"));
 				for (Integer release : versionMap.keySet()) {
 					writer.println(versionMap.get(release) + ";" + release);
 				}
@@ -84,14 +85,16 @@ public class FileChooserGUI extends JFrame {
 				this.versionMap.clear();
 			}
 
-			while (line != null && line.length() > 0) {
+			while (line != null) {
 				if (lineNum == 0) {
 					this.inputMap.put("project", line.trim());
 				} else if (lineNum == 1) {
 					this.inputMap.put("svnURL", line.trim());
 				} else if (lineNum == 2) {
 					this.inputMap.put("buildFile", line.trim());
-				} else {
+				} else if (lineNum == 3) {
+					this.inputMap.put("jarProperty", line.trim());
+				}else {
 					String[] inputs = line.split(";");
 					this.versionMap.put(Integer.parseInt(inputs[1]), inputs[0]);
 				}

@@ -1,6 +1,7 @@
 package edu.rosehulman.serg.smellbuster.gui;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,17 +33,24 @@ public class VersionInputScreenGUI extends JFrame implements ActionListener {
 	private JMenuItem loadMenuItem;
 	private JMenuItem saveMenuItem;
 	private JMenuItem quitMenuItem;
+	
 	private JPanel bottomPanel;
 	private JPanel svnFieldPanel;
 	private JPanel buildFilePanel;
 	private JPanel projectNamePanel;
+	private JPanel jarPropertyPanel;
 	private JPanel topPanel;
+	
 	private JLabel svnLabel;
 	private JLabel buildFileLabel;
 	private JLabel projectNameLabel;
+	private JLabel jarPropertyLabel;
+	
 	private JTextField svnField;
 	private JTextField buildFileField;
 	private JTextField projectNameField;
+	private JTextField jarPropertyField;
+	
 	private JButton addButton;
 	private InputTableGUI inputTable;
 	private Map<Integer, String> versionMap;
@@ -62,6 +70,7 @@ public class VersionInputScreenGUI extends JFrame implements ActionListener {
 		initializeProjectNamePanel();
 		initializeSVNPanel();
 		initializeBuildFilePanel();
+		initializeJarPropertyPanel();
 		initializeTopPanel();
 
 		setLayout(new BorderLayout());
@@ -77,23 +86,29 @@ public class VersionInputScreenGUI extends JFrame implements ActionListener {
 		this.addButton = new JButton("Display Table");
 		this.addButton.addActionListener(this);
 
-		this.svnLabel = new JLabel("SVN Repository Url:");
-		this.svnLabel.setSize(250, 50);
+		this.svnLabel = new JLabel("SVN Repository Url*:");
+		this.svnLabel.setPreferredSize(new Dimension(150, 30));
 
-		this.buildFileLabel = new JLabel("Build File Location: ");
-		this.buildFileLabel.setSize(250, 50);
+		this.buildFileLabel = new JLabel("Build File Location*:");
+		this.buildFileLabel.setPreferredSize(new Dimension(150, 30));
 
-		this.projectNameLabel = new JLabel("Project Name:          ");
-		this.projectNameLabel.setSize(250, 50);
+		this.projectNameLabel = new JLabel("Project Name*:");
+		this.projectNameLabel.setPreferredSize(new Dimension(150, 30));
 
+		this.jarPropertyLabel = new JLabel("Ant Target jar Property:");
+		this.jarPropertyLabel.setPreferredSize(new Dimension(150, 30));
+		
 		this.svnField = new JTextField();
-		this.svnField.setSize(450, 50);
+		this.svnField.setPreferredSize(new Dimension(550, 30));
 
 		this.buildFileField = new JTextField();
-		this.buildFileField.setSize(450, 50);
+		this.buildFileField.setPreferredSize(new Dimension(550, 30));
 
 		this.projectNameField = new JTextField();
-		this.projectNameField.setSize(450, 50);
+		this.projectNameField.setPreferredSize(new Dimension(550, 30));
+		
+		this.jarPropertyField = new JTextField();
+		this.jarPropertyField.setPreferredSize(new Dimension(550, 30));
 	}
 
 	private void initProgressBar() {
@@ -162,14 +177,24 @@ public class VersionInputScreenGUI extends JFrame implements ActionListener {
 		this.projectNamePanel.add(this.projectNameLabel, BorderLayout.WEST);
 		this.projectNamePanel.add(this.projectNameField, BorderLayout.CENTER);
 	}
+	
+	private void initializeJarPropertyPanel(){
+		this.jarPropertyPanel = new JPanel();
+		this.jarPropertyPanel.setLayout(new BorderLayout());
+
+		this.jarPropertyPanel.add(this.jarPropertyLabel, BorderLayout.WEST);
+		this.jarPropertyPanel.add(this.jarPropertyField, BorderLayout.CENTER);
+
+	}
 
 	private void initializeTopPanel() {
 		this.topPanel = new JPanel();
-		this.topPanel.setLayout(new GridLayout(3, 1));
+		this.topPanel.setLayout(new GridLayout(4, 1));
 
 		this.topPanel.add(this.projectNamePanel);
 		this.topPanel.add(this.svnFieldPanel);
 		this.topPanel.add(this.buildFilePanel);
+		this.topPanel.add(this.jarPropertyPanel);
 	}
 
 	@Override
@@ -193,7 +218,7 @@ public class VersionInputScreenGUI extends JFrame implements ActionListener {
 					SVNLoadLogic svnLoadLogic = new SVNLoadLogic(
 							projectNameField.getText(), versionMap,
 							svnField.getText(),
-							buildFileField.getText(), progressBar);
+							buildFileField.getText(), jarPropertyField.getText(), progressBar);
 					dispose();
 					svnLoadLogic.displayTable();
 				}
@@ -209,7 +234,7 @@ public class VersionInputScreenGUI extends JFrame implements ActionListener {
 			this.projectNameField.setText(inputMap.get("project"));
 			this.svnField.setText(inputMap.get("svnURL"));
 			this.buildFileField.setText(inputMap.get("buildFile"));
-			
+			this.jarPropertyField.setText(inputMap.get("jarProperty"));
 		} else if (e.getSource().equals(this.saveMenuItem)) {
 			loadVersionMap();
 			Map<String, String> inputMap = this.getSaveInputMap();
@@ -225,6 +250,7 @@ public class VersionInputScreenGUI extends JFrame implements ActionListener {
 		inputMap.put("project", this.projectNameField.getText().trim());
 		inputMap.put("svnURL", this.svnField.getText().trim());
 		inputMap.put("buildFile", this.buildFileField.getText().trim());
+		inputMap.put("jarProperty", this.jarPropertyField.getText().trim());
 		return inputMap;
 	}
 

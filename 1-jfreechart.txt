@@ -1,6 +1,7 @@
 JFreeChart
 http://svn.code.sf.net/p/jfreechart/code/branches/
-ant\build.xml
+jfreechart-1.0.x-branch\ant\build.xml
+jfreechart-bundle-file
 1.0.6;91
 1.0.7;588
 1.0.8;655

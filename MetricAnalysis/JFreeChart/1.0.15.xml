@@ -1,5 +1,4 @@
-<classes>
-	<class>
+<classes>	<class>
 		<name>org.jfree.data.KeyedValues2D</name>
 		<wmc>7</wmc>
 		<dit>1</dit>

@@ -21,44 +21,48 @@ public class MetricAnalyserRunnable implements Runnable {
 
 		try {
 			File jarFileDir = new File(this.jarFileLocation);
-			
-			checkDestinationLocation();
-			
-			for (File file : jarFileDir.listFiles()) {
-				if (file.getName().contains(".jar")) {
 
-					String currentDir = System.getProperty("user.dir");
+			// checkDestinationLocation();
+			File destFile = new File(this.destLocation);
 
-					String cmd[] = new String[3];
-					cmd[0] = "cmd.exe";
-					cmd[1] = "/C";
-					if (OSDetector.isWindows()) {
-						cmd[2] = "java -jar " + currentDir
-								+ "\\lib\\ckjm.jar -x "
-								+ file.getAbsolutePath() + " >> " + currentDir
-								+ "\\" + this.destLocation;
-					} else {
-						cmd[2] = "java -jar " + currentDir
-								+ "/lib/ckjm.jar -x " + file.getAbsolutePath()
-								+ " >> " + currentDir + "/" + this.destLocation;
+			if (!destFile.exists()) {
+				for (File file : jarFileDir.listFiles()) {
+					if (file.getName().contains(".jar")) {
+
+						String currentDir = System.getProperty("user.dir");
+
+						String cmd[] = new String[3];
+						cmd[0] = "cmd.exe";
+						cmd[1] = "/C";
+						if (OSDetector.isWindows()) {
+							cmd[2] = "java -jar " + currentDir
+									+ "\\lib\\ckjm.jar -x "
+									+ file.getAbsolutePath() + " >> "
+									+ currentDir + "\\" + this.destLocation;
+						} else {
+							cmd[2] = "java -jar " + currentDir
+									+ "/lib/ckjm.jar -x "
+									+ file.getAbsolutePath() + " >> "
+									+ currentDir + "/" + this.destLocation;
+						}
+
+						Runtime rt = Runtime.getRuntime();
+						Process proc = rt.exec(cmd);
+
+						StreamGobbler errorGobbler = new StreamGobbler(
+								proc.getErrorStream(), "ERROR");
+
+						StreamGobbler outputGobbler = new StreamGobbler(
+								proc.getInputStream(), "OUTPUT");
+
+						errorGobbler.start();
+						outputGobbler.start();
+
+						int exitVal = proc.waitFor();
+						System.out.println("ExitValue: " + exitVal);
+
+						break;
 					}
-
-					Runtime rt = Runtime.getRuntime();
-					Process proc = rt.exec(cmd);
-
-					StreamGobbler errorGobbler = new StreamGobbler(
-							proc.getErrorStream(), "ERROR");
-
-					StreamGobbler outputGobbler = new StreamGobbler(
-							proc.getInputStream(), "OUTPUT");
-
-					errorGobbler.start();
-					outputGobbler.start();
-
-					int exitVal = proc.waitFor();
-					System.out.println("ExitValue: " + exitVal);
-
-					break;
 				}
 			}
 		} catch (Exception e) {
@@ -67,10 +71,10 @@ public class MetricAnalyserRunnable implements Runnable {
 
 		SVNLoadLogic.updateProgressBar();
 	}
-	
-	public void checkDestinationLocation(){
+
+	public void checkDestinationLocation() {
 		File file = new File(this.destLocation);
-		if (file.exists()){
+		if (file.exists()) {
 			file.delete();
 		}
 	}

@@ -10,10 +10,14 @@ public class ProjectBuildRunnable implements Runnable {
 
 	private String svnBuildDirLocation;
 	private String version;
+	private String jarProperty;
 
-	public ProjectBuildRunnable(String svnBuildDirLocation, String version) {
+	public ProjectBuildRunnable(String svnBuildDirLocation, String version, String jarProperty) {
 		this.svnBuildDirLocation = svnBuildDirLocation;
 		this.version = version;
+		this.jarProperty = "";
+		if (jarProperty != null)
+			this.jarProperty = jarProperty;
 	}
 
 	@Override
@@ -23,7 +27,7 @@ public class ProjectBuildRunnable implements Runnable {
 			String dirLocation = this.svnBuildDirLocation.substring(0,
 					this.svnBuildDirLocation.length() - 7);
 			File dir = new File(dirLocation);
-			if (dir.exists()) {
+			if (!dir.exists()) {
 				try {
 					MavenExecutor.executeMavenTask(svnBuildDirLocation);
 				} catch (Exception e) {
@@ -34,9 +38,9 @@ public class ProjectBuildRunnable implements Runnable {
 			String dirLocation = this.svnBuildDirLocation.substring(0,
 					this.svnBuildDirLocation.length() - 9);
 			File dir = new File(dirLocation);
-			if (dir.exists()) {
+			if (!dir.exists()) {
 				try {
-					AntExecutor.executeAntTask(this.svnBuildDirLocation, this.version);
+					AntExecutor.executeAntTask(this.svnBuildDirLocation, this.version, this.jarProperty);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

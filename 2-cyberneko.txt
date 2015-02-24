@@ -1,6 +1,7 @@
 CyberNeko
 http://svn.code.sf.net/p/nekohtml/code/trunk/
 build.xml
+jar.file
 1.9.7;167
 1.9.8;186
 1.9.9;196
