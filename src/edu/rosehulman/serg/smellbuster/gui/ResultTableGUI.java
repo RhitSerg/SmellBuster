@@ -294,6 +294,7 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 		}
 	}
 
+	/**
 	public int getColorCategory(Color color) {
 
 		if (color.equals(new Color(255, 0, 0))) {
@@ -312,7 +313,7 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 			return 7;
 		}
 		return -1;
-	}
+	}*/
 
 	public String[] getColumnNames() {
 		int len = this.versionMap.keySet().size();
