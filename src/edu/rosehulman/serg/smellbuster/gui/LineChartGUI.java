@@ -130,6 +130,16 @@ public class LineChartGUI extends JFrame {
 		plot.setDomainGridlinePaint(Color.white);
 		plot.setRangeGridlinePaint(Color.white);
 
+		plot.getRenderer().setSeriesPaint(0, Color.RED);
+		plot.getRenderer().setSeriesPaint(1, Color.BLUE);
+		plot.getRenderer().setSeriesPaint(2, Color.GRAY);
+		plot.getRenderer().setSeriesPaint(3, Color.GREEN);
+		plot.getRenderer().setSeriesPaint(4, Color.MAGENTA);
+		plot.getRenderer().setSeriesPaint(5, Color.ORANGE);
+		plot.getRenderer().setSeriesPaint(6, Color.CYAN);
+		plot.getRenderer().setSeriesPaint(7, Color.BLACK);
+		plot.getRenderer().setSeriesPaint(8, Color.YELLOW);
+		
 		return chart;
 
 	}
