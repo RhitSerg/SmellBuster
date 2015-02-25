@@ -25,6 +25,9 @@ public class LineChartGUI extends JFrame {
 	private ArrayList<MetricDOMObject> classList;
 	String[] metrics = new String[] { "wmc", "noc", "cbo", "lcom3", "cam",
 			"ic", "cbm", "amc", "cc" };
+	Color[] metricColors = new Color[] { Color.RED, Color.BLUE, Color.GRAY,
+			Color.GREEN, Color.MAGENTA, Color.ORANGE, Color.CYAN, Color.BLACK,
+			Color.YELLOW };
 	private final int CHART_WIDTH = 700;
 	private final int CHART_HEIGHT = 270;
 	private final int NUM_OF_ROWS = 1;
@@ -37,7 +40,8 @@ public class LineChartGUI extends JFrame {
 	 * 
 	 * @param title
 	 */
-	public LineChartGUI(final String title, ArrayList<MetricDOMObject> classList, Set<Integer> labels) {
+	public LineChartGUI(final String title,
+			ArrayList<MetricDOMObject> classList, Set<Integer> labels) {
 		super(title);
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.title = title;
@@ -45,11 +49,11 @@ public class LineChartGUI extends JFrame {
 		this.setXAxisLables(labels);
 		setContentPane(getChartPanel(this.classList));
 	}
-	
-	private void setXAxisLables(Set<Integer> labels){
+
+	private void setXAxisLables(Set<Integer> labels) {
 		this.xaxisLabels = new double[labels.size()];
 		int pos = 0;
-		for (int repoVersion: labels){
+		for (int repoVersion : labels) {
 			this.xaxisLabels[pos] = repoVersion;
 			pos++;
 		}
@@ -130,16 +134,10 @@ public class LineChartGUI extends JFrame {
 		plot.setDomainGridlinePaint(Color.white);
 		plot.setRangeGridlinePaint(Color.white);
 
-		plot.getRenderer().setSeriesPaint(0, Color.RED);
-		plot.getRenderer().setSeriesPaint(1, Color.BLUE);
-		plot.getRenderer().setSeriesPaint(2, Color.GRAY);
-		plot.getRenderer().setSeriesPaint(3, Color.GREEN);
-		plot.getRenderer().setSeriesPaint(4, Color.MAGENTA);
-		plot.getRenderer().setSeriesPaint(5, Color.ORANGE);
-		plot.getRenderer().setSeriesPaint(6, Color.CYAN);
-		plot.getRenderer().setSeriesPaint(7, Color.BLACK);
-		plot.getRenderer().setSeriesPaint(8, Color.YELLOW);
-		
+		for (int i=0; i<this.metrics.length; i++){
+			plot.getRenderer().setSeriesPaint(i, this.metricColors[i]);
+		}
+
 		return chart;
 
 	}
