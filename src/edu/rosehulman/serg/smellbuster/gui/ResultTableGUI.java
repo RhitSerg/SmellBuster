@@ -53,13 +53,16 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 	private JMenuItem quitMenuItem;
 	private MetricGUI metricGUI;
 	private ArrayList<Integer> packageHeaders;
+	//private Map<String, int[]> dataMap;
 
 	// Constructor of main frame
-	public ResultTableGUI(String[][] dataValues, Map<Integer, String> versionMap, String projectName) {
+	public ResultTableGUI(String[][] dataValues,
+			Map<Integer, String> versionMap, String projectName) {
 
 		this.versionMap = versionMap;
 		this.packageHeaders = new ArrayList<>();
-		this.displayTableLogic = new ResultTableLogic(this.versionMap, projectName);
+		this.displayTableLogic = new ResultTableLogic(this.versionMap,
+				projectName);
 		this.selectedMetric = 0;
 		this.metricGUI = new MetricGUI(this.displayTableLogic);
 		this.metrics = this.metricGUI.getMetricDisplayList();
@@ -68,6 +71,12 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 		this.dataValues = dataValues;
 		this.tableModel = new MyTableModel(dataValues, columnNames);
 
+		/**
+		//Uncomment when want to display statistics
+		this.dataMap = new HashMap<>();
+		initializeDataMap();
+		*/
+		
 		initMenu();
 		initTable();
 		initComboBox();
@@ -75,6 +84,48 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 		initFrame();
 
 	}
+
+	/**
+	//Uncomment when want to display the statistics
+	private void displayData() {
+		for (int col = 0; col < this.columnNames.length; col++) {
+
+			int[] dataArr = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
+
+			for (int i = 0; i < this.table.getRowCount(); i++) {
+				String name = this.table.getModel().getValueAt(i, col)
+						.toString();
+				if (name.contains(".java")) {
+					dataArr[0] = dataArr[0] + 1;
+
+					Color c = this.displayTableLogic.getColorForMetricScore(0,
+							name, this.columnNames[col]);
+					int index = this.getColorCategory(c);
+					if (index > -1) {
+						dataArr[index] = dataArr[index] + 1;
+					}
+				}
+			}
+			String version = this.columnNames[col];
+			this.dataMap.put(version, dataArr);
+		}
+
+		for (String version : this.dataMap.keySet()) {
+			System.out.print(version + "\t");
+			int[] dataArr = this.dataMap.get(version);
+			for (int num : dataArr)
+				System.out.print(num + ",");
+			System.out.println();
+		}
+	}
+
+	private void initializeDataMap() {
+		for (int ver : this.versionMap.keySet()) {
+			String version = this.versionMap.get(ver);
+			int[] tempArr = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
+			this.dataMap.put(version, tempArr);
+		}
+	}*/
 
 	private void initMenu() {
 		this.menuBar = new JMenuBar();
@@ -136,7 +187,9 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 					case 1:
 						ArrayList<MetricDOMObject> classList = ResultTableGUI.this.displayTableLogic
 								.createClassListMap(className);
-						LineChartGUI chart = new LineChartGUI(className, classList, ResultTableGUI.this.versionMap.keySet());
+						LineChartGUI chart = new LineChartGUI(className,
+								classList, ResultTableGUI.this.versionMap
+										.keySet());
 						chart.setSize(500, 500);
 						chart.setVisible(true);
 						break;
@@ -185,14 +238,18 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 			c.setForeground(Color.WHITE);
 			if (value != null && value.toString().length() > 0
 					&& !value.toString().contains("Package: ")) {
+
+				String version = ResultTableGUI.this.columnNames[column];
+
 				Color color = ResultTableGUI.this.displayTableLogic
 						.getColorForMetricScore(selectedMetric,
-								value.toString(),
-								ResultTableGUI.this.columnNames[column]);
+								value.toString(), version);
+
 				if (color == null) {
 					c.setBackground(Color.LIGHT_GRAY);
 					c.setForeground(Color.BLACK);
 				} else {
+
 					c.setBackground(color);
 					int r = color.getRed();
 					int g = color.getGreen();
@@ -235,6 +292,26 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 		public boolean isCellEditable(int row, int column) {
 			return false;
 		}
+	}
+
+	public int getColorCategory(Color color) {
+
+		if (color.equals(new Color(255, 0, 0))) {
+			return 1;
+		} else if (color.equals(new Color(204, 0, 0))) {
+			return 2;
+		} else if (color.equals(new Color(159, 95, 0))) {
+			return 3;
+		} else if (color.equals(new Color(255, 102, 0))) {
+			return 4;
+		} else if (color.equals(new Color(255, 204, 0))) {
+			return 5;
+		} else if (color.equals(new Color(95, 159, 0))) {
+			return 6;
+		} else if (color.equals(new Color(0, 255, 0))) {
+			return 7;
+		}
+		return -1;
 	}
 
 	public String[] getColumnNames() {
