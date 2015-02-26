@@ -2,7 +2,6 @@ package edu.rosehulman.serg.smellbuster.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -24,9 +23,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.WindowConstants;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
 
 import edu.rosehulman.serg.smellbuster.logic.ResultTableLogic;
 import edu.rosehulman.serg.smellbuster.util.*;
@@ -43,7 +39,7 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 	private JScrollPane scrollPane;
 	private Map<Integer, String> versionMap;
 	private String[][] dataValues;
-	private ResultTableLogic displayTableLogic;
+	private ResultTableLogic resultTableLogic;
 	private MyTableModel tableModel;
 	private String[] metrics;
 	private int selectedMetric;
@@ -52,7 +48,6 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 	private JMenuItem settingsMenuItem;
 	private JMenuItem quitMenuItem;
 	private MetricGUI metricGUI;
-	private ArrayList<Integer> packageHeaders;
 	//private Map<String, int[]> dataMap;
 
 	// Constructor of main frame
@@ -60,11 +55,10 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 			Map<Integer, String> versionMap, String projectName) {
 
 		this.versionMap = versionMap;
-		this.packageHeaders = new ArrayList<>();
-		this.displayTableLogic = new ResultTableLogic(this.versionMap,
+		this.resultTableLogic = new ResultTableLogic(this.versionMap,
 				projectName);
 		this.selectedMetric = 0;
-		this.metricGUI = new MetricGUI(this.displayTableLogic);
+		this.metricGUI = new MetricGUI(this.resultTableLogic);
 		this.metrics = this.metricGUI.getMetricDisplayList();
 
 		this.columnNames = getColumnNames();
@@ -164,7 +158,7 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 		table = new JTable(tableModel);
 		table.setRowSelectionAllowed(false);
 		table.setCellSelectionEnabled(true);
-		table.setDefaultRenderer(Object.class, new MyTableCellRenderer());
+		table.setDefaultRenderer(Object.class, new MyTableCellRenderer(this, this.selectedMetric));
 		table.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 
@@ -185,7 +179,7 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 							options[0]);
 					switch (selectedOption) {
 					case 1:
-						ArrayList<MetricDOMObject> classList = ResultTableGUI.this.displayTableLogic
+						ArrayList<MetricDOMObject> classList = ResultTableGUI.this.resultTableLogic
 								.createClassListMap(className);
 						LineChartGUI chart = new LineChartGUI(className,
 								classList, ResultTableGUI.this.versionMap
@@ -222,76 +216,6 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 		setSize(1300, 700);
 		setBackground(Color.gray);
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-	}
-
-	private class MyTableCellRenderer extends DefaultTableCellRenderer
-			implements TableCellRenderer {
-
-		private static final long serialVersionUID = 1L;
-
-		@Override
-		public Component getTableCellRendererComponent(JTable table,
-				Object value, boolean isSelected, boolean hasFocus, int row,
-				int column) {
-			Component c = (Component) super.getTableCellRendererComponent(
-					table, value, isSelected, hasFocus, row, column);
-			c.setForeground(Color.WHITE);
-			if (value != null && value.toString().length() > 0
-					&& !value.toString().contains("Package: ")) {
-
-				String version = ResultTableGUI.this.columnNames[column];
-
-				Color color = ResultTableGUI.this.displayTableLogic
-						.getColorForMetricScore(selectedMetric,
-								value.toString(), version);
-
-				if (color == null) {
-					c.setBackground(Color.LIGHT_GRAY);
-					c.setForeground(Color.BLACK);
-				} else {
-
-					c.setBackground(color);
-					int r = color.getRed();
-					int g = color.getGreen();
-					int b = color.getBlue();
-					int d = 0;
-					double a = 1 - (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-					if (a < 0.5)
-						d = 0;
-					else
-						d = 255;
-					Color newColor = new Color(d, d, d);
-					c.setForeground(newColor);
-				}
-			} else if (value != null && value.toString().length() > 0
-					&& value.toString().contains("Package: ")) {
-				ResultTableGUI.this.packageHeaders.add(row);
-				c.setBackground(Color.BLACK);
-				c.setForeground(Color.WHITE);
-			} else {
-				if (ResultTableGUI.this.packageHeaders.contains(row)) {
-					c.setBackground(Color.BLACK);
-					c.setForeground(Color.WHITE);
-				} else {
-					c.setBackground(Color.LIGHT_GRAY);
-					c.setForeground(Color.BLACK);
-				}
-			}
-			return c;
-		}
-	}
-
-	private class MyTableModel extends DefaultTableModel {
-		private static final long serialVersionUID = 1L;
-
-		public MyTableModel(String[][] dataValues, String[] columnNames) {
-			super(dataValues, columnNames);
-		}
-
-		@Override
-		public boolean isCellEditable(int row, int column) {
-			return false;
-		}
 	}
 
 	/**
@@ -331,7 +255,11 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 	}
 
 	public ResultTableLogic getResultTableLogic() {
-		return this.displayTableLogic;
+		return this.resultTableLogic;
+	}
+	
+	public String[][] getDataValues(){
+		return this.dataValues;
 	}
 
 	@Override
