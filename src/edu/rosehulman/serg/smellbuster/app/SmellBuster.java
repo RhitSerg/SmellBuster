@@ -29,6 +29,8 @@ public class SmellBuster  {
 //		    UIManager.setLookAndFeel("com.jtattoo.plaf.aluminium.AluminiumLookAndFeel");
 //		    
 //		    UIManager.setLookAndFeel("com.jtattoo.plaf.noire.NoireLookAndFeel");
+			
+//			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		}

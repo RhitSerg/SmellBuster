@@ -31,17 +31,16 @@ public class MyTableCellRenderer extends DefaultTableCellRenderer implements
 		cell.setDataValues(this.resultTableGUI.getDataValues());
 		cell.setColumnNames(this.resultTableGUI.getColumnNames());
 		cell.setSelectedMetric(selectedMetric);
+		cell.setForeground(Color.WHITE);
+		cell.setBackground(Color.LIGHT_GRAY);
 
 		if (value != null && value.toString().length() > 0
 				&& value.toString().contains("Package: ")) {
 			this.packageHeaders.add(row);
 			cell.setIsHeader(true);
-			cell.setForeground(Color.WHITE);
-
 		} else {
 			if (this.packageHeaders.contains(row)) {
 				cell.setIsHeader(true);
-				cell.setForeground(Color.WHITE);
 			}
 		}
 

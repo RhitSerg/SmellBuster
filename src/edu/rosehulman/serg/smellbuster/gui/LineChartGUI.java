@@ -119,7 +119,7 @@ public class LineChartGUI extends JFrame {
 		// create the chart...
 		final JFreeChart chart = ChartFactory.createXYLineChart(title, // chart
 																		// title
-				"Version", // x axis label
+				"SVN Revision Number", // x axis label
 				"Metric Value", // y axis label
 				dataset, // data
 				PlotOrientation.VERTICAL, true, // include legend
