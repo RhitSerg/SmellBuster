@@ -5,11 +5,6 @@ import java.io.File;
 public class AntExecutor {
 	public static void executeAntTask(String buildFilePath, String version,
 			String jarProperty) {
-		// String currentDir = System.getProperty("user.dir");
-
-		// ant -buildfile svnbuildDirlocation
-		// -Djar.file=C:\Users\Dharmin\Desktop\test.jar
-
 		String dirLocation = buildFilePath.substring(0,
 				buildFilePath.length() - 9);
 
@@ -19,19 +14,16 @@ public class AntExecutor {
 		cmd[0] = "cmd.exe";
 		cmd[1] = "/C";
 		if (jarProperty.length() > 0) {
-			if (OSDetector.isWindows()) {
-				cmd[2] = "ant -buildfile " + buildFilePath + " -D"+jarProperty+"="
-						+ dirLocation + "target\\" + version + ".jar";
-			} else {
-				cmd[2] = "ant -buildfile " + buildFilePath + " -D"+jarProperty+"="
-						+ dirLocation + "/target/" + version + ".jar";
-			}
+
+			cmd[2] = "ant -buildfile " + buildFilePath + " -D" + jarProperty
+					+ "=" + dirLocation + "target" + File.separator + version
+					+ ".jar";
+
 		} else {
-			if (OSDetector.isWindows()) {
-				cmd[2] = "ant -buildfile " + buildFilePath + "target\\" + version + ".jar";
-			} else {
-				cmd[2] = "ant -buildfile " + buildFilePath + "/target/" + version + ".jar";
-			}
+
+			cmd[2] = "ant -buildfile " + buildFilePath + "target"
+					+ File.separator + version + ".jar";
+
 		}
 
 		try {

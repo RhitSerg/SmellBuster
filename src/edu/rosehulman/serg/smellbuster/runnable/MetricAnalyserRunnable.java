@@ -3,7 +3,6 @@ package edu.rosehulman.serg.smellbuster.runnable;
 import java.io.File;
 
 import edu.rosehulman.serg.smellbuster.logic.SVNLoadLogic;
-import edu.rosehulman.serg.smellbuster.util.OSDetector;
 import edu.rosehulman.serg.smellbuster.util.StreamGobbler;
 
 public class MetricAnalyserRunnable implements Runnable {
@@ -34,17 +33,11 @@ public class MetricAnalyserRunnable implements Runnable {
 						String cmd[] = new String[3];
 						cmd[0] = "cmd.exe";
 						cmd[1] = "/C";
-						if (OSDetector.isWindows()) {
-							cmd[2] = "java -jar " + currentDir
-									+ "\\lib\\ckjm.jar -x "
-									+ file.getAbsolutePath() + " >> "
-									+ currentDir + "\\" + this.destLocation;
-						} else {
-							cmd[2] = "java -jar " + currentDir
-									+ "/lib/ckjm.jar -x "
-									+ file.getAbsolutePath() + " >> "
-									+ currentDir + "/" + this.destLocation;
-						}
+
+						cmd[2] = "java -jar " + currentDir + File.separator
+								+ "lib" + File.separator + "ckjm.jar -x "
+								+ file.getAbsolutePath() + " >> " + currentDir
+								+ File.separator + this.destLocation;
 
 						Runtime rt = Runtime.getRuntime();
 						Process proc = rt.exec(cmd);

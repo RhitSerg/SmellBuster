@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -22,7 +23,6 @@ import javax.swing.JTextField;
 import javax.swing.table.TableModel;
 
 import edu.rosehulman.serg.smellbuster.logic.SVNLoadLogic;
-import edu.rosehulman.serg.smellbuster.util.OSDetector;
 
 public class VersionInputScreenGUI extends JFrame implements ActionListener {
 
@@ -33,24 +33,24 @@ public class VersionInputScreenGUI extends JFrame implements ActionListener {
 	private JMenuItem loadMenuItem;
 	private JMenuItem saveMenuItem;
 	private JMenuItem quitMenuItem;
-	
+
 	private JPanel bottomPanel;
 	private JPanel svnFieldPanel;
 	private JPanel buildFilePanel;
 	private JPanel projectNamePanel;
 	private JPanel jarPropertyPanel;
 	private JPanel topPanel;
-	
+
 	private JLabel svnLabel;
 	private JLabel buildFileLabel;
 	private JLabel projectNameLabel;
 	private JLabel jarPropertyLabel;
-	
+
 	private JTextField svnField;
 	private JTextField buildFileField;
 	private JTextField projectNameField;
 	private JTextField jarPropertyField;
-	
+
 	private JButton addButton;
 	private InputTableGUI inputTable;
 	private Map<Integer, String> versionMap;
@@ -97,7 +97,7 @@ public class VersionInputScreenGUI extends JFrame implements ActionListener {
 
 		this.jarPropertyLabel = new JLabel("Ant Target jar Property:");
 		this.jarPropertyLabel.setPreferredSize(new Dimension(150, 30));
-		
+
 		this.svnField = new JTextField();
 		this.svnField.setPreferredSize(new Dimension(550, 30));
 
@@ -106,7 +106,7 @@ public class VersionInputScreenGUI extends JFrame implements ActionListener {
 
 		this.projectNameField = new JTextField();
 		this.projectNameField.setPreferredSize(new Dimension(550, 30));
-		
+
 		this.jarPropertyField = new JTextField();
 		this.jarPropertyField.setPreferredSize(new Dimension(550, 30));
 	}
@@ -120,21 +120,13 @@ public class VersionInputScreenGUI extends JFrame implements ActionListener {
 	private void initializeMenu() {
 		this.menuBar = new JMenuBar();
 		this.fileMenu = new JMenu("File");
-		if (OSDetector.isWindows()) {
-			this.loadMenuItem = new JMenuItem("Load", new ImageIcon(
-					"assets\\upload.png"));
-			this.saveMenuItem = new JMenuItem("Save", new ImageIcon(
-					"assets\\save.png"));
-			this.quitMenuItem = new JMenuItem("Quit", new ImageIcon(
-					"assets\\quit.png"));
-		} else {
-			this.loadMenuItem = new JMenuItem("Load", new ImageIcon(
-					"assets/upload.png"));
-			this.saveMenuItem = new JMenuItem("Save", new ImageIcon(
-					"assets/save.png"));
-			this.quitMenuItem = new JMenuItem("Quit", new ImageIcon(
-					"assets/quit.png"));
-		}
+
+		this.loadMenuItem = new JMenuItem("Load", new ImageIcon("assets"
+				+ File.separator + "upload.png"));
+		this.saveMenuItem = new JMenuItem("Save", new ImageIcon("assets"
+				+ File.separator + "save.png"));
+		this.quitMenuItem = new JMenuItem("Quit", new ImageIcon("assets"
+				+ File.separator + "quit.png"));
 
 		this.menuBar.add(this.fileMenu);
 		this.fileMenu.add(this.loadMenuItem);
@@ -177,8 +169,8 @@ public class VersionInputScreenGUI extends JFrame implements ActionListener {
 		this.projectNamePanel.add(this.projectNameLabel, BorderLayout.WEST);
 		this.projectNamePanel.add(this.projectNameField, BorderLayout.CENTER);
 	}
-	
-	private void initializeJarPropertyPanel(){
+
+	private void initializeJarPropertyPanel() {
 		this.jarPropertyPanel = new JPanel();
 		this.jarPropertyPanel.setLayout(new BorderLayout());
 
@@ -217,8 +209,8 @@ public class VersionInputScreenGUI extends JFrame implements ActionListener {
 				public void run() {
 					SVNLoadLogic svnLoadLogic = new SVNLoadLogic(
 							projectNameField.getText(), versionMap,
-							svnField.getText(),
-							buildFileField.getText(), jarPropertyField.getText(), progressBar);
+							svnField.getText(), buildFileField.getText(),
+							jarPropertyField.getText(), progressBar);
 					dispose();
 					svnLoadLogic.displayTable();
 				}
@@ -226,10 +218,10 @@ public class VersionInputScreenGUI extends JFrame implements ActionListener {
 			t.start();
 		} else if (e.getSource().equals(this.loadMenuItem)) {
 			this.fileChooser.loadInput();
-			
+
 			this.versionMap = this.fileChooser.getVersionMap();
 			this.inputTable.loadTableValues(this.versionMap);
-			
+
 			Map<String, String> inputMap = this.fileChooser.getInputMap();
 			this.projectNameField.setText(inputMap.get("project"));
 			this.svnField.setText(inputMap.get("svnURL"));
@@ -244,8 +236,8 @@ public class VersionInputScreenGUI extends JFrame implements ActionListener {
 		}
 
 	}
-	
-	private Map<String, String> getSaveInputMap(){
+
+	private Map<String, String> getSaveInputMap() {
 		Map<String, String> inputMap = new TreeMap<>();
 		inputMap.put("project", this.projectNameField.getText().trim());
 		inputMap.put("svnURL", this.svnField.getText().trim());

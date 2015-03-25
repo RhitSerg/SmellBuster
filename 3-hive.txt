@@ -1,6 +1,6 @@
 Hive
 http://svn.apache.org/repos/asf/hive/trunk/
-ant\pom.xml
+ant/pom.xml
 
 0.8.0;1213525
 0.8.1;1236025

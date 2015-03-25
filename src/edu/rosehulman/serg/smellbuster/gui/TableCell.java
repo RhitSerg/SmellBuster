@@ -164,17 +164,4 @@ public class TableCell extends JLabel {
 		Color newColor = new Color(d, d, d);
 		this.setForeground(newColor);
 	}
-
-	// public static void main(String[] args) {
-	// JFrame f = new JFrame("Test");
-	// JPanel p = (JPanel)f.getContentPane();
-	// p.add(new JLabel("Test"), BorderLayout.NORTH);
-	// p.add(new
-	// TableCell("I am Dharmin! King of the world! Respect my autority!", 0,0),
-	// BorderLayout.CENTER);
-	// p.add(new JLabel("Bottom"), BorderLayout.SOUTH);
-	// f.pack();
-	// f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	// f.setVisible(true);
-	// }
 }

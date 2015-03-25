@@ -27,7 +27,7 @@ public class ResultTableLogic {
 	}
 
 	public void parseMetrics() {
-		File[] files = new File(this.metricFilesLocation + "\\" + this.projectName).listFiles();
+		File[] files = new File(this.metricFilesLocation + File.separator + this.projectName).listFiles();
 		MetricParserFactory parser = new MetricParserFactory();
 
 		for (int i = 0; i < files.length; i++) {

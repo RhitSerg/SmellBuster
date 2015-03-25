@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
@@ -74,21 +75,13 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 	private void initMenu() {
 		this.menuBar = new JMenuBar();
 		this.fileMenu = new JMenu("File");
-		if (OSDetector.isWindows()) {
-			this.settingsMenuItem = new JMenuItem("Settings", new ImageIcon(
-					"assets\\settings.png"));
-			this.statsMenuItem = new JMenuItem("Display Statistics",
-					new ImageIcon("assets\\statistics.png"));
-			this.quitMenuItem = new JMenuItem("Quit", new ImageIcon(
-					"assets\\quit.png"));
-		} else {
-			this.settingsMenuItem = new JMenuItem("Settings", new ImageIcon(
-					"assets/settings.png"));
-			this.statsMenuItem = new JMenuItem("Display Statistics",
-					new ImageIcon("assets/statistics.png"));
-			this.quitMenuItem = new JMenuItem("Quit", new ImageIcon(
-					"assets/quit.png"));
-		}
+
+		this.settingsMenuItem = new JMenuItem("Settings", new ImageIcon(
+				"assets" + File.separator + "settings.png"));
+		this.statsMenuItem = new JMenuItem("Display Statistics", new ImageIcon(
+				"assets" + File.separator + "statistics.png"));
+		this.quitMenuItem = new JMenuItem("Quit", new ImageIcon("assets"
+				+ File.separator + "quit.png"));
 
 		this.menuBar.add(this.fileMenu);
 		this.fileMenu.add(this.settingsMenuItem);

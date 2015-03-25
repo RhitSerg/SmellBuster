@@ -36,13 +36,14 @@ public class SVNLoadLogic {
 	private Map<String, ArrayList<String[]>> packageClassMap;
 
 	public SVNLoadLogic(String projectName, Map<Integer, String> versionMap,
-			String svnURL, String buildFileLoc, String jarProperty, JProgressBar progressBar) {
+			String svnURL, String buildFileLoc, String jarProperty,
+			JProgressBar progressBar) {
 		this.projectName = projectName;
 		this.versionMap = versionMap;
 		SVNLoadLogic.progressBar = progressBar;
 		this.svnURL = svnURL;
-		this.svnDir = System.getProperty("user.dir") + "\\repo\\"
-				+ this.projectName;
+		this.svnDir = System.getProperty("user.dir") + File.separator + "repo"
+				+ File.separator + this.projectName;
 		this.buildFileLoc = buildFileLoc;
 		this.diffMap = new HashMap<>();
 		this.classMap = new HashMap<>();
@@ -67,7 +68,7 @@ public class SVNLoadLogic {
 				.keySet().size());
 
 		for (int revision : this.versionMap.keySet()) {
-			String svnDirLocation = this.svnDir + "\\" + revision;
+			String svnDirLocation = this.svnDir + File.separator + revision;
 
 			Runnable worker = new RepoCheckoutRunnable(svnDirLocation,
 					(long) revision, vcParser);
@@ -97,10 +98,11 @@ public class SVNLoadLogic {
 				.keySet().size());
 
 		for (int revision : this.versionMap.keySet()) {
-			String svnBuildDirLocation = this.svnDir + "\\" + revision + "\\"
-					+ this.buildFileLoc;
+			String svnBuildDirLocation = this.svnDir + File.separator
+					+ revision + File.separator + this.buildFileLoc;
 
-			Runnable worker = new ProjectBuildRunnable(svnBuildDirLocation, this.versionMap.get(revision), this.jarProperty);
+			Runnable worker = new ProjectBuildRunnable(svnBuildDirLocation,
+					this.versionMap.get(revision), this.jarProperty);
 			executor.execute(worker);
 		}
 
@@ -121,7 +123,8 @@ public class SVNLoadLogic {
 			}
 		}
 
-		File projectDir = new File("MetricAnalysis\\" + this.projectName);
+		File projectDir = new File("MetricAnalysis" + File.separator
+				+ this.projectName);
 		if (!projectDir.exists()) {
 			try {
 				projectDir.mkdir();
@@ -136,20 +139,22 @@ public class SVNLoadLogic {
 				.keySet().size());
 
 		this.createMetricAnalysisDirIfNotExist();
-		
+
 		String jarLoc = this.buildFileLoc;
-		if(this.buildFileLoc.contains("build.xml")){
-			jarLoc = jarLoc.substring(0, jarLoc.length()-9);
+		if (this.buildFileLoc.contains("build.xml")) {
+			jarLoc = jarLoc.substring(0, jarLoc.length() - 9);
 		} else {
-			jarLoc = jarLoc.substring(0, jarLoc.length()-7);
+			jarLoc = jarLoc.substring(0, jarLoc.length() - 7);
 		}
-		
+
 		for (int revision : this.versionMap.keySet()) {
-			String jarFileLocation = this.svnDir + "\\" + revision +"\\" + jarLoc + "target";
+			String jarFileLocation = this.svnDir + File.separator + revision
+					+ File.separator + jarLoc + "target";
 
 			Runnable worker = new MetricAnalyserRunnable(jarFileLocation,
-					"MetricAnalysis\\" + this.projectName + "\\"
-							+ this.versionMap.get(revision) + ".xml");
+					"MetricAnalysis" + File.separator + this.projectName
+							+ File.separator + this.versionMap.get(revision)
+							+ ".xml");
 			executor.execute(worker);
 		}
 
