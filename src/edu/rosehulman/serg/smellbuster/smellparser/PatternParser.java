@@ -84,16 +84,20 @@ public class PatternParser {
 				return false;
 			}
 		});
-		
+
 		for (Comment comment : (List<Comment>) cu.getCommentList()) {
 			int start = comment.getStartPosition();
 			int end = start + comment.getLength();
 			String commentString = this.fileContent.substring(start, end);
-			if (comment.isBlockComment()){
-				this.blockCommentList.add(commentString);
-			}
-			else if (comment.isLineComment()){
-				this.lineCommentList.add(commentString);
+			if (comment.isBlockComment()) {
+				if (!this.blockCommentList.contains(commentString)) {
+					this.blockCommentList.add(commentString);
+				}
+			} else if (comment.isLineComment()) {
+				if (commentString.length() > 2
+						&& !this.lineCommentList.contains(commentString)) {
+					this.lineCommentList.add(commentString);
+				}
 			}
 		}
 
@@ -132,7 +136,7 @@ public class PatternParser {
 			}
 		});
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	private StringBuilder getMethodSignature(MethodDeclaration method) {
 		StringBuilder name = new StringBuilder();
@@ -234,13 +238,13 @@ public class PatternParser {
 		}
 		return "";
 	}
-	
-	public ArrayList<String> getNodeToChangeForComments(){
+
+	public ArrayList<String> getNodeToChangeForComments() {
 		ArrayList<String> commentList = new ArrayList<>(this.lineCommentList);
 		double numBlockComments = this.blockCommentList.size();
 		double methods = this.methodNames.size();
 		double commentToMethodRatio = numBlockComments / methods;
-		if (commentToMethodRatio > 0.2){
+		if (commentToMethodRatio > 0.2) {
 			commentList.addAll(this.blockCommentList);
 		}
 		return commentList;
