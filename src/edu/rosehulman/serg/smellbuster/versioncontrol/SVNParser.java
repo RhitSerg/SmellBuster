@@ -93,7 +93,6 @@ public class SVNParser implements IVersionControlParser {
 										.getPath().contains("Tests"))) {
 
 							DiffClass dc = new DiffClass();
-
 							String className = entryPath.getPath().replace("/",
 									"\\");
 							String[] nameSplit = className.split("\\\\");

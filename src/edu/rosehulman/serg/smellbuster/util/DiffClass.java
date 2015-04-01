@@ -3,6 +3,7 @@ package edu.rosehulman.serg.smellbuster.util;
 public class DiffClass {
 		private String name;
 		private String packageName;
+		private String location;
 		private char type;
 
 		public String getName() {
@@ -29,5 +30,12 @@ public class DiffClass {
 			this.packageName = packageName;
 		}
 
+		public String getLocation(){
+			return this.location;
+		}
+		
+		public void setLocation(String location){
+			this.location = location;
+		}
 
 	}

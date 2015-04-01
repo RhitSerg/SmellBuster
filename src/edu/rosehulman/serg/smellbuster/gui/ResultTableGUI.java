@@ -23,7 +23,6 @@ import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 
 import edu.rosehulman.serg.smellbuster.logic.ResultTableLogic;
-import edu.rosehulman.serg.smellbuster.util.*;
 
 public class ResultTableGUI extends JFrame implements ActionListener {
 
@@ -196,6 +195,21 @@ public class ResultTableGUI extends JFrame implements ActionListener {
 
 	public Map<Integer, String> getVersionMap() {
 		return this.versionMap;
+	}
+	
+	public String getProjectName(){
+		return this.projectName;
+	}
+	
+	public int getRevisionNumberForVersion(String version){
+		
+		for (int revision: this.versionMap.keySet()){
+			if (version.equalsIgnoreCase(this.versionMap.get(revision))){
+				return revision;
+			}
+		}
+		
+		return -1;
 	}
 
 }
