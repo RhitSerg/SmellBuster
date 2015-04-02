@@ -34,11 +34,9 @@ public class SmellBuster  {
 		} catch (Exception e) {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		}
-		
 
 		VersionInputScreenGUI frame = new VersionInputScreenGUI();
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
 	}
 }

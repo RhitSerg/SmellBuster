@@ -10,11 +10,13 @@ import org.eclipse.jdt.core.dom.ASTNode;
 public class CodeSmellParser implements ISmellParser {
 	
 	private Map<String, String> designPatternMap;
+	private String fileContents;
 
 	@Override
 	public Map<String, String> getCodeSmellsForFile(String filePath) {
 
 		this. designPatternMap = new HashMap<>();
+		this.fileContents = "";
 		
 		this.getCodeForStrategyPattern(filePath);
 	
@@ -61,6 +63,8 @@ public class CodeSmellParser implements ISmellParser {
 				commentSmell += ("<li>"+comment+"</li>");
 			}
 			
+			this.fileContents = parser.getFileContents();
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -72,6 +76,10 @@ public class CodeSmellParser implements ISmellParser {
 		this.designPatternMap.put("Strategy", strategyPattern);
 		this.designPatternMap.put("Comment", commentSmell);
 		this.designPatternMap.put("Introduce Parameter Object", introParameterObjectPattern);
+	}
+	
+	public String getFileContents(){
+		return this.fileContents;
 	}
 
 }

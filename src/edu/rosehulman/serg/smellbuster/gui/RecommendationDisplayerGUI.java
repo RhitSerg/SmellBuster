@@ -1,38 +1,45 @@
 package edu.rosehulman.serg.smellbuster.gui;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.io.File;
 import java.util.Map;
 
+import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
-import javax.swing.JTextPane;
+
+import edu.rosehulman.serg.smellbuster.smellparser.CodeSmellParser;
 
 public class RecommendationDisplayerGUI extends JFrame {
 
 	private static final long serialVersionUID = -1767648751660171489L;
+	@SuppressWarnings("unused")
 	private Map<String, String> smellPatternMap;
-	private JTextPane displayPane;
 
-	public RecommendationDisplayerGUI(
-			Map<String, String> smellPatternMap, String title) {
+
+	public RecommendationDisplayerGUI(String filePath,
+			String title) {
 		super(title);
 		this.setPreferredSize(new Dimension(500, 350));
-		this.smellPatternMap = smellPatternMap;
-		this.displayPane = new JTextPane();
-		this.displayPane.setContentType("text/html");
-		this.setPaneContent();
-		JScrollPane jsp = new JScrollPane(this.displayPane);
-		this.getContentPane().add(jsp);
-		this.pack();
+		this.setLayout(new BorderLayout());
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-	}
 
-	private void setPaneContent() {
-		String text = "";
-		for (String pattern : this.smellPatternMap.keySet()) {
-			text += this.smellPatternMap.get(pattern);
+		CodeSmellParser smellParser = new CodeSmellParser();
+		this.smellPatternMap = smellParser
+				.getCodeSmellsForFile(filePath);
+
+		JEditorPane editorPane = new JEditorPane();
+		File file = new File("web" + File.separator + "recommendations.html");
+		try {
+			editorPane.setPage(file.toURI().toURL());
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		this.displayPane.setText(text);
+		JScrollPane scrollPane = new JScrollPane(editorPane);
+		scrollPane.setPreferredSize(new Dimension(500, 350));
+		this.add(scrollPane, BorderLayout.CENTER);
+
 	}
 
 }

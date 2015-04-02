@@ -50,11 +50,8 @@ public class TableCellMouseListener extends MouseAdapter {
 				break;
 			case 2:
 				String filePath = this.getFilePathFor(className, version);
-				CodeSmellParser smellParser = new CodeSmellParser();
-				Map<String, String> smellPatternMap = smellParser
-						.getCodeSmellsForFile(filePath);
 				RecommendationDisplayerGUI recommendGUI = new RecommendationDisplayerGUI(
-						smellPatternMap, className);
+						filePath, className);
 				recommendGUI.setVisible(true);
 				break;
 			default:
