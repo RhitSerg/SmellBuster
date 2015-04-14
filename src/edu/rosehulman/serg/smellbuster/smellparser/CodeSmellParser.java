@@ -41,6 +41,11 @@ public class CodeSmellParser implements ISmellParser {
 		try {
 			parser.parseFile(filePath);
 			ArrayList<String> methodNames = parser.getMethodNames();
+			
+//			ArrayList<String> startegyPrints = new ArrayList<>();
+//			ArrayList<String> methodSignaturePrints = new ArrayList<>();
+//			ArrayList<String> commentPrints = new ArrayList<>();
+			
 			for (String method : methodNames) {
 
 				Map<ASTNode, Integer> codeToChangeForStrategy = parser
@@ -49,21 +54,41 @@ public class CodeSmellParser implements ISmellParser {
 					ASTNode node = codeToChangeForStrategy.keySet().iterator().next();
 					if (node != null) {
 						strategyPattern += ("<li>" + method + "</li>");
+//						startegyPrints.add(method);
 					}
 				}
 				
 				String methodSignature = parser.getNodeToChangeForParameterList(method);
 				if (methodSignature.length() > 0){
 					introParameterObjectPattern += ("<li>"+method+"</li>");
+//					methodSignaturePrints.add(method);
 				}
 			}
 			
 			ArrayList<String> comments = parser.getNodeToChangeForComments();
 			for (String comment: comments){
 				commentSmell += ("<li>"+comment+"</li>");
+//				commentPrints.add(comment);
 			}
 			
 			this.fileContents = parser.getFileContents();
+			
+//			System.out.println("Strategy");
+//			for (String strategyPrint: startegyPrints){
+//				System.out.println(strategyPrint);
+//			}
+//			
+//			System.out.println();
+//			System.out.println("Method Signature");
+//			for (String methodSig: methodSignaturePrints){
+//				System.out.println(methodSig);
+//			}
+//			
+//			System.out.println();
+//			System.out.println("Comments");
+//			for (String comment: commentPrints){
+//				System.out.println(comment);
+//			}
 			
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -74,8 +99,8 @@ public class CodeSmellParser implements ISmellParser {
 		commentSmell += ("</ul>");
 
 		this.designPatternMap.put("Strategy", strategyPattern);
+		this.designPatternMap.put("IntroduceParameterObject", introParameterObjectPattern);
 		this.designPatternMap.put("Comment", commentSmell);
-		this.designPatternMap.put("Introduce Parameter Object", introParameterObjectPattern);
 	}
 	
 	public String getFileContents(){

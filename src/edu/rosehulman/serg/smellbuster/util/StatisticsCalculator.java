@@ -38,16 +38,35 @@ public class StatisticsCalculator {
 			this.dataMap.put(version, tempArr);
 		}
 	}
+	
+//	private ArrayList<Boolean> getPackageRows(){
+//		ArrayList<Boolean> packageRows = new ArrayList<>();
+//		boolean value = false;
+//		String packageId = "source.org";
+//		for (int i=0; i<this.table.getRowCount(); i++){
+//			String name = this.table.getModel().getValueAt(i, 0).toString();
+//			if (name.contains("Package") && name.contains(packageId)){
+//				value = true;
+//			} else if (name.contains("Package") && !name.contains(packageId)){
+//				value = false;
+//			}
+//			packageRows.add(value);
+//		}
+//		return packageRows;
+//	}
 
 	private void calculateTotalChanges() {
+//		ArrayList<Boolean> packageRows = this.getPackageRows();
 		for (int col = 0; col < this.columnNames.length; col++) {
 
 			int[] dataArr = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
-
+			
 			for (int i = 0; i < this.table.getRowCount(); i++) {
 				String name = this.table.getModel().getValueAt(i, col)
 						.toString();
-				if (name.contains(".java")) {
+				
+//				boolean check = packageRows.get(i);
+				if (name.contains(".java")){	// && check) {
 					dataArr[0] = dataArr[0] + 1;
 					Color c = this.resultTableLogic.getColorForMetricScore(0,
 							name, this.columnNames[col]);
@@ -58,6 +77,7 @@ public class StatisticsCalculator {
 				}
 			}
 			String version = this.columnNames[col];
+//			System.out.println(version + " : " + Arrays.toString(dataArr));
 			this.dataMap.put(version, dataArr);
 		}
 	}

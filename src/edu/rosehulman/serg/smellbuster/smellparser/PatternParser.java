@@ -65,20 +65,21 @@ public class PatternParser {
 				Block methodBlock = method.getBody();
 				if (methodBlock != null) {
 					String myblock = methodBlock.toString();
-					String methodName = method.getName()
-							.getFullyQualifiedName();
-					PatternParser.this.methodNames.add(methodName);
+//					String methodName = method.getName()
+//							.getFullyQualifiedName();
+					
 
 					String fullMethodSignature = getMethodSignature(method)
 							.toString();
-					PatternParser.this.methodSignatureMap.put(methodName,
+					PatternParser.this.methodNames.add(fullMethodSignature);
+					PatternParser.this.methodSignatureMap.put(fullMethodSignature,
 							fullMethodSignature);
 
 					List<String> methodParameters = method.parameters();
-					PatternParser.this.methodParameterListMap.put(methodName,
+					PatternParser.this.methodParameterListMap.put(fullMethodSignature,
 							methodParameters.size());
 
-					methodVisitor(myblock, methodName);
+					methodVisitor(myblock, fullMethodSignature);
 
 				}
 				return false;
