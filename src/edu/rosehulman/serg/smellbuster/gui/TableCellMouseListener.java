@@ -6,13 +6,11 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.Map;
 
 import javax.swing.JOptionPane;
 
 import org.apache.commons.io.FileUtils;
 
-import edu.rosehulman.serg.smellbuster.smellparser.CodeSmellParser;
 import edu.rosehulman.serg.smellbuster.util.MetricDOMObject;
 
 public class TableCellMouseListener extends MouseAdapter {
@@ -28,7 +26,7 @@ public class TableCellMouseListener extends MouseAdapter {
 		int row = this.resultTableGUI.getTable().getSelectedRow();
 		int column = this.resultTableGUI.getTable().getSelectedColumn();
 
-		final String title = "Track info";
+		final String title = "Metric Detail info";
 		final String version = this.resultTableGUI.getColumnNames()[column];
 		final String className = this.resultTableGUI.getDataValues()[row][column];
 		if (className != null && className.length() > 0) {
