@@ -38,35 +38,104 @@ public class StatisticsCalculator {
 			this.dataMap.put(version, tempArr);
 		}
 	}
-	
-//	private ArrayList<Boolean> getPackageRows(){
-//		ArrayList<Boolean> packageRows = new ArrayList<>();
-//		boolean value = false;
-//		String packageId = "source.org";
-//		for (int i=0; i<this.table.getRowCount(); i++){
-//			String name = this.table.getModel().getValueAt(i, 0).toString();
-//			if (name.contains("Package") && name.contains(packageId)){
-//				value = true;
-//			} else if (name.contains("Package") && !name.contains(packageId)){
-//				value = false;
+
+	// (10 - noc) - wmc - cbo - lcom3 + (2 * cam) - ic - cbm - (0.5 * amc) - cc
+
+//	private void getData() {
+//
+//		for (int col = 0; col < this.columnNames.length; col++) {
+//
+//			double sumNOC = 0;
+//			double sumWMC = 0;
+//			double sumCBO = 0;
+//			double sumLCOM3 = 0;
+//			double sumCAM = 0;
+//			double sumIC = 0;
+//			double sumCBM = 0;
+//			double sumAMC = 0;
+//			double sumCC = 0;
+//			double aggregate = 0;
+//			String version = this.columnNames[col];
+//			double total = 0;
+//
+//			for (int i = 0; i < this.table.getRowCount(); i++) {
+//
+//				String className = this.table.getModel().getValueAt(i, col)
+//						.toString();
+//
+//				if (className.contains(".java")) {
+//					sumNOC += this.getDoubleValue(this.resultTableLogic
+//							.getMetricValueFor("noc", version, className));
+//					sumWMC += this.getDoubleValue(this.resultTableLogic
+//							.getMetricValueFor("wmc", version, className));
+//					sumCBO += this.getDoubleValue(this.resultTableLogic
+//							.getMetricValueFor("cbo", version, className));
+//					sumLCOM3 += this.getDoubleValue(this.resultTableLogic
+//							.getMetricValueFor("lcom3", version, className));
+//					sumCAM += this.getDoubleValue(this.resultTableLogic
+//							.getMetricValueFor("cam", version, className));
+//					sumIC += this.getDoubleValue(this.resultTableLogic
+//							.getMetricValueFor("ic", version, className));
+//					sumCBM += this.getDoubleValue(this.resultTableLogic
+//							.getMetricValueFor("cbm", version, className));
+//					sumAMC += this.getDoubleValue(this.resultTableLogic
+//							.getMetricValueFor("amc", version, className));
+//					sumCC += this.getDoubleValue(this.resultTableLogic
+//							.getMetricValueFor("cc", version, className));
+//					aggregate += this.getDoubleValue(this.resultTableLogic
+//							.getAggregateValueFor(version, className));
+//					
+//					double val = this.getDoubleValue(this.resultTableLogic
+//							.getAggregateValueFor(version, className));
+//					if (val > 0.0 || val < 0.0){
+//						total++;
+//					}
+//				}
 //			}
-//			packageRows.add(value);
+//
+//			System.out.println(version + "," + (sumNOC/total) + "," + (sumWMC/total) + ","
+//					+ (sumCBO/total) + "," + (sumLCOM3/total) + "," + (sumCAM/total) + "," + (sumIC/total)
+//					+ "," + (sumCBM/total) + "," + (sumAMC/total) + "," + (sumCC/total) + "," + (aggregate/total));
 //		}
-//		return packageRows;
 //	}
+	
+//	private double getDoubleValue(String convert){
+//		try{
+//			double val = Double.parseDouble(convert);
+//			return val;
+//		} catch (Exception e){
+//			return 0.0;
+//		}
+//	}
+	// private ArrayList<Boolean> getPackageRows(){
+	// ArrayList<Boolean> packageRows = new ArrayList<>();
+	// boolean value = false;
+	// String packageId = "src.org";
+	// for (int i=0; i<this.table.getRowCount(); i++){
+	// String name = this.table.getModel().getValueAt(i, 0).toString();
+	// if (name.contains("Package") && name.contains(packageId)){
+	// value = true;
+	// } else if (name.contains("Package") && !name.contains(packageId)){
+	// value = false;
+	// }
+	// packageRows.add(value);
+	// }
+	// return packageRows;
+	// }
 
 	private void calculateTotalChanges() {
-//		ArrayList<Boolean> packageRows = this.getPackageRows();
+//		this.getData();
+		// ArrayList<Boolean> packageRows = this.getPackageRows();
 		for (int col = 0; col < this.columnNames.length; col++) {
 
 			int[] dataArr = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
-			
+
 			for (int i = 0; i < this.table.getRowCount(); i++) {
 				String name = this.table.getModel().getValueAt(i, col)
 						.toString();
-				
-//				boolean check = packageRows.get(i);
-				if (name.contains(".java")){	// && check) {
+
+				// boolean check = packageRows.get(i);
+				if (name.contains(".java")) { // && check) {
 					dataArr[0] = dataArr[0] + 1;
 					Color c = this.resultTableLogic.getColorForMetricScore(0,
 							name, this.columnNames[col]);
@@ -77,14 +146,14 @@ public class StatisticsCalculator {
 				}
 			}
 			String version = this.columnNames[col];
-//			System.out.println(version + " : " + Arrays.toString(dataArr));
+			// System.out.println(version + " : " + Arrays.toString(dataArr));
 			this.dataMap.put(version, dataArr);
 		}
 	}
 
 	private void calculateStatsData() {
 		int[] dataTotals = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
-		
+
 		for (String version : this.dataMap.keySet()) {
 			int[] dataArr = this.dataMap.get(version);
 			dataTotals[0] += dataArr[0];
@@ -97,14 +166,14 @@ public class StatisticsCalculator {
 			dataTotals[7] += dataArr[7];
 		}
 
-		for (int i=1; i<dataTotals.length; i++){
+		for (int i = 1; i < dataTotals.length; i++) {
 			double percent = (dataTotals[i] * 100) / dataTotals[0];
 			this.stats.put(i, percent);
 		}
-		
+
 	}
-	
-	public Map<Integer, Double> getStats(){
+
+	public Map<Integer, Double> getStats() {
 		return this.stats;
 	}
 
